@@ -19,3 +19,8 @@ Features:
 5. Allow Highlights to be Shared
     - Plays that are deemed highlights while watching can easily be shared
     - User has the option to include notes along with clip or if they only want to share the clip
+
+Rough Design
+![Home/Game Review](design-draft-images/home:game-review.jpg)
+![Search Home / Team Profile (other team)](design-draft-images/search-home:team-profile.jpg)
+![User Profile / Team Home (user's team)](design-draft-images/user-profile:team-home.jpg)
