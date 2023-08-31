@@ -15,10 +15,19 @@ Features:
 4. Create Film Clips
     - While watching a video, user is able to clip part of a video and make a note about what happens
     - If this user is verified with a team, when another team member is watching the same video they will be able to see the note.
-    - Film clips are kept in a team-wide / user-wide database that can be searched / sorted by keywords (ie. players involved, topic discussed (ie. deep defense), teams, etc...)
-5. Allow Highlights to be Shared
+    - It is possible for a user to tag people and keywords. When a user is tagged they will be notified. Keywords can be searched for in the search field.
+5. Quality of Life Features for Film Review Page
+    - You are able to change settings when watching back a game. You can turn off comments completely. You can also filter to only show notes made by a certain author, only show notes with certain keywords or notes that you're tagged in.
+    - Clips are recorded as a duration, not a single time stamp.
+    - If multiple clips span the same time. A queue will be formed that will ask the user if they want to go back and watch that part of the clip again.
+    - After a clip's duration is over a user can easily click replay or make a comment on the note that will send to the original author.
+6. Allow Highlights to be Shared
     - Plays that are deemed highlights while watching can easily be shared
     - User has the option to include notes along with clip or if they only want to share the clip
+    - This could be turned into a mini social media feed as well. For example as a user is clipping a chunk of film they can decide if they want to post it on their feed. (Notes will be not be viewable on highlight feed)
+7. Everything is Searchable
+    - Users can search by season, team, game, tournament, keywords, and players
+    - Team and Player results allow you to go to a respective profile
 
 Rough Design
 ![Home/Game Review](design-draft-images/home:game-review.jpg)
