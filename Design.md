@@ -15,11 +15,15 @@ Features:
 4. Create Film Clips
     - While watching a video, user is able to clip part of a video and make a note about what happens
     - If this user is verified with a team, when another team member is watching the same video they will be able to see the note.
-    - It is possible for a user to tag people and keywords. When a user is tagged they will be notified. Keywords can be searched for in the search field.
+    - It is possible for a user to tag people and keywords. When a user is tagged they will be notified. Keywords can be searched for in the search field. 
+    - Global keywords (like team names, season and tournament) will be automatically added to all subsequent clips that are made in that game.
+    - After the initial clipping takes place the user is able to manipulate the start and stop timestamps if they messed up.
 5. Quality of Life Features for Film Review Page
     - You are able to change settings when watching back a game. You can turn off comments completely. You can also filter to only show notes made by a certain author, only show notes with certain keywords or notes that you're tagged in.
-    - Clips are recorded as a duration, not a single time stamp.
-    - If multiple clips span the same time. A queue will be formed that will ask the user if they want to go back and watch that part of the clip again.
+    - Clips are recorded as a duration, not a single time stamp. 
+    - If multiple clips span the same time. A queue will be formed. This will allow the user to decide if they want to watch that clip again or just move on without too much worry.
+    - Queued clips can be clicked or deleted.
+    - If you are stil commenting on a previous clip when another clip comes up, it will be queued as well. To not disturb the current draft.
     - After a clip's duration is over a user can easily click replay or make a comment on the note that will send to the original author.
 6. Allow Highlights to be Shared
     - Plays that are deemed highlights while watching can easily be shared
@@ -28,6 +32,9 @@ Features:
 7. Everything is Searchable
     - Users can search by season, team, game, tournament, keywords, and players
     - Team and Player results allow you to go to a respective profile
+8. Mobile/Fullscreen Film Review Quality of Life
+    - When a note comes up while watching a video instead of stopping the video right away an icon appears in the bottom right of the video. It says 'open note'
+    - The open note button will stop the video and exit out of fullscreen so that the note will now populate below the video player.
 
 Rough Design
 ![Home/Game Review](design-draft-images/home:game-review.jpg)
