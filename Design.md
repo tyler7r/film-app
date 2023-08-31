@@ -36,7 +36,8 @@ Features:
     - When a note comes up while watching a video instead of stopping the video right away an icon appears in the bottom right of the video. It says 'open note'
     - The open note button will stop the video and exit out of fullscreen so that the note will now populate below the video player.
 
-Rough Design
-![Home/Game Review](design-draft-images/home:game-review.jpg)
-![Search Home / Team Profile (other team)](design-draft-images/search-home:team-profile.jpg)
-![User Profile / Team Home (user's team)](design-draft-images/user-profile:team-home.jpg)
+Rough Design (2nd Drafts!)
+![Home Page / Film Review](design-draft-images/home-page:film-review-2.jpg)
+![Team Profile / Search Home / Highlight Feed](design-draft-images/team-profile:search-results:highlight-feed-2.jpg)
+![User-Inbox / Coach View](design-draft-images/user-indox:coach-view.jpg)
+
