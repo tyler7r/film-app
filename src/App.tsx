@@ -1,8 +1,9 @@
 import './App.css'
+import React from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import { Home } from './components/Home'
 
-function App() {
+const App: React.FC = () => {
   return (
     <BrowserRouter>
       <div className='App'>

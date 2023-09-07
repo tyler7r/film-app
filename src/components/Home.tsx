@@ -1,6 +1,8 @@
-export const Home = () => {
+import React from 'react';
+
+export const Home: React.FC = () => {
     return (
-        <div id='home-page'>
+        <div className='home-page'>
 
         </div>
     )
