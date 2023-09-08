@@ -1,3 +1,12 @@
+/*
+ * This file contains our linting configuration.
+ * Linting is somewhere between type-checking and formatting.
+ * Formatting is like "when i press tab, insert two spaces" and
+ * "use double quotes for strings instead of single quotes".
+ * Type checking is like "that's a string, you can't add a number to it".
+ * Linting is like "Hey you defined this variable but never used it, that's suspicious."
+ * So not quite as critical as type-checking, but more important maybe than formatting.
+ */
 module.exports = {
   root: true,
   env: {

@@ -1,26 +1,66 @@
+/*
+ * This file contains our configuration for typescript.
+ * You can look up what each option means, but I'll comment
+ * on them for you as well.
+ */
 {
   "compilerOptions": {
+    // allow javascript in our typescript project
     "allowJs": true,
+    "checkJs": true,
+
+    // controls what kind of code is generated
     "target": "ES2017",
     "module": "ES2022",
+
+    // describes the runtime environment -- i.e. we're running in a browser,
+    // so we include "DOM" and "WebWorker", but not "Node", because the node
+    // runtime is different than the browser runtime
     "lib": ["es2022", "DOM", "WebWorker", "DOM.Iterable"],
+
+    // Since jsx isn't technically part of the javascript specification,
+    // we have to tell typescript how to handle it. Here, we're saying to
+    // treat it react-style, but use qwik to actually transform it
     "jsx": "react-jsx",
     "jsxImportSource": "@builder.io/qwik",
+
+    // be strict about whether we can do javascript-type shenanigans, or
+    // if we have to use good types and everything
     "strict": true,
+
+    // these have to do with module resolution -- essentially, when
+    // you type in "import { component$ } from qwik", where should
+    // typescript look for that thing?
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "esModuleInterop": true,
+
+    // these compilation options say, in order:
+    // * skipLibCheck: assume that every .d.ts file is correct
+    // * incremental: only recompile files that changed, instead of the whole project
+    // * isolatedModules: compile each file separately (improves speed because of parallelization)
     "skipLibCheck": true,
     "incremental": true,
     "isolatedModules": true,
+
+    // our output is handled by vite, so we emit nothing but if we do emit anything, it goes in /tmp
     "outDir": "tmp",
     "noEmit": true,
+
+    // these are types that are considered "globally available". I think it's kind of a hack to
+    // put the node types here, but it's how we get type checking in vite.config.ts, which is
+    // run in node and not the browser
     "types": ["node", "vite/client"],
+
+    // these paths are aliases -- so with this setup you can import from `~/components/navbar`
+    // instead of `../../../components/navbar`
     "paths": {
       "~/*": ["./src/*"]
     }
   },
+
+  // these options tell typescript which files it should include
   "files": ["./.eslintrc.cjs"],
   "include": ["src", "./*.d.ts", "./*.config.ts"]
 }
