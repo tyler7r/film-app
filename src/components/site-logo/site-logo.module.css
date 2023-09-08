@@ -1,0 +1,8 @@
+.icon {
+  max-height: 1rem;
+}
+
+.container a {
+  text-decoration: inherit;
+  color: inherit;
+}

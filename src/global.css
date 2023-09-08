@@ -1,5 +1,3 @@
-
-
 /**
  * WHAT IS THIS FILE?
  *
@@ -27,6 +25,12 @@ html {
     "Segoe UI Emoji",
     "Segoe UI Symbol",
     "Noto Color Emoji";
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
 }
 
 body {
