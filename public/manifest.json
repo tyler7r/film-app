@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+  "name": "film-study",
+  "short_name": "Film Study",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#fff",
+  "description": "Collaboratively upload, watch, and review film."
+}

@@ -1,7 +1,25 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from "vite";
+import { qwikVite } from "@builder.io/qwik/optimizer";
+import { qwikCity } from "@builder.io/qwik-city/vite";
+import tsconfigPaths from "vite-tsconfig-paths";
 
-// https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [react()],
-})
+/*
+ * This is our bundler configuration. Right now it doesn't look like much, but we
+ * can customize it later if we want to add, say, PostCSS plugins, Sass, or other
+ * things like that.
+ * 
+ * - [qwikVite](https://qwik.builder.io/docs/advanced/vite/#qwikvite)
+ * - [qwikCity](https://qwik.builder.io/docs/advanced/vite/#qwikcity)
+ * - [tsconfigPaths](https://www.npmjs.com/package/vite-tsconfig-paths)
+ */
+
+export default defineConfig(() => {
+  return {
+    plugins: [qwikCity(), qwikVite(), tsconfigPaths()],
+    preview: {
+      headers: {
+        "Cache-Control": "public, max-age=600",
+      },
+    },
+  };
+});
