@@ -1,5 +1,10 @@
-.icon {
+span {
   max-height: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  text-align: center;
 }
 
 .container a {

@@ -1,4 +1,4 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useStylesScoped$ } from "@builder.io/qwik";
 import { BsSearch, BsEnvelopeFill } from "@qwikest/icons/bootstrap";
 
 import { SiteLogo } from "~/components/site-logo";
@@ -10,13 +10,19 @@ import styles from "./navbar.module.css";
 export const Navbar = component$(() => {
   return (
     <nav>
-      <a href="/" class={styles["link"]}>
+      <a href="/">
         <SiteLogo />
       </a>
-      <Button>Film Room</Button>
-      <BsSearch />
-      <BsEnvelopeFill />
-      <TeamLogo team="Atlanta Hustle" />
+      <div class={styles.right}>
+        <Button>Film Room</Button>
+        <div class={styles.nav_btn}>
+          <BsSearch />
+        </div>
+        <div class={styles.nav_btn}>
+          <BsEnvelopeFill />
+        </div>
+        <TeamLogo team="Atlanta Hustle" />
+      </div>
     </nav>
   );
 });
