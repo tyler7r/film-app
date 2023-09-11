@@ -1,21 +1,31 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useStylesScoped$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
+import HomeStyles from './home.css?inline';
 
 export default component$(() => {
+  useStylesScoped$(HomeStyles);
+
   return (
-    <>
-      <h1>Hello!</h1>
-      <p>
-        This is the landing page. I haven't built it yet, but I threw together a
-        stupid little navbar for you to get a sense of what qwik is about.
-      </p>
-      <p>
-        We still have to talk about state management and things like that, but
-        this will kind of give you an idea of what we're working with.
-      </p>
-    </>
-  );
-});
+    <main>
+      <h2>Welcome, (user)</h2>
+      <div class='continue-watching'>
+        <div class='continue-watching-title'>Continue Watching</div>
+        <div class='continue-watching-game'>(game info, timestamp, etc...)</div>
+      </div>
+      <div class='content'>
+        <div class='content-card'>
+          Assigned Clips
+        </div>
+        <div class='content-card'>
+          Scouting Tab
+        </div>
+        <div class='content-card'>
+          Highlight Feed
+        </div>
+      </div>
+    </main>
+  )
+})
 
 export const head: DocumentHead = {
   title: "Film Study",
