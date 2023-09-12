@@ -1,4 +1,33 @@
 a {
   text-decoration: none;
-  color: inherit;
+  color: white;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+  background-color: #7b0101;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 16px;
+}
+
+img {
+  border: 4px double white;
+  border-radius: 50%;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.nav_btn {
+  color: white;
+  font-size: 32px;
+  cursor: pointer;
 }
