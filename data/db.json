@@ -5,7 +5,7 @@
             "role": "player",
             "username": "tyler7r",
             "name": "Tyler Randall",
-            "team-affiliation": "t1",
+            "team_affiliation": "t1",
             "plays": ["p1", "p2", "p3"]
         },
         {
@@ -13,7 +13,7 @@
             "role": "player",
             "username": "kenni3t",
             "name": "Kenni Taylor",
-            "team-affiliation": "t1",
+            "team_affiliation": "t1",
             "plays": ["p1", "p2", "p3"]
         },
         {
@@ -21,7 +21,7 @@
             "role": "player",
             "username": "cole21t",
             "name": "Coleman Tappero",
-            "team-affiliation": "t1",
+            "team_affiliation": "t1",
             "plays": ["p1", "p2", "p3"]
         },
         {
@@ -29,7 +29,7 @@
             "role": "player",
             "username": "chris31k",
             "name": "Chris Kocher",
-            "team-affiliation": "t2",
+            "team_affiliation": "t2",
             "plays": ["p1", "p2", "p3"]
         },
         {
@@ -37,7 +37,7 @@
             "role": "player",
             "username": "jimmy23m",
             "name": "Jimmy Mickle",
-            "team-affiliation": "t2",
+            "team_affiliation": "t2",
             "plays": ["p1", "p2", "p3"]
         },
         {
@@ -45,7 +45,7 @@
             "role": "player",
             "username": "sam9l",
             "name": "Sam Little",
-            "team-affiliation": "t2",
+            "team_affiliation": "t2",
             "plays": ["p1", "p2", "p3"]
         },
         {
@@ -53,7 +53,7 @@
             "role": "player",
             "username": "pawal55j",
             "name": "Pawel Janas",
-            "team-affiliation": "t3",
+            "team_affiliation": "t3",
             "plays": ["p4", "p5", "p6"]
         },
         {
@@ -61,7 +61,7 @@
             "role": "player",
             "username": "joe91w",
             "name": "Joe White",
-            "team-affiliation": "t3",
+            "team_affiliation": "t3",
             "plays": ["p4", "p5", "p6"]
         },
         {
@@ -69,7 +69,7 @@
             "role": "player",
             "username": "jack7s",
             "name": "Jack Shanahan",
-            "team-affiliation": "t3",
+            "team_affiliation": "t3",
             "plays": ["p4", "p5", "p6"]
         },
         {
@@ -77,7 +77,7 @@
             "role": "player",
             "username": "quinn88f",
             "name": "Quinn Finer",
-            "team-affiliation": "t4",
+            "team_affiliation": "t4",
             "plays": ["p4", "p5", "p6"]
         },
         {
@@ -85,7 +85,7 @@
             "role": "player",
             "username": "alex0a",
             "name": "Alex Atkins",
-            "team-affiliation": "t4",
+            "team_affiliation": "t4",
             "plays": ["p4", "p5", "p6"]
         },
         {
@@ -93,7 +93,7 @@
             "role": "player",
             "username": "cody34s",
             "name": "Cody Spicer",
-            "team-affiliation": "t4",
+            "team_affiliation": "t4",
             "plays": ["p4", "p5", "p6"]
         },
         {
@@ -101,7 +101,7 @@
             "role": "player",
             "username": "johnny53m",
             "name": "Johnny Malks",
-            "team-affiliation": "t5",
+            "team_affiliation": "t5",
             "plays": ["p7", "p8", "p9"]
         },
         {
@@ -109,7 +109,7 @@
             "role": "player",
             "username": "rowan12m",
             "name": "Rowan Mcdonnell",
-            "team-affiliation": "t5",
+            "team_affiliation": "t5",
             "plays": ["p7", "p8", "p9"]
         },
         {
@@ -117,7 +117,7 @@
             "role": "player",
             "username": "cole13j",
             "name": "Cole Jurek",
-            "team-affiliation": "t5",
+            "team_affiliation": "t5",
             "plays": ["p7", "p8", "p9"]
         },
         {
@@ -125,7 +125,7 @@
             "role": "player",
             "username": "nate43p",
             "name": "Nate Prior",
-            "team-affiliation": "t6",
+            "team_affiliation": "t6",
             "plays": ["p7", "p8", "p9"]
         },
         {
@@ -133,7 +133,7 @@
             "role": "player",
             "username": "calvin81b",
             "name": "Calvin Brown",
-            "team-affiliation": "t6",
+            "team_affiliation": "t6",
             "plays": ["p7", "p8", "p9"]
         },
         {
@@ -141,7 +141,7 @@
             "role": "player",
             "username": "eli23k",
             "name": "Eli Kerns",
-            "team-affiliation": "t6",
+            "team_affiliation": "t6",
             "plays": ["p7", "p8", "p9"]
         },
         {
@@ -149,47 +149,47 @@
             "role": "coach",
             "username": "mirandaCk",
             "name": "Miranda Knowles",
-            "team-affiliation": "t1"
+            "team_affiliation": "t1"
         },
         {
             "id": "20",
             "role": "coach",
             "username": "alexCc",
             "name": "Alex Crew",
-            "team-affiliation": "t5"
+            "team_affiliation": "t5"
         },
         {
             "id": "21",
             "role": "coach",
             "username": "jamesCh",
             "name": "James Highsmith",
-            "team-affiliation": "t3"
+            "team_affiliation": "t3"
         },
         {
             "id": "22",
             "role": "coach",
             "username": "josephCd",
             "name": "Joseph Durst",
-            "team-affiliation": "t4"
+            "team_affiliation": "t4"
         },
         {
             "id": "23",
             "role": "coach",
             "username": "codyCm",
             "name": "Cody Mills",
-            "team-affiliation": "t2"
+            "team_affiliation": "t2"
         },
         {
             "id": "24",
             "role": "coach",
             "username": "revolverCc",
             "name": "Revolver Coach",
-            "team-affiliation": "t6"
+            "team_affiliation": "t6"
         }
     ],
     "teams": [
         {
-            "id": "t1",
+            "id": 1,
             "name": "Chain Lightning",
             "city": "Atlanta",
             "division": "Men's",
@@ -198,16 +198,16 @@
             "games": ["g1"]
         },
         {
-            "id": "t2",
+            "id": 2,
             "name": "PONY",
             "city": "New York",
             "division": "Men's",
-            "logo": "https://play.usaultimate.org/assets/TeamLogos/pony_logo_3.png",
+            "logo": "https://play.usaultimate.org/assets/TeamLogos/pony_logo_3.jpg",
             "roster": ["4", "5", "6"],
             "games": ["g1"]
         },
         {
-            "id": "t3",
+            "id": 3,
             "name": "Machine",
             "city": "Chicago",
             "division": "Men's",
@@ -216,16 +216,16 @@
             "games": ["g2"]
         },
         {
-            "id": "t4",
+            "id": 4,
             "name": "Johnny Bravo",
             "city": "Denver",
             "division": "Men's",
-            "logo": "https://play.usaultimate.org/assets/TeamLogos/jb_logo.png",
+            "logo": "https://play.usaultimate.org/assets/TeamLogos/jb_logo.gif",
             "roster": ["10", "11", "12"],
             "games": ["g2"]
         },
         {
-            "id": "t5",
+            "id": 5,
             "name": "Truck Stop",
             "city": "Washington D.C",
             "division": "Men's",
@@ -234,7 +234,7 @@
             "games": ["g3"]
         },
         {
-            "id": "t6",
+            "id": 6,
             "name": "Revolver",
             "city": "San Francisco",
             "division": "Men's",

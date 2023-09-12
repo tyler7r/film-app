@@ -62,5 +62,5 @@
 
   // these options tell typescript which files it should include
   "files": ["./.eslintrc.cjs"],
-  "include": ["src", "./*.d.ts", "./*.config.ts"]
+  "include": ["src", "./*.d.ts", "./*.config.ts", "src/routes/profile/layout.tsx"]
 }
