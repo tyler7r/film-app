@@ -9,7 +9,8 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 8px;
-  background-color: #7b0101;
+  background-color: rgb(39, 39, 39);
+  border-bottom: 2px solid gray;
 }
 
 .right {
