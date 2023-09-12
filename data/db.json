@@ -161,15 +161,15 @@
         {
             "id": "21",
             "role": "coach",
-            "username": "machineCc",
-            "name": "Machine Coach",
+            "username": "jamesCh",
+            "name": "James Highsmith",
             "team-affiliation": "t3"
         },
         {
             "id": "22",
             "role": "coach",
-            "username": "bravoCc",
-            "name": "Bravo Coach",
+            "username": "josephCd",
+            "name": "Joseph Durst",
             "team-affiliation": "t4"
         },
         {
@@ -193,7 +193,7 @@
             "name": "Chain Lightning",
             "city": "Atlanta",
             "division": "Men's",
-            "logo": "",
+            "logo": "https://play.usaultimate.org/assets/TeamLogos/chain_logo.png",
             "roster": ["1", "2", "3"],
             "games": ["g1"]
         },
@@ -202,7 +202,7 @@
             "name": "PONY",
             "city": "New York",
             "division": "Men's",
-            "logo": "",
+            "logo": "https://play.usaultimate.org/assets/TeamLogos/pony_logo_3.png",
             "roster": ["4", "5", "6"],
             "games": ["g1"]
         },
@@ -211,7 +211,7 @@
             "name": "Machine",
             "city": "Chicago",
             "division": "Men's",
-            "logo": "",
+            "logo": "https://play.usaultimate.org/assets/TeamLogos/2013TCT_Machine1.png",
             "roster": ["7", "8", "9"],
             "games": ["g2"]
         },
@@ -220,7 +220,7 @@
             "name": "Johnny Bravo",
             "city": "Denver",
             "division": "Men's",
-            "logo": "",
+            "logo": "https://play.usaultimate.org/assets/TeamLogos/jb_logo.png",
             "roster": ["10", "11", "12"],
             "games": ["g2"]
         },
@@ -230,6 +230,7 @@
             "city": "Washington D.C",
             "division": "Men's",
             "roster": ["13, 14, 15"],
+            "logo": "https://play.usaultimate.org/assets/TeamLogos/ts_logo1.png",
             "games": ["g3"]
         },
         {
@@ -238,6 +239,7 @@
             "city": "San Francisco",
             "division": "Men's",
             "roster": ["16", "17", "18"],
+            "logo": "https://play.usaultimate.org/assets/TeamLogos/gold-moons1.png",
             "games": ["g3"]
         }
     ],
