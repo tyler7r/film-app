@@ -246,22 +246,22 @@
     "games": [
         {
             "id": "g1",
-            "team1": "t1",
-            "team2": "t2",
+            "team1": "Atlanta Chain Lightning",
+            "team2": "New York PONY",
             "tournament": "U.S Open",
             "season": "2023"
         },
         {
             "id": "g2",
-            "team1": "t3",
-            "team2": "t4",
+            "team1": "Chicago Machine",
+            "team2": "Denver Johnny Bravo",
             "tournament": "U.S Open",
             "season": "2023"
         },
         {
             "id": "3",
-            "team1": "t5",
-            "team2": "t6",
+            "team1": "Washington D.C Truck Stop",
+            "team2": "San Francisco Revolver",
             "tournament": "U.S Open",
             "season": "2023"
         }
