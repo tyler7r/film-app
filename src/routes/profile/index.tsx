@@ -1,9 +1,11 @@
-import { Resource, component$ } from "@builder.io/qwik";
+import { Resource, component$, useSignal, useStore, $ } from "@builder.io/qwik";
 import mockData from '../../../data/db.json';
-import { routeLoader$ } from "@builder.io/qwik-city";
+import { DocumentHead, routeLoader$ } from "@builder.io/qwik-city";
 import { Player } from "~/components/player";
 import styles from './profile.module.css'
 import { Game } from "~/components/game";
+import { Button } from "~/components/button";
+import { NoteForm } from "~/components/noteform";
 
 export const getTeamDetails = routeLoader$(async (requestEvent) => {
     const teams = mockData.teams;
@@ -26,6 +28,12 @@ export default component$(() => {
     const team = getTeamDetails();
     const players = getPlayerDetails();
     const games = getGameDetails();
+    const isUserAffiliated = useSignal(true);
+    const newNoteVisible = useSignal(false);
+
+    const closeNote = $(() => {
+        newNoteVisible.value = false;
+    })
 
     return (
         <div class='content'>
@@ -70,10 +78,26 @@ export default component$(() => {
                         />
                     </div>
                 </div>
-                <div class={[styles['notes-container'], styles['container']]}>
-                    <div class={styles['container-title']}>Notes</div>
-                </div>
+                {isUserAffiliated.value &&
+                    <div class={[styles['notes-container'], styles['container']]}>
+                        {newNoteVisible.value
+                            ? <NoteForm close={closeNote} />
+                            : <Button onClick$={() => newNoteVisible.value = true}>New Note</Button>
+                        }
+                        <div class={styles['container-title']}>Notes</div>
+                    </div>
+                }
             </div>
         </div>
     )
 })
+
+export const head: DocumentHead = {
+    title: "Team Profile",
+    meta: [
+      {
+        name: "description",
+        content: "Team profile. Where you can check a team's roster, and games played.",
+      },
+    ],
+  };
