@@ -4,6 +4,7 @@ import styles from './search.module.css'
 import { BsSearch } from "@qwikest/icons/bootstrap";
 import { Button } from "~/components/button";
 import Modal from "~/components/modal";
+import SearchFilters from "~/components/filters";
 
 const SearchHome = component$(() => {
     const search = useSignal('');
@@ -31,9 +32,7 @@ const SearchHome = component$(() => {
                 {modalVisible.value &&
                     <Modal close={close}>
                         <h2 q:slot='title'>Search Filters</h2>
-                        <div q:slot='content'>
-
-                        </div>
+                        <SearchFilters q:slot='content' />
                     </Modal>
                 }
                 <div class={styles['results-container']}>
