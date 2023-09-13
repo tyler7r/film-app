@@ -3,6 +3,7 @@ import { $, component$, useSignal, useStore } from "@builder.io/qwik";
 import styles from './search.module.css'
 import { BsSearch } from "@qwikest/icons/bootstrap";
 import { Button } from "~/components/button";
+import Modal from "~/components/modal";
 
 const SearchHome = component$(() => {
     const search = useSignal('');
@@ -11,6 +12,10 @@ const SearchHome = component$(() => {
     const submit = $(() => {
         console.log(search.value);
         search.value = ''
+    })
+
+    const close = $(() => {
+        modalVisible.value = false;
     })
 
     return (
@@ -24,7 +29,12 @@ const SearchHome = component$(() => {
                 </form>
                 <Button onClick$={() => modalVisible.value = true}>Add Filters</Button>
                 {modalVisible.value &&
-                    <div>Hello</div>
+                    <Modal close={close}>
+                        <h2 q:slot='title'>Search Filters</h2>
+                        <div q:slot='content'>
+
+                        </div>
+                    </Modal>
                 }
                 <div class={styles['results-container']}>
                     <div class={styles['results']}>
