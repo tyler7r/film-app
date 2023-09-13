@@ -28,41 +28,51 @@ export default component$(() => {
     const games = getGameDetails();
 
     return (
-        <div>
-            <Resource
-                value={team}
-                onPending={() => <div>Loading...</div>}
-                onResolved={(team) => (
-                    <div class={styles['container']}>
-                        <img class={styles['team-logo']} width="150" height="150" src={team.logo} alt='team-logo' />
-                        <div>{team.city} {team.name}</div>
-                    </div>
-                )}
-            />
-            <Resource 
-                value={players}
-                onPending={() => <div>Loading...</div>}
-                onResolved={(players) => (
+        <div class='content'>
+            <div class={styles['team-profile']}>
+                <Resource
+                    value={team}
+                    onPending={() => <div>Loading...</div>}
+                    onResolved={(team) => (
+                        <div class={[styles['info-container']]}>
+                            <img class={styles['team-logo']} src={team.logo} alt='team-logo' />
+                            <div class={styles['team-name']}>{team.city} {team.name}</div>
+                        </div>
+                    )}
+                />
+                <div class={styles["team-content"]}>
                     <div class={styles['roster-container']}>
-                        {players && players.map(player => (
-                            <Player name={player.name} id={player.id} />
-                        ))}
+                        <Resource
+                            value={players}
+                            onPending={() => <div>Loading...</div>}
+                            onResolved={(players) => (
+                                <div class={styles['container']}>
+                                    <div class={styles['container-title']}>Roster</div>
+                                    {players && players.map(player => (
+                                        <Player name={player.name} id={player.id} number={player.number} />
+                                    ))}
+                                </div>
+                            )}
+                        />
                     </div>
-                )}
-            />
-            <Resource
-                value={games}
-                onPending={() => <div>Loading...</div>}
-                onResolved={(games) => (
                     <div class={styles['games-container']}>
-                        {games && games.map(game => (
-                            <Game id={game.id} team1={game.team1} team2={game.team2} tournament={game.tournament} season={game.season} />
-                        ))}
+                        <Resource
+                            value={games}
+                            onPending={() => <div>Loading...</div>}
+                            onResolved={(games) => (
+                                <div class={styles['container']}>
+                                    <div class={styles['container-title']}>Games</div>
+                                    {games && games.map(game => (
+                                        <Game id={game.id} team1={game.team1} team2={game.team2} tournament={game.tournament} season={game.season} />
+                                    ))}
+                                </div>
+                            )}
+                        />
                     </div>
-                )}
-            />
-            <div class={styles['notes-container']}>
-                Notes
+                </div>
+                <div class={[styles['notes-container'], styles['container']]}>
+                    <div class={styles['container-title']}>Notes</div>
+                </div>
             </div>
         </div>
     )

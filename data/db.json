@@ -6,15 +6,17 @@
             "username": "tyler7r",
             "name": "Tyler Randall",
             "team_affiliation": "t1",
-            "plays": ["p1", "p2", "p3"]
+            "plays": ["p1", "p2", "p3"],
+            "number": 11
         },
         {
             "id": "2",
             "role": "player",
-            "username": "kenni3t",
+            "username": "kenni9t",
             "name": "Kenni Taylor",
             "team_affiliation": "t1",
-            "plays": ["p1", "p2", "p3"]
+            "plays": ["p1", "p2", "p3"],
+            "number": 9
         },
         {
             "id": "3",
@@ -22,7 +24,8 @@
             "username": "cole21t",
             "name": "Coleman Tappero",
             "team_affiliation": "t1",
-            "plays": ["p1", "p2", "p3"]
+            "plays": ["p1", "p2", "p3"],
+            "number": 21
         },
         {
             "id": "4",
@@ -30,7 +33,8 @@
             "username": "chris31k",
             "name": "Chris Kocher",
             "team_affiliation": "t2",
-            "plays": ["p1", "p2", "p3"]
+            "plays": ["p1", "p2", "p3"],
+            "number": 31
         },
         {
             "id": "5",
@@ -38,7 +42,8 @@
             "username": "jimmy23m",
             "name": "Jimmy Mickle",
             "team_affiliation": "t2",
-            "plays": ["p1", "p2", "p3"]
+            "plays": ["p1", "p2", "p3"],
+            "number": 23
         },
         {
             "id": "6",
@@ -46,7 +51,8 @@
             "username": "sam9l",
             "name": "Sam Little",
             "team_affiliation": "t2",
-            "plays": ["p1", "p2", "p3"]
+            "plays": ["p1", "p2", "p3"],
+            "number": 9
         },
         {
             "id": "7",
@@ -54,7 +60,8 @@
             "username": "pawal55j",
             "name": "Pawel Janas",
             "team_affiliation": "t3",
-            "plays": ["p4", "p5", "p6"]
+            "plays": ["p4", "p5", "p6"],
+            "number": 55
         },
         {
             "id": "8",
@@ -62,7 +69,8 @@
             "username": "joe91w",
             "name": "Joe White",
             "team_affiliation": "t3",
-            "plays": ["p4", "p5", "p6"]
+            "plays": ["p4", "p5", "p6"],
+            "number": 91
         },
         {
             "id": "9",
@@ -70,7 +78,8 @@
             "username": "jack7s",
             "name": "Jack Shanahan",
             "team_affiliation": "t3",
-            "plays": ["p4", "p5", "p6"]
+            "plays": ["p4", "p5", "p6"],
+            "number": 7
         },
         {
             "id": "10",
@@ -78,7 +87,8 @@
             "username": "quinn88f",
             "name": "Quinn Finer",
             "team_affiliation": "t4",
-            "plays": ["p4", "p5", "p6"]
+            "plays": ["p4", "p5", "p6"],
+            "number": 88
         },
         {
             "id": "11",
@@ -86,7 +96,8 @@
             "username": "alex0a",
             "name": "Alex Atkins",
             "team_affiliation": "t4",
-            "plays": ["p4", "p5", "p6"]
+            "plays": ["p4", "p5", "p6"],
+            "number": 0
         },
         {
             "id": "12",
@@ -94,7 +105,8 @@
             "username": "cody34s",
             "name": "Cody Spicer",
             "team_affiliation": "t4",
-            "plays": ["p4", "p5", "p6"]
+            "plays": ["p4", "p5", "p6"],
+            "number": 34
         },
         {
             "id": "13",
@@ -102,7 +114,8 @@
             "username": "johnny53m",
             "name": "Johnny Malks",
             "team_affiliation": "t5",
-            "plays": ["p7", "p8", "p9"]
+            "plays": ["p7", "p8", "p9"],
+            "number": 53
         },
         {
             "id": "14",
@@ -110,7 +123,8 @@
             "username": "rowan12m",
             "name": "Rowan Mcdonnell",
             "team_affiliation": "t5",
-            "plays": ["p7", "p8", "p9"]
+            "plays": ["p7", "p8", "p9"],
+            "number": 12
         },
         {
             "id": "15",
@@ -118,7 +132,8 @@
             "username": "cole13j",
             "name": "Cole Jurek",
             "team_affiliation": "t5",
-            "plays": ["p7", "p8", "p9"]
+            "plays": ["p7", "p8", "p9"],
+            "number": 13
         },
         {
             "id": "16",
@@ -126,7 +141,8 @@
             "username": "nate43p",
             "name": "Nate Prior",
             "team_affiliation": "t6",
-            "plays": ["p7", "p8", "p9"]
+            "plays": ["p7", "p8", "p9"],
+            "number": 43
         },
         {
             "id": "17",
@@ -134,7 +150,8 @@
             "username": "calvin81b",
             "name": "Calvin Brown",
             "team_affiliation": "t6",
-            "plays": ["p7", "p8", "p9"]
+            "plays": ["p7", "p8", "p9"],
+            "number": 81
         },
         {
             "id": "18",
@@ -142,7 +159,8 @@
             "username": "eli23k",
             "name": "Eli Kerns",
             "team_affiliation": "t6",
-            "plays": ["p7", "p8", "p9"]
+            "plays": ["p7", "p8", "p9"],
+            "number": 23
         },
         {
             "id": "19",
