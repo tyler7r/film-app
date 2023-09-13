@@ -40,3 +40,9 @@
     justify-content: center;
     align-items: center;
 }
+
+.modal-title {
+    margin: 0;
+    color: white;
+    font-style: normal;
+}

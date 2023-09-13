@@ -1,5 +1,5 @@
 import { Slot, component$, useStylesScoped$ } from "@builder.io/qwik";
-import styles from './modal.module.css?inline'
+import styles from './modal.css?inline'
 import { Button } from "../button";
 
 interface ModalProps {
@@ -11,9 +11,9 @@ export default component$((props: ModalProps) => {
     useStylesScoped$(styles)
 
     return (
-        <div class='content'>
-            <div class={`modal`}>
-                <Button class='close' onClick$={close}>Close</Button>
+        <div class='modal-overlay'>
+            <div class='modal'>
+                <button class='close' onClick$={close}>X</button>
                 <div class='modal-title'>
                     <Slot name='title' />
                 </div>

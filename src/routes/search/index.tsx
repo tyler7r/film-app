@@ -8,7 +8,7 @@ import SearchFilters from "~/components/filters";
 
 const SearchHome = component$(() => {
     const search = useSignal('');
-    const modalVisible = useSignal(false);
+    const modalVisible = useSignal(true);
 
     const submit = $(() => {
         console.log(search.value);
@@ -31,7 +31,7 @@ const SearchHome = component$(() => {
                 <Button onClick$={() => modalVisible.value = true}>Add Filters</Button>
                 {modalVisible.value &&
                     <Modal close={close}>
-                        <h2 q:slot='title'>Search Filters</h2>
+                        <h2 class={styles['modal-title']} q:slot='title'>Search Filters</h2>
                         <SearchFilters q:slot='content' />
                     </Modal>
                 }
