@@ -6,6 +6,7 @@ import { Button } from "~/components/button";
 import { TeamLogo } from "~/components/team-logo";
 
 import styles from "./navbar.module.css";
+import { Link } from "@builder.io/qwik-city";
 
 export const Navbar = component$(() => {
   return (
@@ -15,9 +16,9 @@ export const Navbar = component$(() => {
       </a>
       <div class={styles.right}>
         <Button>Film Room</Button>
-        <div class={styles.nav_btn}>
+        <Link href='/search' class={styles.nav_btn}>
           <BsSearch />
-        </div>
+        </Link>
         <div class={styles.nav_btn}>
           <BsEnvelopeFill />
         </div>
