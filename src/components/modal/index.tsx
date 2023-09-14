@@ -6,7 +6,7 @@ interface ModalProps {
     close: PropFunction<() => void>,
 }
 
-export default component$((props: ModalProps) => {
+const Modal = component$((props: ModalProps) => {
     const { close } = props;
     useStylesScoped$(styles)
 
@@ -24,3 +24,5 @@ export default component$((props: ModalProps) => {
         </div>
     )
 })
+
+export default Modal

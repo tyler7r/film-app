@@ -271,7 +271,7 @@
             "id": "p1",
             "author": "1",
             "game": "g1",
-            "players-involved": ["1", "2", "3", "4", "5", "6"],
+            "players": ["1", "2", "3", "4", "5", "6"],
             "note": "This is a great deep cut and throw",
             "keywords": ["cut-timing", "edge-control", "spacing"],
             "highlight": true
@@ -280,7 +280,7 @@
             "id": "p2",
             "author": "2",
             "game": "g1",
-            "players-involved": ["1", "2", "3", "4", "5", "6"],
+            "players": ["1", "2", "3", "4", "5", "6"],
             "note": "Throw and go",
             "keywords": ["throw-and-go", "quick-movement"],
             "highlight": false
@@ -289,7 +289,7 @@
             "id": "p3",
             "author": "19",
             "game": "g1",
-            "players-involved": ["1", "2", "3", "4", "5", "6"],
+            "players": ["1", "2", "3", "4", "5", "6"],
             "note": "Great reset positioning, makes for easy around throw",
             "keywords": ["reset-positioning", "early-around"],
             "highlight": false
@@ -298,7 +298,7 @@
             "id": "p4",
             "author": "7",
             "game": "g2",
-            "players-involved": ["7", "8", "9", "10", "11", "12"],
+            "players": ["7", "8", "9", "10", "11", "12"],
             "note": "Effective pump fakes to sell around and create big inside throwing window",
             "keywords": ["pump-fakes", "inside-break"],
             "highlight": false
@@ -307,7 +307,7 @@
             "id": "p5",
             "author": "8",
             "game": "g2",
-            "players-involved": ["7", "8", "9", "10", "11", "12"],
+            "players": ["7", "8", "9", "10", "11", "12"],
             "note": "Effective bracket on a deep and under cut",
             "keywords": ["bracket", "poach"],
             "highlight": false
@@ -316,7 +316,7 @@
             "id": "p6",
             "author": "20",
             "game": "g2",
-            "players-involved": ["7", "8", "9", "10", "11", "12"],
+            "players": ["7", "8", "9", "10", "11", "12"],
             "note": "Great redzone poach set, leads to crazy flick blade",
             "keywords": ["redzone", "poach", "blade"],
             "highlight": true
@@ -325,7 +325,7 @@
             "id": "p7",
             "author": "13",
             "game": "g3",
-            "players-involved": ["13", "14", "15", "16", "17", "18"],
+            "players": ["13", "14", "15", "16", "17", "18"],
             "note": "Butterfly cut makes for easy away throw",
             "keywords": ["deep-cut", "butterfly"],
             "highlight": true
@@ -334,7 +334,7 @@
             "id": "p8",
             "author": "14",
             "game": "g3",
-            "players-involved": ["13", "14", "15", "16", "17", "18"],
+            "players": ["13", "14", "15", "16", "17", "18"],
             "note": "Great mark leads to tight inside throw, crazy layout block",
             "keywords": ["mark", "inside-break", "layout"],
             "highlight": true
@@ -343,7 +343,7 @@
             "id": "p9",
             "author": "23",
             "game": "g3",
-            "players-involved": ["13", "14", "15", "16", "17", "18"],
+            "players": ["13", "14", "15", "16", "17", "18"],
             "note": "Alaska clear early, sets up wide open lane for cutters",
             "keywords": ["clear", "alaska"],
             "highlight": false
