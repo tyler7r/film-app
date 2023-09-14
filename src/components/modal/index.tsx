@@ -1,9 +1,9 @@
-import { Slot, component$, useStylesScoped$ } from "@builder.io/qwik";
+import { PropFunction, Slot, component$, useStylesScoped$ } from "@builder.io/qwik";
 import styles from './modal.css?inline'
 import { Button } from "../button";
 
 interface ModalProps {
-    close: () => void,
+    close: PropFunction<() => void>,
 }
 
 export default component$((props: ModalProps) => {

@@ -8,7 +8,7 @@ import SearchFilters from "~/components/filters";
 
 const SearchHome = component$(() => {
     const search = useSignal('');
-    const modalVisible = useSignal(true);
+    const modalVisible = useSignal(false);
 
     const submit = $(() => {
         console.log(search.value);

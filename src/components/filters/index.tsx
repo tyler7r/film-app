@@ -1,9 +1,9 @@
-import { $, component$, useStore } from "@builder.io/qwik";
+import { $, PropFunction, component$, useStore } from "@builder.io/qwik";
 import styles from './filters.module.css'
 import { Button } from "../button";
 
 interface FilterProps {
-    close: () => void,
+    close: PropFunction<() => void>,
 }
 
 const SearchFilters = component$((props: FilterProps) => {
