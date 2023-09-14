@@ -1,4 +1,4 @@
-import { $, component$, useSignal, useStore } from "@builder.io/qwik";
+import { $, Slot, component$, useSignal, useStore } from "@builder.io/qwik";
 
 import styles from './search.module.css'
 import { BsSearch } from "@qwikest/icons/bootstrap";
@@ -6,9 +6,19 @@ import { Button } from "~/components/button";
 import Modal from "~/components/modal";
 import SearchFilters from "~/components/filters";
 
+import mockData from '../../../data/db.json';
+
 const SearchHome = component$(() => {
     const search = useSignal('');
     const modalVisible = useSignal(false);
+    const searchFilters = useStore({
+        keywords: true,
+        teams: true,
+        players: true,
+        games: true,
+        season: '',
+        tournament: ''
+    })
 
     const submit = $(() => {
         console.log(search.value);
@@ -17,6 +27,14 @@ const SearchHome = component$(() => {
 
     const close = $(() => {
         modalVisible.value = false;
+    })
+    
+    const applyFilters = $((filter: 'keywords' | 'teams' | 'players' | 'games' | 'season' | 'tournament', value: string = '') => {
+        if (filter === 'season' || filter === 'tournament') {
+            searchFilters[filter] = value;
+        } else {
+            searchFilters[filter] = !searchFilters[filter]
+        }
     })
 
     return (
@@ -32,10 +50,15 @@ const SearchHome = component$(() => {
                 {modalVisible.value &&
                     <Modal close={close}>
                         <h2 class={styles['modal-title']} q:slot='title'>Filters</h2>
-                        <SearchFilters q:slot='content' close={close} />
+                        <SearchFilters q:slot='content' close={close} applyFilters={applyFilters} searchFilters={searchFilters} />
                     </Modal>
                 }
                 <div class={styles['results-container']}>
+                    {}
+                    <div class={styles['results']}>
+                        <div class={styles['results-title']}>Keywords</div>
+                        <Slot name='keywords' />
+                    </div>
                     <div class={styles['results']}>
                         <div class={styles['results-title']}>Players</div>
                     </div>
@@ -43,7 +66,7 @@ const SearchHome = component$(() => {
                         <div class={styles['results-title']}>Teams</div>
                     </div>
                     <div class={styles['results']}>
-                        <div class={styles['results-title']}>Plays (keywords)</div>
+                        <div class={styles['results-title']}>Games</div>
                     </div>
                 </div>
             </div>
