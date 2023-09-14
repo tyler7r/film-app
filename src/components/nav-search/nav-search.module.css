@@ -1,0 +1,26 @@
+.search-form {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-left: 16px;
+}   
+
+.search-input {
+    padding: 8px;
+    border-radius: 1rem;
+    width: 100%;
+}
+
+.close {
+    background:none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: darkred;
+}
