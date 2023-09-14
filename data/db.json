@@ -5,144 +5,162 @@
             "role": "player",
             "username": "tyler7r",
             "name": "Tyler Randall",
-            "team-affiliation": "t1",
-            "plays": ["p1", "p2", "p3"]
+            "team_affiliation": "t1",
+            "plays": ["p1", "p2", "p3"],
+            "number": 11
         },
         {
             "id": "2",
             "role": "player",
             "username": "kenni3t",
             "name": "Kenni Taylor",
-            "team-affiliation": "t1",
-            "plays": ["p1", "p2", "p3"]
+            "team_affiliation": "t1",
+            "plays": ["p1", "p2", "p3"],
+            "number": 9
         },
         {
             "id": "3",
             "role": "player",
             "username": "cole21t",
             "name": "Coleman Tappero",
-            "team-affiliation": "t1",
-            "plays": ["p1", "p2", "p3"]
+            "team_affiliation": "t1",
+            "plays": ["p1", "p2", "p3"],
+            "number": 21
         },
         {
             "id": "4",
             "role": "player",
             "username": "chris31k",
             "name": "Chris Kocher",
-            "team-affiliation": "t2",
-            "plays": ["p1", "p2", "p3"]
+            "team_affiliation": "t2",
+            "plays": ["p1", "p2", "p3"],
+            "number": 31
         },
         {
             "id": "5",
             "role": "player",
             "username": "jimmy23m",
             "name": "Jimmy Mickle",
-            "team-affiliation": "t2",
-            "plays": ["p1", "p2", "p3"]
+            "team_affiliation": "t2",
+            "plays": ["p1", "p2", "p3"],
+            "number": 23
         },
         {
             "id": "6",
             "role": "player",
             "username": "sam9l",
             "name": "Sam Little",
-            "team-affiliation": "t2",
-            "plays": ["p1", "p2", "p3"]
+            "team_affiliation": "t2",
+            "plays": ["p1", "p2", "p3"],
+            "number": 9
         },
         {
             "id": "7",
             "role": "player",
             "username": "pawal55j",
             "name": "Pawel Janas",
-            "team-affiliation": "t3",
-            "plays": ["p4", "p5", "p6"]
+            "team_affiliation": "t3",
+            "plays": ["p4", "p5", "p6"],
+            "number": 55
         },
         {
             "id": "8",
             "role": "player",
             "username": "joe91w",
             "name": "Joe White",
-            "team-affiliation": "t3",
-            "plays": ["p4", "p5", "p6"]
+            "team_affiliation": "t3",
+            "plays": ["p4", "p5", "p6"],
+            "number": 91
         },
         {
             "id": "9",
             "role": "player",
             "username": "jack7s",
             "name": "Jack Shanahan",
-            "team-affiliation": "t3",
-            "plays": ["p4", "p5", "p6"]
+            "team_affiliation": "t3",
+            "plays": ["p4", "p5", "p6"],
+            "number": 7
         },
         {
             "id": "10",
             "role": "player",
             "username": "quinn88f",
             "name": "Quinn Finer",
-            "team-affiliation": "t4",
-            "plays": ["p4", "p5", "p6"]
+            "team_affiliation": "t4",
+            "plays": ["p4", "p5", "p6"],
+            "number": 88
         },
         {
             "id": "11",
             "role": "player",
             "username": "alex0a",
             "name": "Alex Atkins",
-            "team-affiliation": "t4",
-            "plays": ["p4", "p5", "p6"]
+            "team_affiliation": "t4",
+            "plays": ["p4", "p5", "p6"],
+            "number": 0
         },
         {
             "id": "12",
             "role": "player",
             "username": "cody34s",
             "name": "Cody Spicer",
-            "team-affiliation": "t4",
-            "plays": ["p4", "p5", "p6"]
+            "team_affiliation": "t4",
+            "plays": ["p4", "p5", "p6"],
+            "number": 34
         },
         {
             "id": "13",
             "role": "player",
             "username": "johnny53m",
             "name": "Johnny Malks",
-            "team-affiliation": "t5",
-            "plays": ["p7", "p8", "p9"]
+            "team_affiliation": "t5",
+            "plays": ["p7", "p8", "p9"],
+            "number": 53
         },
         {
             "id": "14",
             "role": "player",
             "username": "rowan12m",
             "name": "Rowan Mcdonnell",
-            "team-affiliation": "t5",
-            "plays": ["p7", "p8", "p9"]
+            "team_affiliation": "t5",
+            "plays": ["p7", "p8", "p9"],
+            "number": 12
         },
         {
             "id": "15",
             "role": "player",
             "username": "cole13j",
             "name": "Cole Jurek",
-            "team-affiliation": "t5",
-            "plays": ["p7", "p8", "p9"]
+            "team_affiliation": "t5",
+            "plays": ["p7", "p8", "p9"],
+            "number": 13
         },
         {
             "id": "16",
             "role": "player",
             "username": "nate43p",
             "name": "Nate Prior",
-            "team-affiliation": "t6",
-            "plays": ["p7", "p8", "p9"]
+            "team_affiliation": "t6",
+            "plays": ["p7", "p8", "p9"],
+            "number": 43
         },
         {
             "id": "17",
             "role": "player",
             "username": "calvin81b",
             "name": "Calvin Brown",
-            "team-affiliation": "t6",
-            "plays": ["p7", "p8", "p9"]
+            "team_affiliation": "t6",
+            "plays": ["p7", "p8", "p9"],
+            "number": 81
         },
         {
             "id": "18",
             "role": "player",
             "username": "eli23k",
             "name": "Eli Kerns",
-            "team-affiliation": "t6",
-            "plays": ["p7", "p8", "p9"]
+            "team_affiliation": "t6",
+            "plays": ["p7", "p8", "p9"],
+            "number": 23
         },
         {
             "id": "19",
@@ -246,22 +264,22 @@
     "games": [
         {
             "id": "g1",
-            "team1": "t1",
-            "team2": "t2",
+            "team1": "Atlanta Chain Lightning",
+            "team2": "New York PONY",
             "tournament": "U.S Open",
             "season": "2023"
         },
         {
             "id": "g2",
-            "team1": "t3",
-            "team2": "t4",
+            "team1": "Chicago Machine",
+            "team2": "Denver Johnny Bravo",
             "tournament": "U.S Open",
             "season": "2023"
         },
         {
             "id": "3",
-            "team1": "t5",
-            "team2": "t6",
+            "team1": "Washington D.C Truck Stop",
+            "team2": "San Francisco Revolver",
             "tournament": "U.S Open",
             "season": "2023"
         }

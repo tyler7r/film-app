@@ -4,22 +4,8 @@ import SearchFilters from "~/components/filters";
 import Modal from "~/components/modal";
 import { Button } from "~/components/button";
 import SearchResults from "~/components/results";
-import { routeLoader$ } from "@builder.io/qwik-city";
 
-interface SearchFilterType {
-    keywords: boolean,
-    teams: boolean,
-    players: boolean,
-    games: boolean,
-    season: string,
-    tournament: string
-}
-
-interface SearchProps {
-    filters: SearchFilterType
-}
-
-const Search = component$((props: SearchProps) => {
+const Search = component$(() => {
     const modalVisible = useSignal(false);
     const searchFilters = useStore({
         keywords: true,
@@ -46,7 +32,7 @@ const Search = component$((props: SearchProps) => {
         <>
             <Button onClick$={() => modalVisible.value = true}>Add Filters</Button>
             {modalVisible.value &&
-                <Modal close={close}>
+                <Modal>
                     <h2 class={styles['modal-title']} q:slot='title'>Filters</h2>
                     <SearchFilters q:slot='content' close={close} applyFilters={applyFilters} searchFilters={searchFilters} />
                 </Modal>

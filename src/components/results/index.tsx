@@ -59,8 +59,9 @@ const SearchResults = component$((props: ResultsProps) => {
                 //     )}
                 // />
                 <div class={styles['results']}>
+                    <div class={styles['results-title']}>Keywords</div>
                     {plays && plays.map(play => (
-                        <div>{play.note}</div>
+                        <div class={styles['result']}>{play.note}</div>
                     ))}
                 </div>
             }
@@ -77,8 +78,9 @@ const SearchResults = component$((props: ResultsProps) => {
                 //     )}
                 // />
                 <div class={styles['results']}>
+                    <div class={styles['results-title']}>Players</div>
                     {players && players.map(player => (
-                        <div>{player.name}</div>
+                        <div class={styles['result']}>{player.name} #{player.number}</div>
                     ))}
                 </div>
             }
@@ -95,8 +97,9 @@ const SearchResults = component$((props: ResultsProps) => {
                 //     )}
                 // />
                 <div class={styles['results']}>
+                    <div class={styles['results-title']}>Teams</div>
                     {teams && teams.map(team => (
-                        <div>{team.name}</div>
+                        <div class={styles['result']}>{team.city} {team.name}</div>
                     ))}
                 </div>
             }
@@ -113,8 +116,9 @@ const SearchResults = component$((props: ResultsProps) => {
                 //     )}
                 // />
                 <div class={styles['results']}>
+                    <div class={styles['results-title']}>Games</div>
                     {games && games.map(game => (
-                        <div>{game.team1} vs. {game.team2}</div>
+                        <div class={styles['result']}>{game.team1} vs. {game.team2}</div>
                     ))}
                 </div>
             }

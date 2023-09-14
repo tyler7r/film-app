@@ -50,7 +50,7 @@ const SearchFilters = component$((props: FilterProps) => {
                 <div class={styles['input-title']}>Tournament</div>
                 <input type='text' onInput$={(e) => applyFilters('tournament' ,(e.target as HTMLInputElement).value)} value={searchFilters.tournament} />
             </label>
-            <Button>Submit</Button>
+            <Button>Close</Button>
         </form>
     )
 })
