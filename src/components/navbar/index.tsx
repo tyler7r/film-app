@@ -26,9 +26,9 @@ export const Navbar = component$(() => {
           <div class={styles['nav_btn']}>
             <BsSearch onClick$={() => searchOpen.value = true}/>
           </div>
-          <div class={styles['nav_btn']}>
+          <a href='/inbox' class={styles['nav_btn']}>
             <BsEnvelopeFill />
-          </div>
+          </a>
           <TeamLogo team="Atlanta Hustle" />
         </div>
         : <NavSearch closeSearch={closeSearch} />
