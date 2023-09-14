@@ -6,6 +6,7 @@ import mockData from '../../../data/db.json';
 const inbox = component$(() => {
     return (
         <div class={styles['inbox-container']}>
+            <div class={styles['container-title']}>Inbox</div>
             <div class={styles['results']}>
                 <div class={styles['results-title']}>Team Announcements</div>
                 <div class={styles['result']}>New Announcement!</div>
