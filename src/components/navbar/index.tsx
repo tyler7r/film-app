@@ -15,6 +15,8 @@ export const Navbar = component$(() => {
     searchOpen.value = false;
   })
 
+  const teamId = 't1';
+
   return (
     <nav>
       <a href="/">
@@ -29,7 +31,7 @@ export const Navbar = component$(() => {
           <a href='/inbox' class={styles['nav_btn']}>
             <BsEnvelopeFill />
           </a>
-          <TeamLogo team="Atlanta Hustle" />
+          <a href={`/profile/${teamId}`}><TeamLogo team="Atlanta Hustle" /></a>
         </div>
         : <NavSearch closeSearch={closeSearch} />
       }

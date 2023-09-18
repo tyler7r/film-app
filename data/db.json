@@ -207,7 +207,7 @@
     ],
     "teams": [
         {
-            "id": 1,
+            "id": "t1",
             "name": "Chain Lightning",
             "city": "Atlanta",
             "division": "Men's",
@@ -216,7 +216,7 @@
             "games": ["g1"]
         },
         {
-            "id": 2,
+            "id": "t2",
             "name": "PONY",
             "city": "New York",
             "division": "Men's",
@@ -225,7 +225,7 @@
             "games": ["g1"]
         },
         {
-            "id": 3,
+            "id": "t3",
             "name": "Machine",
             "city": "Chicago",
             "division": "Men's",
@@ -234,7 +234,7 @@
             "games": ["g2"]
         },
         {
-            "id": 4,
+            "id": "t4",
             "name": "Johnny Bravo",
             "city": "Denver",
             "division": "Men's",
@@ -243,7 +243,7 @@
             "games": ["g2"]
         },
         {
-            "id": 5,
+            "id": "t5",
             "name": "Truck Stop",
             "city": "Washington D.C",
             "division": "Men's",
@@ -252,7 +252,7 @@
             "games": ["g3"]
         },
         {
-            "id": 6,
+            "id": "t6",
             "name": "Revolver",
             "city": "San Francisco",
             "division": "Men's",
