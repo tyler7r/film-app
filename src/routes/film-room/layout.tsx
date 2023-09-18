@@ -4,7 +4,7 @@ import Modal from "~/components/modal";
 
 export default component$(() => {
     return (
-        <div>
+        <div class='content'>
             <Slot />
         </div>
     )

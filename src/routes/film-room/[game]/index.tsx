@@ -1,10 +1,13 @@
 import { component$, useStore, $, useSignal } from "@builder.io/qwik";
 import styles from './film-room.module.css'
+import mockData from '../../../../data/db.json'
 import Modal from "~/components/modal";
 import VideoSettings from "~/components/video-settings";
 import { Button } from "~/components/button";
+import { useLocation } from "@builder.io/qwik-city";
 
 const FilmRoom = component$(() => {
+    const gameId = useLocation().params.game
     const modalVisible = useSignal(false);
     const settings = useStore({
         showClips: true,
@@ -25,9 +28,17 @@ const FilmRoom = component$(() => {
         modalVisible.value = false;
     })
 
+    const games = mockData.games;
+    let game = games.find(game => game.id === gameId)
+
     return (
-        <div>
+        <div class={styles['container']}>
             <Button onClick$={() => modalVisible.value = true}>Video Settings</Button>
+            {game &&
+                <>
+                    <h2 class={styles['game-title']}>{game.team1} vs. {game.team2}</h2>
+                </>
+            }
             {modalVisible.value &&
                 <Modal>
                     <h2 q:slot="title" class={styles['modal-title']}>Video Settings</h2>

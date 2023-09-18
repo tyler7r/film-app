@@ -1,0 +1,41 @@
+.container {
+    margin: 8px;
+}
+
+.content-title {
+    margin: 0;
+    font-size: 48px;
+    text-align: center;
+}
+
+.games-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 8px;
+    gap: 16px;
+}
+
+.game {
+    border: 2px solid gray;
+    color: rgb(205, 205, 205);
+    background-color: rgb(82, 82, 82);
+    padding: 12px;
+    font-size: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+}
+
+.game-tournament {
+    border-bottom: 2px solid gray;
+    padding-bottom: 4px;
+}
+
+.game-teams {
+    color: white;
+}

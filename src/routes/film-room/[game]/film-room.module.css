@@ -1,0 +1,19 @@
+.modal-title {
+    margin: 0;
+    font-size: 48px;
+}
+
+.container {
+    margin: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.game-title {
+    margin: 0;
+    text-align: center;
+    font-size: 36px;
+}
