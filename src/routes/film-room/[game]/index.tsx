@@ -5,7 +5,6 @@ import Modal from "~/components/modal";
 import VideoSettings from "~/components/video-settings";
 import { Button } from "~/components/button";
 import { useLocation } from "@builder.io/qwik-city";
-import { mock } from "node:test";
 
 const FilmRoom = component$(() => {
     const gameId = useLocation().params.game
