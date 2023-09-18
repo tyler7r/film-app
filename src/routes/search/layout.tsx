@@ -2,7 +2,7 @@ import { $, Slot, component$, useSignal } from "@builder.io/qwik";
 
 import styles from './search.module.css'
 import { BsSearch } from "@qwikest/icons/bootstrap";
-import { useLocation } from "@builder.io/qwik-city";
+import { DocumentHead, useLocation } from "@builder.io/qwik-city";
 
 const SearchLayout = component$(() => {
     const currentSearch = useLocation().params.term;
@@ -29,3 +29,13 @@ const SearchLayout = component$(() => {
 })
 
 export default SearchLayout;
+
+export const head: DocumentHead = {
+    title: "Film Study",
+    meta: [
+      {
+        name: "description",
+        content: "Collaboratively upload, watch, and review film.",
+      },
+    ],
+  };
