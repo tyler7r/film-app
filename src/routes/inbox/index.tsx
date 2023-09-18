@@ -2,8 +2,9 @@ import { component$ } from "@builder.io/qwik";
 import styles from './inbox.module.css'
 
 import mockData from '../../../data/db.json';
+import { DocumentHead } from "@builder.io/qwik-city";
 
-const inbox = component$(() => {
+const Inbox = component$(() => {
     return (
         <div class={styles['inbox-container']}>
             <div class={styles['container-title']}>Inbox</div>
@@ -27,4 +28,14 @@ const inbox = component$(() => {
     )
 })
 
-export default inbox
+export const head: DocumentHead = {
+    title: "Film Study Inbox",
+    meta: [
+      {
+        name: "description",
+        content: "Collaboratively upload, watch, and review film.",
+      },
+    ],
+  };
+
+export default Inbox
