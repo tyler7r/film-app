@@ -1,4 +1,4 @@
-import { $, PropFunction, component$, useStore } from "@builder.io/qwik";
+import { $, PropFunction, component$ } from "@builder.io/qwik";
 import styles from './filters.module.css'
 import { Button } from "../button";
 

@@ -17,3 +17,76 @@
     text-align: center;
     font-size: 36px;
 }
+
+.mock-player {
+    border: 2px solid gray;
+    height: 400px;
+    width: 600px;
+    background-color: white;
+}
+
+.play-directory {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    gap: 8px;
+}
+
+.directory-title {
+    font-size: 28px;
+}
+
+.play {
+    font-size: 18px;
+    border: 2px solid gray;
+    color: rgb(205, 205, 205);
+    background-color: rgb(82, 82, 82);
+    padding: 8px;
+}
+
+.mock-player {
+    position: relative;
+}
+
+.clip-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 4px;
+    padding: 4px;
+    color: white;
+    cursor: pointer;
+}
+
+#inactive {
+    background-color: green;
+}
+
+#active {
+    background-color: red;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkbox-container {
+    display: flex;
+    gap: 8px;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.input-title {
+    font-size: 22px;
+}
