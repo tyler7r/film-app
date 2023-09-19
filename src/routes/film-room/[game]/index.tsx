@@ -61,7 +61,10 @@ const FilmRoom = component$(() => {
             <Button onClick$={() => settingsOpen.value = true}>Video Settings</Button>
             {game &&
                 <>
-                    <h2 class={styles['game-title']}>{game.team1} vs. {game.team2}</h2>
+                    <div class={styles["game-title-container"]}>
+                        <div class={styles['game-tournament']}>{game.season} {game.tournament}</div>
+                        <h2 class={styles['game-title']}>{game.team1} vs. {game.team2}</h2>
+                    </div>
                     <div class={styles['mock-player']}>
                         {clipStarted.value
                             ? <div id={styles['active']} class={styles['clip-btn']} onClick$={() => createNote.value = true}>STOP</div>
