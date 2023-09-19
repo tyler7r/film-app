@@ -1,3 +1,9 @@
+/* dark gray #333d50 */
+/* yellow #d3ab2b */
+/* light gray #cbd0d8 */
+/* dark gray rgb(92, 92, 92) */
+/* cream #f4f3ea */
+
 main {
     display: flex;
     flex-direction: column;
@@ -10,7 +16,7 @@ main {
 h2 {
     font-size: 36px;
     margin-bottom: 0;
-    color: lightblue;
+    color: #cbd0d8;
     font-family: 'Kanit';
     font-weight: lighter;
     font-style: italic;
@@ -18,26 +24,26 @@ h2 {
 
 .continue-watching {
     font-family: 'Inter';
-    border: 4px solid gray;
+    border: 4px solid #d3ab2b;
     padding: 16px;
     width: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 8px;
-    background-color: rgb(82, 82, 82);
+    background-color: rgb(92, 92, 92);
     border-radius: 8px;
 }
 
 .continue-watching-title {
     font-weight: bold;
     font-size: 36px;
-    color: rgb(205, 205, 205);
+    color: #f4f3ea;
 }
 
 .continue-watching-game {
-    color: black;
-    font-size: 24px;
+    color: #333d50;
+    font-size: 20px;
     font-style: italic;
 }
 
@@ -50,13 +56,12 @@ h2 {
     border-radius: 0.5rem;
     padding: 8px;
     gap: 24px;
-    border: 4px solid red;
 }
 
 .content-card {
-    border: 2px solid gray;
-    color: rgb(205, 205, 205);
-    background-color: rgb(82, 82, 82);
+    border: 4px solid #d3ab2b;
+    color: #f4f3ea;
+    background-color: rgb(92, 92, 92);
     width: 100%;
     padding: 8px;
     font-weight: bold;
