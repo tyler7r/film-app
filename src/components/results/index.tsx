@@ -77,8 +77,8 @@ const SearchResults = component$((props: ResultsProps) => {
                 //         </div>
                 //     )}
                 // />
-                <div class={styles['results']}>
-                    <div class={styles['results-title']}>Players</div>
+                <div class={styles['results']} id={styles['player-results']}>
+                    <div class={styles['results-title']} id={styles['players-title']}>Players</div>
                     {players && players.map(player => (
                         <div class={styles['result']}>{player.name} #{player.number}</div>
                     ))}

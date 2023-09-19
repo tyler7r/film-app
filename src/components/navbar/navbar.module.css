@@ -27,8 +27,18 @@ img {
   cursor: pointer;
 }
 
+img:hover {
+  border: 4px solid #d3ab2b;
+  background-color: rgb(203, 208, 216, 0.1);
+}
+
 .nav_btn {
   color: #f4f3ea;
   font-size: 32px;
   cursor: pointer;
+}
+
+.nav_btn:hover {
+  font-size: 34px;
+  color: #cbd0d8;
 }

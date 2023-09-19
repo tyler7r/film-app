@@ -11,6 +11,7 @@
     padding: 8px;
     border-radius: 1rem;
     width: 100%;
+    color: #333d50;
 }
 
 .search-input:focus {

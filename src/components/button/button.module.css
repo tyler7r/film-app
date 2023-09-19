@@ -8,3 +8,8 @@
   font-weight: bold;
   cursor: pointer;
 }
+
+.button:hover {
+  border: 4px solid #f4f3ea;
+  background-color: rgb(203, 208, 216, 0.1);
+}
