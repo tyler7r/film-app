@@ -1,4 +1,4 @@
-import { $, PropFunction, component$, useStore } from "@builder.io/qwik";
+import { $, PropFunction, component$ } from "@builder.io/qwik";
 import styles from './filters.module.css'
 import { Button } from "../button";
 
@@ -50,7 +50,7 @@ const SearchFilters = component$((props: FilterProps) => {
                 <div class={styles['input-title']}>Tournament</div>
                 <input type='text' onInput$={(e) => applyFilters('tournament' ,(e.target as HTMLInputElement).value)} value={searchFilters.tournament} />
             </label>
-            <Button>Close</Button>
+            <Button>Save</Button>
         </form>
     )
 })

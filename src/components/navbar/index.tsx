@@ -22,7 +22,7 @@ export const Navbar = component$(() => {
       </a>
       {!searchOpen.value
         ? <div class={styles['right']}>
-          <Button>Film Room</Button>
+          <a href='/film-room'><Button>Film Room</Button></a>
           <div class={styles['nav_btn']}>
             <BsSearch onClick$={() => searchOpen.value = true}/>
           </div>
