@@ -16,6 +16,27 @@ body {
   line-height: inherit;
 }
 
+input:focus {
+  outline: none;
+  color: #333d50;
+  border: 4px solid #d3ab2b;
+}
+
+textarea {
+  width: 100%;
+  color: #333d50;
+  outline: none;
+  resize: none;
+  height: 100px;
+  font-family: 'Inter';
+  font-size: 18px;
+}
+
+textarea:focus {
+  padding: 4px;
+  border: 2px solid #d3ab2b;
+}
+
 .content {
   display: flex;
   flex-direction: column;

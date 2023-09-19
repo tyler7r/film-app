@@ -85,7 +85,7 @@ const FilmRoom = component$(() => {
                     <form q:slot='content' class={styles['form-container']} preventdefault:submit onSubmit$={submitNote}>
                         <label class={styles['input-container']}>
                             <div class={styles['input-title']}>Note</div>
-                            <input type="text" onInput$={(e) => formData.note = (e.target as HTMLInputElement).value} value={formData.note} />
+                            <textarea onInput$={(e) => formData.note = (e.target as HTMLInputElement).value} value={formData.note} />
                         </label>
                         <label class={styles['input-container']}>
                             <div class={styles['input-title']}>Keywords</div>
@@ -108,9 +108,9 @@ const FilmRoom = component$(() => {
                         <div class={styles['play-author']}>{play?.author}</div>
                         <div class={styles['play-note']}>{play?.note}</div>
                         <form class={styles['form-container']} preventdefault:submit onSubmit$={submitComment}>
-                            <label class={styles['input-container']}>
+                            <label class={styles['input-container']} id={styles['comment-container']}>
                                 <div class={styles['input-title']}>Comment</div>
-                                <input type='text' bind:value={comment} />
+                                <textarea bind:value={comment} />
                             </label>
                             {comment.value !== ''
                                 ? <Button>Submit</Button>
