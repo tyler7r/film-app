@@ -1,3 +1,9 @@
+/* dark blue #333d50 */
+/* yellow #d3ab2b */
+/* light gray #cbd0d8 */
+/* dark gray rgb(92, 92, 92) */
+/* cream #f4f3ea */
+
 .form-container {
     display: flex;
     flex-direction: column;
@@ -18,5 +24,11 @@
 }
 
 .input-title {
-    font-size: 22px;
+    font-size: 24px;
+}
+
+input:focus {
+    outline: none;
+    color: #333d50;
+    border: 4px solid #d3ab2b;
 }

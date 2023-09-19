@@ -33,7 +33,7 @@ const Search = component$(() => {
             <Button onClick$={() => modalVisible.value = true}>Add Filters</Button>
             {modalVisible.value &&
                 <Modal>
-                    <h2 class={styles['modal-title']} q:slot='title'>Filters</h2>
+                    <h2 class={styles['modal-title']} q:slot='title'>Search Filters</h2>
                     <SearchFilters q:slot='content' close={close} applyFilters={applyFilters} searchFilters={searchFilters} />
                 </Modal>
             }
