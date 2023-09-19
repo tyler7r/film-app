@@ -1,13 +1,13 @@
 span {
-  max-height: 1rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 4px;
+  justify-content: center;
+  gap: 8px;
   text-align: center;
+  border: 1px solid red;
+  padding: 8px;
 }
 
-.container a {
-  text-decoration: inherit;
-  color: inherit;
+.logo-name {
+  font-size: 24px;
 }
