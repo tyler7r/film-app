@@ -9,24 +9,22 @@ main {
 
 .welcome-msg {
     font-size: 36px;
-    margin-bottom: 0;
     color: #d3ab2b;
     font-family: 'Kanit';
     font-weight: lighter;
     font-style: italic;
+    margin-top: 16px;
 }
 
 .continue-watching {
     font-family: 'Inter';
-    /* border: 4px solid #d3ab2b; */
-    border: 4px solid rgb(92, 92, 92);
+    border: 4px solid #d3ab2b;
     padding: 16px;
     width: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 8px;
-    /* background-color: rgb(92, 92, 92); */
     background-color: #cbd0d8;
     border-radius: 8px;
 }
@@ -52,13 +50,12 @@ main {
     border-radius: 0.5rem;
     padding: 8px;
     gap: 24px;
-    border: 4px solid #d3ab2b;
 }
 
 .content-card {
     border: 4px solid #cbd0d8;
-    color: #f4f3ea;
-    background-color: rgb(92, 92, 92);
+    color: #333d50;
+    background-color: #f4f3ea;
     width: 100%;
     padding: 8px;
     font-weight: bold;
