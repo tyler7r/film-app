@@ -23,12 +23,12 @@ export const NoteForm = component$((props: NoteProps) => {
     })
 
     return (
-        <div class={styles['new-note-container']}>
-            <Button class={styles['close-note']} onClick$={close}>Close</Button>
-            <form preventdefault:submit class={styles['note-form']} onSubmit$={() => submit()}>
-                <textarea value={noteData.message} onInput$={(e) => noteData.message = (e.target as HTMLInputElement).value} ></textarea>
-                <Button>Submit</Button>
-            </form>
-        </div>
+        <form preventdefault:submit class={styles['note-form']} onSubmit$={() => submit()}>
+            <textarea value={noteData.message} onInput$={(e) => noteData.message = (e.target as HTMLInputElement).value} />
+            {noteData.message !== ''
+                ? <Button>Submit</Button>
+                : <Button type='button'>Submit</Button>
+            }
+        </form>
     )
 })

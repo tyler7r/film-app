@@ -1,4 +1,23 @@
+/* dark gray #333d50 */
+/* yellow #d3ab2b */
+/* light gray #cbd0d8 */
+/* dark gray rgb(92, 92, 92) */
+/* cream #f4f3ea */
+
 .player-info {
+    font-size: 18px;
     display: flex;
-    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    background-color: #cbd0d8;
+    padding: 4px;
+    border-radius: 4px;
+    color: #333d50;
+    height: 100%;
+}
+
+.player-number {
+    font-weight: bold;
+    color: rgb(92, 92, 92);
 }

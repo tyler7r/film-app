@@ -5,6 +5,9 @@ const Modal = component$(() => {
     return (
         <div class={styles['modal-overlay']}>
             <div class={styles['modal']}>
+                <div class={styles['close']}>
+                    <Slot name='close-modal' />
+                </div>
                 <div class={styles['modal-title']}>
                     <Slot name='title' />
                 </div>
