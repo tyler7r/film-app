@@ -3,8 +3,8 @@
   padding: 8px;
   font-size: 14px;
   background: none;
-  border: 4px double white;
-  color: white;
+  border: 4px double #f4f3ea;
+  color: #f4f3ea;
   font-weight: bold;
   cursor: pointer;
 }

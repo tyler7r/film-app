@@ -1,6 +1,12 @@
+/* dark gray #333d50 */
+/* yellow #d3ab2b */
+/* light gray #cbd0d8 */
+/* dark gray rgb(92, 92, 92) */
+/* cream #f4f3ea */
+
 a {
   text-decoration: none;
-  color: white;
+  color: #f4f3ea;
   font-weight: bold;
 }
 
@@ -9,8 +15,8 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 8px;
-  background-color: rgb(39, 39, 39);
-  border-bottom: 2px solid gray;
+  background-color: #333d50;
+  border-bottom: 4px solid #f4f3ea;
 }
 
 .right {
@@ -21,14 +27,14 @@ nav {
 }
 
 img {
-  border: 4px double white;
+  border: 4px double #d3ab2b;
   border-radius: 50%;
   padding: 4px;
   cursor: pointer;
 }
 
 .nav_btn {
-  color: white;
+  color: #f4f3ea;
   font-size: 32px;
   cursor: pointer;
 }
