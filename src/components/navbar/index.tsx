@@ -31,7 +31,7 @@ export const Navbar = component$(() => {
           <a href='/inbox' class={styles['nav_btn']}>
             <BsEnvelopeFill />
           </a>
-          <a href={`/profile/${teamId}`}><TeamLogo team="Atlanta Hustle" /></a>
+          <a href={`/profile/${teamId}`} class={styles['team-logo']}><TeamLogo team="Atlanta Hustle" /></a>
         </div>
         : <NavSearch closeSearch={closeSearch} />
       }

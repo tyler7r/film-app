@@ -1,6 +1,6 @@
 a {
   text-decoration: none;
-  color: white;
+  color: #f4f3ea;
   font-weight: bold;
 }
 
@@ -9,8 +9,8 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 8px;
-  background-color: rgb(39, 39, 39);
-  border-bottom: 2px solid gray;
+  background-color: #333d50;
+  border-bottom: 4px solid #f4f3ea;
 }
 
 .right {
@@ -20,15 +20,25 @@ nav {
   gap: 16px;
 }
 
-img {
-  border: 4px double white;
+.team-logo {
+  border: 4px double #d3ab2b;
   border-radius: 50%;
   padding: 4px;
   cursor: pointer;
 }
 
+.team-logo:hover {
+  border: 4px solid #d3ab2b;
+  background-color: rgb(203, 208, 216, 0.1);
+}
+
 .nav_btn {
-  color: white;
+  color: #f4f3ea;
   font-size: 32px;
   cursor: pointer;
+}
+
+.nav_btn:hover {
+  font-size: 34px;
+  color: #cbd0d8;
 }

@@ -1,3 +1,9 @@
+/* dark gray #333d50 */
+/* yellow #d3ab2b */
+/* light gray #cbd0d8 */
+/* dark gray rgb(92, 92, 92) */
+/* cream #f4f3ea */
+
 .container {
     display: flex;
     flex-direction: column;
@@ -21,8 +27,14 @@
     width: 70%;
     padding: 8px;
     border-radius: 1rem;
-    border: 2px solid gray;
+    border: 2px solid rgb(92, 92, 92);
     font-size: 24px;
+    color: #333d50;
+}
+
+.search-input:focus {
+    border: 4px solid #d3ab2b;
+    outline: none;
 }
 
 .search-icon {
@@ -31,12 +43,18 @@
     align-items: center;
     background: none;
     border: none;
-    color: white;
+    color: #f4f3ea;
     font-size: 36px;
+    cursor: pointer;
+}
+
+.search-icon:hover {
+    font-size: 38px;
+    color: #cbd0d8;
 }
 
 .empty-search {
     margin: 8px;
     font-size: 48px;
-    color: white;
+    color: #f4f3ea;
 }

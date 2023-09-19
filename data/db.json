@@ -287,7 +287,7 @@
     "plays": [
         {
             "id": "p1",
-            "author": "1",
+            "author": "Tyler Randall",
             "game": "g1",
             "players": ["1", "2", "3", "4", "5", "6"],
             "note": "This is a great deep cut and throw",
@@ -296,7 +296,7 @@
         },
         {
             "id": "p2",
-            "author": "2",
+            "author": "Miranda Knowles",
             "game": "g1",
             "players": ["1", "2", "3", "4", "5", "6"],
             "note": "Throw and go",

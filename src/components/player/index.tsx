@@ -12,8 +12,8 @@ export const Player = component$((props: PlayerProps) => {
 
     return (
         <div class={styles['player-info']}>
-            <div>{name}</div>
-            <div>#{number}</div>
+            <div class={styles['player-name']}>{name}</div>
+            <div class={styles['player-number']}>#{number}</div>
         </div>
     )
 })

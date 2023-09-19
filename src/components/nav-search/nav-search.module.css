@@ -11,16 +11,22 @@
     padding: 8px;
     border-radius: 1rem;
     width: 100%;
+    color: #333d50;
+}
+
+.search-input:focus {
+    border: 4px solid #d3ab2b;
+    outline: none;
 }
 
 .close {
     background:none;
     border: none;
-    color: white;
-    font-size: 24px;
+    color: #f4f3ea;
+    font-size: 28px;
     cursor: pointer;
 }
 
 .close:hover {
-    color: darkred;
+    color: #d3ab2b;
 }

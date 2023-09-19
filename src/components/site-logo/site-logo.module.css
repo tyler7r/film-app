@@ -4,10 +4,10 @@ span {
   justify-content: center;
   gap: 8px;
   text-align: center;
-  border: 1px solid red;
   padding: 8px;
 }
 
 .logo-name {
   font-size: 24px;
+  color: #f4f3ea;
 }

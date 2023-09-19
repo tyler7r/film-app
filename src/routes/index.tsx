@@ -4,8 +4,8 @@ import styles from './index.module.css';
 
 export default component$(() => {
   return (
-    <main>
-      <h2>Welcome, (user)</h2>
+    <main class='content'>
+      <h2 class={styles['welcome-msg']}>Welcome, Tyler Randall!</h2>
       <div class={styles['continue-watching']}>
         <div class={styles['continue-watching-title']}>Continue Watching</div>
         <div class={styles['continue-watching-game']}>(game info, timestamp, etc...)</div>

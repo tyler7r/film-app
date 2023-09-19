@@ -1,61 +1,62 @@
 main {
     display: flex;
     flex-direction: column;
-    height: 100vh;
     width: 100%;
     align-items: center;
     text-align: center;
     gap: 16px;
 }
 
-h2 {
-    font-size: 42px;
-    margin-bottom: 0;
-    color: rgb(205, 205, 205);
+.welcome-msg {
+    font-size: 36px;
+    color: #d3ab2b;
     font-family: 'Kanit';
     font-weight: lighter;
     font-style: italic;
+    margin-top: 16px;
 }
 
 .continue-watching {
     font-family: 'Inter';
-    border: 2px solid gray;
-    padding: 8px;
-    width: 60%;
+    border: 4px solid #d3ab2b;
+    padding: 16px;
+    width: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 8px;
-    background-color: rgb(82, 82, 82);
+    background-color: #cbd0d8;
+    border-radius: 8px;
 }
 
 .continue-watching-title {
     font-weight: bold;
-    font-size: 18px;
-    color: rgb(205, 205, 205);
+    font-size: 36px;
+    color: #f4f3ea;
 }
 
 .continue-watching-game {
-    color: black;
-    font-size: 14px;
+    color: #333d50;
+    font-size: 20px;
     font-style: italic;
 }
 
 .content {
     font-family: 'Inter';
     display: flex;
-    justify-content: space-around;
-    width: 90%;
-    height: 100%;
-    margin: 16px;
+    justify-content: space-between;
+    width: 80%;
+    min-height: 60vh;
+    border-radius: 0.5rem;
+    padding: 8px;
     gap: 24px;
 }
 
 .content-card {
-    border: 2px solid gray;
-    color: rgb(205, 205, 205);
-    background-color: rgb(82, 82, 82);
-    height: 100%;
+    border: 4px solid #cbd0d8;
+    color: #333d50;
+    background-color: #f4f3ea;
+    width: 100%;
     padding: 8px;
     font-weight: bold;
     font-size: 28px;

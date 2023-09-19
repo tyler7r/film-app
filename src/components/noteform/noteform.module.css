@@ -1,21 +1,19 @@
-.new-note-container {
+.note-form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 8px;
-    width: 100%;
+    gap: 16px;
 }
 
-.note-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    width: 100%;
+.inactive {
+    color: darkgray;
+    border-color: darkgray;
+    cursor: default;
 }
 
-textarea {
-    width: 80%;
-    border-radius: 4px;
+.inactive:hover {
+    color: darkgray;
+    border: 4px double darkgray;
+    background-color: #333d50;
 }
