@@ -22,7 +22,7 @@ export const SiteLogo = component$((props) => {
           fill="white"
         />
       </svg>
-      Film Study
+      <div class={styles['logo-name']}>Film Study</div>
     </span>
   );
 });

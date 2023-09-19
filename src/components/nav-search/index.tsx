@@ -11,16 +11,14 @@ const NavSearch = component$((props: PropTypes) => {
     const search = useSignal('');
 
     const submit = $(() => {
-        console.log('run');
-        search.value = '';
         closeSearch();
-        window.location.href = '/search';
-        //link to search page with results in params
+        window.location.href = `/search/${search.value}`;
+        search.value = '';
     })
 
     return (
         <form preventdefault:submit onSubmit$={submit} class={styles['search-form']}>
-            <input class={styles['search-input']} type='text' value={search.value} onInput$={(e) => (e.target as HTMLInputElement).value} />
+            <input class={styles['search-input']} type='text' bind:value={search} />
             <Button>Search</Button>
             <button type='button' onClick$={() => closeSearch()} class={styles['close']}>X</button>
         </form>

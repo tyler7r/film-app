@@ -34,3 +34,9 @@
     color: white;
     font-size: 36px;
 }
+
+.empty-search {
+    margin: 8px;
+    font-size: 48px;
+    color: white;
+}

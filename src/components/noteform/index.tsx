@@ -10,7 +10,10 @@ export const NoteForm = component$((props: NoteProps) => {
 
     const { close } = props;
 
-    const noteData = useStore({ author: 'User Display Name', message: '' });
+    const noteData = useStore({ 
+        author: 'User Display Name', 
+        message: '' 
+    });
 
     const submit = $(() => {
         // post logic here
@@ -23,10 +26,7 @@ export const NoteForm = component$((props: NoteProps) => {
         <div class={styles['new-note-container']}>
             <Button class={styles['close-note']} onClick$={close}>Close</Button>
             <form preventdefault:submit class={styles['note-form']} onSubmit$={() => submit()}>
-                <label>
-                    <span>Note</span>
-                    <textarea value={noteData.message} onInput$={(e) => noteData.message = (e.target as HTMLInputElement).value} ></textarea>
-                </label>
+                <textarea value={noteData.message} onInput$={(e) => noteData.message = (e.target as HTMLInputElement).value} ></textarea>
                 <Button>Submit</Button>
             </form>
         </div>
