@@ -20,7 +20,6 @@ main {
     font-family: 'Inter';
     border: 4px solid #d3ab2b;
     padding: 16px;
-    width: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,11 +40,10 @@ main {
     font-style: italic;
 }
 
-.content {
+.content-cards {
     font-family: 'Inter';
-    display: flex;
-    justify-content: space-between;
-    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     min-height: 60vh;
     border-radius: 0.5rem;
     padding: 8px;
@@ -56,12 +54,83 @@ main {
     border: 4px solid #cbd0d8;
     color: #333d50;
     background-color: #f4f3ea;
-    width: 100%;
     padding: 8px;
     font-weight: bold;
     font-size: 28px;
     border-radius: 0.5rem;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.card-title {
+    border-bottom: 4px solid #d3ab2b;
+    width: fit-content;
+    padding: 0px 16px 0px 16px;
+    align-self: center;
+    padding-bottom: 2px;
+}
+
+#highlight-card {
+    grid-column: 1 / 3;
+    justify-self: center;
+    width: 50%;
+    height: fit-content;
     justify-content: center;
+}
+
+.highlight-title {
+    border-bottom: 4px solid #d3ab2b;
+    width: fit-content;
+    padding: 0px 16px 4px 16px;
+    align-self: center;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.assigned-clip {
+    background-color: #cbd0d8;
+    padding: 4px;
+    border-radius: 4px;
+    color: #333d50;
+}
+
+.scouting-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.scouting-title {
+    font-size: 24px;
+}
+
+.scouting-info {
+    color: #333d50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    background-color: #cbd0d8;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.next-opponent-logo {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    border: 2px solid #d3ab2b;
+}
+
+#last-game-info {
+    flex-direction: column;
+    font-size: 24px;
 }
