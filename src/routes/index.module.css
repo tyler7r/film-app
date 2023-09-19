@@ -7,7 +7,7 @@ main {
     gap: 16px;
 }
 
-h2 {
+.welcome-msg {
     font-size: 36px;
     margin-bottom: 0;
     color: #d3ab2b;

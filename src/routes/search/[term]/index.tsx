@@ -6,7 +6,7 @@ import { Button } from "~/components/button";
 import SearchResults from "~/components/results";
 
 const Search = component$(() => {
-    const modalVisible = useSignal(false);
+    const modalVisible = useSignal(true);
     const searchFilters = useStore({
         keywords: true,
         teams: true,
