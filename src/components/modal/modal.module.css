@@ -27,7 +27,7 @@
 .modal-title {
     border-bottom: 4px solid #d3ab2b;
     color: #f4f3ea;
-    margin: 0;
+    font-size: 42px;
 }
 
 .close {
@@ -42,5 +42,5 @@
 }
 
 .close:hover {
-    color: darkred;
+    color: #d3ab2b;
 }

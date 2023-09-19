@@ -1,13 +1,19 @@
-.new-note-container {
-    
-}
-
-.close {
-    text-align: right;
-    font-size: 24px;
-    font-weight: bold;
-}
-
 .note-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
 
+.inactive {
+    color: darkgray;
+    border-color: darkgray;
+    cursor: default;
+}
+
+.inactive:hover {
+    color: darkgray;
+    border: 4px double darkgray;
+    background-color: #333d50;
 }

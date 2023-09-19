@@ -16,6 +16,10 @@ body {
   line-height: inherit;
 }
 
+h2 {
+  margin: 0;
+}
+
 input:focus {
   outline: none;
   color: #333d50;

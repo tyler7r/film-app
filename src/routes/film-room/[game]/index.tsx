@@ -82,7 +82,7 @@ const FilmRoom = component$(() => {
             {createNote.value &&
                 <Modal>
                     <div q:slot='close-modal' onClick$={() => createNote.value = false}>X</div>
-                    <h2 q:slot='title' class={styles['modal-title']}>Create Note</h2>
+                    <h2 q:slot='title'>Create Note</h2>
                     <form q:slot='content' class={styles['form-container']} preventdefault:submit onSubmit$={submitNote}>
                         <label class={styles['input-container']}>
                             <div class={styles['input-title']}>Note</div>
@@ -99,14 +99,14 @@ const FilmRoom = component$(() => {
             {settingsOpen.value &&
                 <Modal>
                     <div q:slot='close-modal' onClick$={() => settingsOpen.value = false}>X</div>
-                    <h2 q:slot="title" class={styles['modal-title']}>Video Settings</h2>
+                    <h2 q:slot="title">Video Settings</h2>
                     <VideoSettings q:slot='content' settings={settings} applySettings={applySettings} close={close} />
                 </Modal>
             }
             {noteOpen.value && 
                 <Modal>
                     <div q:slot='close-modal' onClick$={() => noteOpen.value = false}>X</div>
-                    <h2 q:slot='title' class={styles['modal-title']}>Play</h2>
+                    <h2 q:slot='title'>Play</h2>
                     <div q:slot='content' class={styles['play-container']}>
                         <div class={styles['play-author']}>{play?.author}</div>
                         <div class={styles['play-note']}>{play?.note}</div>

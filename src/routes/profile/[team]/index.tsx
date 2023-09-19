@@ -16,7 +16,7 @@ export default component$(() => {
     const players = mockData.users.filter(user => user.role === 'player');
 
     const isUserAffiliated = useSignal(true);
-    const newNoteVisible = useSignal(true);
+    const newNoteVisible = useSignal(false);
 
     const closeNote = $(() => {
         newNoteVisible.value = false;
@@ -48,12 +48,12 @@ export default component$(() => {
                         {newNoteVisible.value
                             ? <Modal>
                                 <div q:slot='close-modal' onClick$={() => newNoteVisible.value = false}>X</div>
-                                <h2 class={styles['modal-title']} q:slot='title'>New Note</h2>
+                                <h2 q:slot='title'>New Note</h2>
                                 <NoteForm q:slot='content' close={closeNote}/>
                             </Modal>
                             : <Button onClick$={() => newNoteVisible.value = true}>New Note</Button>
                         }
-                        <div class={styles['container-title']}>Notes</div>
+                        <div class={styles['container-title']}>Team Notes</div>
                         <div class={styles['note']}>This is an example note!</div>
                     </div>
                 }

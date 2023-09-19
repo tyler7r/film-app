@@ -27,7 +27,7 @@ export const NoteForm = component$((props: NoteProps) => {
             <textarea value={noteData.message} onInput$={(e) => noteData.message = (e.target as HTMLInputElement).value} />
             {noteData.message !== ''
                 ? <Button>Submit</Button>
-                : <Button type='button'>Submit</Button>
+                : <Button class={styles['inactive']} type='button'>Add Note</Button>
             }
         </form>
     )
