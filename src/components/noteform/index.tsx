@@ -24,10 +24,9 @@ export const NoteForm = component$((props: NoteProps) => {
 
     return (
         <form preventdefault:submit class='form-container' onSubmit$={() => submit()}>
-            <textarea value={noteData.message} onInput$={(e) => noteData.message = (e.target as HTMLInputElement).value} />
-            {noteData.message !== ''
-                ? <Button>Submit</Button>
-                : <Button class={styles['inactive']} type='button'>Add Note</Button>
+            <textarea value={noteData.message} placeholder="Make a note about this team that only your teammates can see" onInput$={(e) => noteData.message = (e.target as HTMLInputElement).value} />
+            {noteData.message !== '' &&
+                 <Button>Submit</Button>
             }
         </form>
     )

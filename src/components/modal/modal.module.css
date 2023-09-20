@@ -23,6 +23,8 @@
     position: relative;
     gap: 12px;
     max-height: 80vh;
+    min-height: 40vh;
+    min-width: 60vw;
 }
 
 .modal-title {
