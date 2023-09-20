@@ -22,6 +22,9 @@
     align-items: center;
     position: relative;
     gap: 12px;
+    max-height: 80vh;
+    min-height: 40vh;
+    min-width: 60vw;
 }
 
 .modal-title {
@@ -30,15 +33,21 @@
     font-size: 42px;
 }
 
+.modal-content {
+    width: 80%;
+    overflow-y: scroll;
+}
+
 .close {
     position: absolute;
-    top: 5%;
-    right: 5%;
+    top: 0;
+    right: 0;
     background: none;
     border: none;
     font-size: 24px;
     color: white;
     cursor: pointer;
+    margin: 8px;
 }
 
 .close:hover {

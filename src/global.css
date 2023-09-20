@@ -20,6 +20,39 @@ h2 {
   margin: 0;
 }
 
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.checkbox-container {
+  display: flex;
+  gap: 8px;
+}
+
+.input-title {
+  font-size: 24px;
+  text-align: left;
+}
+
+input {
+  padding: 6px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  font-size: 18px;
+}
+
 input:focus {
   outline: none;
   color: #333d50;
@@ -27,7 +60,7 @@ input:focus {
 }
 
 textarea {
-  width: 100%;
+  width: 90%;
   color: #333d50;
   outline: none;
   resize: none;
@@ -35,10 +68,11 @@ textarea {
   font-family: 'Inter';
   font-size: 18px;
   border-radius: 4px;
+  padding: 6px;
 }
 
 textarea:focus {
-  padding: 4px;
+  padding: 6px;
   border: 2px solid #d3ab2b;
 }
 

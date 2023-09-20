@@ -19,23 +19,23 @@ const VideoSettings = component$((props: VideoSettingsProps) => {
     const { settings, applySettings, close } = props;
 
     return (
-        <form class={styles['form-container']} preventdefault:submit onSubmit$={close}>
-            <label class={styles['checkbox-container']}>
-                <div class={styles['setting-title']}>Show Clips?</div>
+        <form class='form-container' preventdefault:submit onSubmit$={close}>
+            <label class='checkbox-container'>
+                <div class='input-title'>Show Clips?</div>
                 <input type='checkbox' onInput$={() => applySettings('showClips')} checked={settings.showClips} />
             </label>
             {settings.showClips &&
                 <>
-                    <label class={styles['checkbox-container']}>
-                        <div class={styles['setting-title']}>Only My Mentions?</div>
+                    <label class='checkbox-container'>
+                        <div class='input-title'>Only My Mentions?</div>
                         <input type='checkbox' onInput$={() => applySettings('myMentionsOnly')} checked={settings.myMentionsOnly} />
                     </label>
-                    <label class={styles['input-container']}>
-                        <div class={styles['setting-title']}>Notes from Select Author</div>
+                    <label class='input-container'>
+                        <div class='input-title'>Notes from Select Author</div>
                         <input type='text' onInput$={() => applySettings('selectAuthor')} value={settings.selectAuthor} />
                     </label>
-                    <label class={styles['input-container']}>
-                        <div class={styles['setting-title']}>Notes with Select Keyword</div>
+                    <label class='input-container'>
+                        <div class='input-title'>Notes with Select Keyword</div>
                         <input type='text' onInput$={() => applySettings('selectKeyword')} value={settings.selectKeyword} />
                     </label>
                 </>

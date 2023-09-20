@@ -25,29 +25,29 @@ const SearchFilters = component$((props: FilterProps) => {
     })
 
     return (
-        <form preventdefault:submit onSubmit$={submit} class={styles['form-container']}>
-            <label class={styles['checkbox-container']}>
-                <div class={styles['input-title']}>Keywords</div>
+        <form preventdefault:submit onSubmit$={submit} class='form-container'>
+            <label class='checkbox-container'>
+                <div class='input-title'>Keywords</div>
                 <input type='checkbox' onInput$={() => applyFilters('keywords')} checked={searchFilters.keywords} />
             </label>
-            <label class={styles['checkbox-container']}>
-                <div class={styles['input-title']}>Players</div>
+            <label class='checkbox-container'>
+                <div class='input-title'>Players</div>
                 <input type='checkbox' onInput$={() => applyFilters('players')} checked={searchFilters.players} />
             </label>
-            <label class={styles['checkbox-container']}>
-                <div class={styles['input-title']}>Teams</div>
+            <label class='checkbox-container'>
+                <div class='input-title'>Teams</div>
                 <input type='checkbox' onInput$={() => applyFilters('teams')} checked={searchFilters.teams} />
             </label>
-            <label class={styles['checkbox-container']}>
-                <div class={styles['input-title']}>Games</div>
+            <label class='checkbox-container'>
+                <div class='input-title'>Games</div>
                 <input type='checkbox' onInput$={() => applyFilters('games')} checked={searchFilters.games} />
             </label>
-            <label class={styles['input-container']}>
-                <div class={styles['input-title']}>Season</div>
+            <label class='input-container'>
+                <div class='input-title'>Season</div>
                 <input type='text' onInput$={(e) => applyFilters('season', (e.target as HTMLInputElement).value)} value={searchFilters.season} />
             </label>
-            <label class={styles['input-container']}>
-                <div class={styles['input-title']}>Tournament</div>
+            <label class='input-container'>
+                <div class='input-title'>Tournament</div>
                 <input type='text' onInput$={(e) => applyFilters('tournament' ,(e.target as HTMLInputElement).value)} value={searchFilters.tournament} />
             </label>
             <Button>Save</Button>
