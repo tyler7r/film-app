@@ -20,11 +20,11 @@ const ScoutingModal = component$((props: PropTypes) => {
         <form class='form-container' preventdefault:submit onSubmit$={submit}>
             <label class='input-container'>
                 <div class='input-title'>Next Opponent</div>
-                <input type='text' bind:value={nextOpponent} />
+                <input type='text' placeholder='No next opponent...' bind:value={nextOpponent} />
             </label>
             <label class='input-container'>
                 <div class='input-title'>Game to Watch</div>
-                <input type='text' bind:value={lastGame} />
+                <input type='text' placeholder='No suggested game to watch...' bind:value={lastGame} />
             </label>
             <Button>Submit</Button>
         </form>
