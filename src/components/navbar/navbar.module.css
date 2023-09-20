@@ -32,13 +32,13 @@ nav {
   background-color: rgb(203, 208, 216, 0.1);
 }
 
-.nav_btn {
+.nav-btn {
   color: #f4f3ea;
   font-size: 32px;
   cursor: pointer;
 }
 
-.nav_btn:hover {
+.nav-btn:hover {
   font-size: 34px;
   color: #cbd0d8;
 }
