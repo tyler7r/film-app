@@ -42,9 +42,6 @@ export default component$(() => {
                         {players && players.map(player => (
                             <Player name={player.name} id={player.id} number={player.number} />
                         ))}
-                        {inCoachView.value &&
-                            <button class={styles['edit-roster']}>Edit Roster</button>
-                        }
                     </div>
                     <div class={styles['container']}>
                         <div class={styles['container-title']}>Games</div>

@@ -19,3 +19,29 @@
     border-bottom: 4px solid #d3ab2b;
     text-align: center;
 }
+
+.btn-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.coach-btn {
+    background-color: #cbd0d8;
+    color: #333d50;
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 24px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.coach-btn:hover {
+    border: 2px dashed #d3ab2b;
+}
+
+#announcement-btn {
+    grid-column: 1 / 3;
+}
