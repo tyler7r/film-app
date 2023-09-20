@@ -1,4 +1,10 @@
-.login-container {
+/* dark gray #333d50 */
+/* yellow #d3ab2b */
+/* light gray #cbd0d8 */
+/* dark gray rgb(92, 92, 92) */
+/* cream #f4f3ea */
+
+.signup-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12,48 +18,70 @@
     color: #f4f3ea;
     border-bottom: 4px solid #d3ab2b;
     padding: 0px 16px 4px 16px;
+    margin-bottom: 8px;
 }
 
-.login-form {
-    width: 80%;
+.signup-form {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    gap: 8px;
+    width: 80%;
+}
+
+.signup-input {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+}   
+
+#radio-container {
+    gap: 8px;
+    align-items: center;
+}
+
+.radio-inputs {
+    display: flex;
     gap: 8px;
 }
 
-.login-input {
+.radio {
     display: flex;
-    flex-direction: column;
     gap: 2px;
-    width: 50%;
 }
 
-.login-title {
+.radio-title {
     color: #f4f3ea;
     font-size: 24px;
 }
 
-.login-btn {
+.signup-title {
+    font-size: 24px;
+    color: #f4f3ea;
+}
+
+.signup-btn {
     margin-top: 16px;
     font-size: 32px;
     padding: 16px;
 }
 
-.no-account-container {
+.account-container {
     display: flex;
     gap: 8px;
     color: #f4f3ea;
     font-size: 24px;
 }
 
-.no-account-link {
+.account-link {
     text-decoration: none;
     font-weight: bold;
     color: #d3ab2b;
 }
 
-.no-account-link:hover {
+.account-link:hover {
     text-decoration: underline;
 }
