@@ -1,12 +1,15 @@
 import { Resource, component$, useSignal, useStore, $ } from "@builder.io/qwik";
 import mockData from '../../../../data/db.json';
-import { DocumentHead, routeLoader$, useLocation } from "@builder.io/qwik-city";
+import { DocumentHead, useLocation } from "@builder.io/qwik-city";
 import { Player } from "~/components/player";
 import styles from './profile.module.css'
 import { Game } from "~/components/game";
 import { Button } from "~/components/button";
 import { NoteForm } from "~/components/noteform";
 import Modal from "~/components/modal";
+import TeamAnnouncement from "~/components/announcement";
+import ScoutingModal from "~/components/scouting";
+import CoachTab from "~/components/coach-tab";
 
 export default component$(() => {
     const teamId = useLocation().params.teams;
@@ -17,6 +20,7 @@ export default component$(() => {
 
     const isUserAffiliated = useSignal(true);
     const newNoteVisible = useSignal(false);
+    const inCoachView = useSignal(true);
 
     const closeNote = $(() => {
         newNoteVisible.value = false;
@@ -29,12 +33,18 @@ export default component$(() => {
                     <img class={styles['team-logo']} src={team.logo} alt='team-logo' />
                     <div class={styles['team-name']}>{team.city} {team.name}</div>
                 </div>
+                {inCoachView.value &&
+                    <CoachTab />
+                }
                 <div class={styles["team-content"]}>
                     <div class={styles['container']} id={styles['roster-container']}>
                         <div class={styles['container-title']} id={styles['roster-title']}>Roster</div>
                         {players && players.map(player => (
                             <Player name={player.name} id={player.id} number={player.number} />
                         ))}
+                        {inCoachView.value &&
+                            <button class={styles['edit-roster']}>Edit Roster</button>
+                        }
                     </div>
                     <div class={styles['container']}>
                         <div class={styles['container-title']}>Games</div>
@@ -49,7 +59,7 @@ export default component$(() => {
                             ? <Modal>
                                 <div q:slot='close-modal' onClick$={() => newNoteVisible.value = false}>X</div>
                                 <h2 q:slot='title'>New Note</h2>
-                                <NoteForm q:slot='content' close={closeNote}/>
+                                <NoteForm q:slot='content' close={closeNote} />
                             </Modal>
                             : <Button onClick$={() => newNoteVisible.value = true}>New Note</Button>
                         }
