@@ -41,7 +41,7 @@ export default component$(() => {
             </div>
         </div>
         <div class={styles['content-card']} id={styles['highlight-card']}>
-          <div class={styles['highlight-title']}>The Highlight Factory</div>
+          <a href='/highlight-factory'><div class={styles['highlight-title']}>The Highlight Factory</div></a>
         </div>
       </div>
     </main>

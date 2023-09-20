@@ -85,6 +85,7 @@ main {
     width: fit-content;
     padding: 0px 16px 4px 16px;
     align-self: center;
+    color: #333d50;
 }
 
 .card-content {
