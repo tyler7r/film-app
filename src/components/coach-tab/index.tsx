@@ -6,9 +6,9 @@ import ScoutingModal from "../scouting";
 import EditRoster from "../edit-roster";
 
 const CoachTab = component$(() => {
-    const teamAnnouncementOpen = useSignal(true);
+    const teamAnnouncementOpen = useSignal(false);
     const setScoutingOpen = useSignal(false);
-    const editRosterOpen = useSignal(false);
+    const editRosterOpen = useSignal(true);
 
     const closeAnnouncement = $(() => {
         teamAnnouncementOpen.value = false;
