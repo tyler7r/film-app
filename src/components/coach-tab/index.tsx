@@ -6,7 +6,7 @@ import ScoutingModal from "../scouting";
 import EditRoster from "../edit-roster";
 
 const CoachTab = component$(() => {
-    const teamAnnouncementOpen = useSignal(false);
+    const teamAnnouncementOpen = useSignal(true);
     const setScoutingOpen = useSignal(false);
     const editRosterOpen = useSignal(false);
 
@@ -34,21 +34,21 @@ const CoachTab = component$(() => {
                 <Modal>
                     <div q:slot='close-modal' onClick$={() => closeAnnouncement()}>X</div>
                     <h2 q:slot='title'>Team Announcment</h2>
-                    <TeamAnnouncement close={closeAnnouncement} />
+                    <TeamAnnouncement q:slot="content" close={closeAnnouncement} />
                 </Modal>
             }
             {setScoutingOpen.value &&
                 <Modal>
                     <div q:slot='close-modal' onClick$={() => closeScouting()}>X</div>
                     <h2 q:slot="title">Adjust Scouting</h2>
-                    <ScoutingModal close={closeScouting} />
+                    <ScoutingModal q:slot="content" close={closeScouting} />
                 </Modal>
             }
             {editRosterOpen.value &&
                 <Modal>
                     <div q:slot='close-modal' onClick$={() => closeRoster()}>X</div>
                     <h2 q:slot="title">Edit Roster</h2>
-                    <EditRoster close={closeRoster} />
+                    <EditRoster q:slot="content" close={closeRoster} />
                 </Modal>
             }
         </div>

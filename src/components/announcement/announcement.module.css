@@ -1,0 +1,20 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+}
+
+.inactive {
+    color: darkgray;
+    border: 4px double darkgray;
+    cursor: default;
+}
+
+.inactive:hover {
+    color: darkgray;
+    border: 4px double darkgray;
+    background-color: #333d50;
+}
