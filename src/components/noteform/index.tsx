@@ -23,7 +23,7 @@ export const NoteForm = component$((props: NoteProps) => {
     })
 
     return (
-        <form preventdefault:submit class={styles['note-form']} onSubmit$={() => submit()}>
+        <form preventdefault:submit class='form-container' onSubmit$={() => submit()}>
             <textarea value={noteData.message} onInput$={(e) => noteData.message = (e.target as HTMLInputElement).value} />
             {noteData.message !== ''
                 ? <Button>Submit</Button>

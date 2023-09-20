@@ -7,7 +7,7 @@ import EditRoster from "../edit-roster";
 
 const CoachTab = component$(() => {
     const teamAnnouncementOpen = useSignal(false);
-    const setScoutingOpen = useSignal(false);
+    const setScoutingOpen = useSignal(true);
     const editRosterOpen = useSignal(false);
 
     const closeAnnouncement = $(() => {
@@ -40,7 +40,7 @@ const CoachTab = component$(() => {
             {setScoutingOpen.value &&
                 <Modal>
                     <div q:slot='close-modal' onClick$={() => closeScouting()}>X</div>
-                    <h2 q:slot="title">Adjust Scouting</h2>
+                    <h2 q:slot="title">Scouting Tab</h2>
                     <ScoutingModal q:slot="content" close={closeScouting} />
                 </Modal>
             }

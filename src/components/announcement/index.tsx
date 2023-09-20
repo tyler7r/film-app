@@ -16,11 +16,10 @@ const TeamAnnouncement = component$((props: PropTypes) => {
     })
 
     return (
-        <form preventdefault:submit onSubmit$={submit} class={styles['form-container']}>
+        <form preventdefault:submit onSubmit$={submit} class='form-container'>
             <textarea bind:value={announcement} />
-            {announcement.value !== ''
-                ? <Button>Send</Button>
-                : <Button class={styles['inactive']} type='button'>Add Announcement</Button>
+            {announcement.value !== '' &&
+                <Button>Send</Button>
             }
         </form>
     )

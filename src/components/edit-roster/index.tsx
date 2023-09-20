@@ -29,13 +29,13 @@ const EditRoster = component$((props: PropTypes) => {
                 <Button onClick$={() => addPlayerOpen.value = true}>Add Player</Button>
             }
             {addPlayerOpen.value &&
-                <form preventdefault:submit onSubmit$={addToRoster} class={styles['form-container']}>
-                    <label class={styles['input-container']}>
-                        <div class={styles['input-title']}>Name</div>
+                <form preventdefault:submit onSubmit$={addToRoster} class='form-container'>
+                    <label class='input-container'>
+                        <div class='input-title'>Name</div>
                         <input type='text' onInput$={(e) => newPlayerInfo.name = (e.target as HTMLInputElement).value} value={newPlayerInfo.name} />
                     </label>
-                    <label class={styles['input-container']}>
-                        <div class={styles['input-title']}>Number</div>
+                    <label class='input-container'>
+                        <div class='input-title'>Number</div>
                         <input type='text' onInput$={(e) => newPlayerInfo.number = (e.target as HTMLInputElement).value} value={newPlayerInfo.number} />
                     </label>
                     {(newPlayerInfo.name !== '' && newPlayerInfo.number !== '')

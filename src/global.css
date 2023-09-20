@@ -20,6 +20,39 @@ h2 {
   margin: 0;
 }
 
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.checkbox-container {
+  display: flex;
+  gap: 8px;
+}
+
+.input-title {
+  font-size: 24px;
+  text-align: left;
+}
+
+input {
+  padding: 6px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  font-size: 18px;
+}
+
 input:focus {
   outline: none;
   color: #333d50;

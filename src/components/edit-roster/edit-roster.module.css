@@ -22,21 +22,3 @@
 .player-btn:hover {
     color: #d3ab2b;
 }
-
-.form-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: left;
-    gap: 4px;
-}
-
-.input-container {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.input-title {
-    font-size: 24px;
-}
