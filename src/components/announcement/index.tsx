@@ -17,7 +17,7 @@ const TeamAnnouncement = component$((props: PropTypes) => {
 
     return (
         <form preventdefault:submit onSubmit$={submit} class='form-container'>
-            <textarea bind:value={announcement} />
+            <textarea bind:value={announcement} placeholder="Write an announcement that will be sent to all team member's inbox" />
             {announcement.value !== '' &&
                 <Button>Send</Button>
             }
