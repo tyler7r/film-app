@@ -8,7 +8,7 @@ import EditRoster from "../edit-roster";
 const CoachTab = component$(() => {
     const teamAnnouncementOpen = useSignal(false);
     const setScoutingOpen = useSignal(false);
-    const editRosterOpen = useSignal(true);
+    const editRosterOpen = useSignal(false);
 
     const closeAnnouncement = $(() => {
         teamAnnouncementOpen.value = false;

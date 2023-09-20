@@ -12,7 +12,7 @@ interface PropTypes {
 const EditRoster = component$((props: PropTypes) => {
     const { close } = props;
     const players = mockData.users.filter(user => user.role === 'player');
-    const addPlayerOpen = useSignal(true);
+    const addPlayerOpen = useSignal(false);
     const newPlayerInfo = useStore({
         name: '',
         number: ''
