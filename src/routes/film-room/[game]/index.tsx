@@ -5,6 +5,7 @@ import Modal from "~/components/modal";
 import VideoSettings from "~/components/video-settings";
 import { Button } from "~/components/button";
 import { useLocation } from "@builder.io/qwik-city";
+import CreateNote from "~/components/create-note";
 
 const FilmRoom = component$(() => {
     const gameId = useLocation().params.game
@@ -12,10 +13,6 @@ const FilmRoom = component$(() => {
     const createNote = useSignal(false);
     const noteOpen = useSignal(false);
     const clipStarted = useSignal(false);
-    const formData = useStore({
-        note: '',
-        keywords: '',
-    });
     const comment = useSignal('');
 
     const settings = useStore({
@@ -33,13 +30,8 @@ const FilmRoom = component$(() => {
         }
     })
 
-    const close = $(() => {
+    const closeSettings = $(() => {
         settingsOpen.value = false;
-    })
-
-    const submitNote = $(() => {
-        createNote.value = false;
-        clipStarted.value = false;
     })
 
     const submitComment = $(() => {
@@ -48,6 +40,14 @@ const FilmRoom = component$(() => {
             comment.value = '';
         }
         noteOpen.value = false;
+    })
+
+    const endClip = $(() => {
+        clipStarted.value = false;
+    })
+
+    const closeNote = $(() => {
+        createNote.value = false;
     })
 
     const games = mockData.games;
@@ -74,40 +74,24 @@ const FilmRoom = component$(() => {
                     <div class={styles['play-directory']}>
                         <div class={styles['directory-title']}>Play Directory</div>
                         {plays.map(play => (
-                            <div class={styles['play']} onClick$={() => noteOpen.value = true}>{play.note}</div>
+                            <div key={play.id} class={styles['play']} onClick$={() => noteOpen.value = true}>{play.note}</div>
                         ))}
                     </div>
                 </>
             }
             {createNote.value &&
-                <Modal>
-                    <div q:slot='close-modal' onClick$={() => {createNote.value = false; clipStarted.value = false}}>X</div>
-                    <h2 q:slot='title'>Create Note</h2>
-                    <form q:slot='content' class='form-container' preventdefault:submit onSubmit$={submitNote}>
-                        <label class='input-container'>
-                            <div class='input-title'>Note</div>
-                            <textarea onInput$={(e) => formData.note = (e.target as HTMLInputElement).value} value={formData.note} />
-                        </label>
-                        <label class='input-container'>
-                            <div class='input-title'>Keywords</div>
-                            <input type="text" onInput$={(e) => formData.keywords = (e.target as HTMLInputElement).value} value={formData.keywords} />
-                        </label>
-                        {(formData.keywords !== '' || formData.note !== '') &&
-                            <Button>Save</Button>
-                        }
-                    </form>
-                </Modal>
+                <CreateNote endClip={endClip} close={closeNote} />
             }
             {settingsOpen.value &&
                 <Modal>
-                    <div q:slot='close-modal' onClick$={() => settingsOpen.value = false}>X</div>
+                    <div q:slot='closeSettings-modal' onClick$={() => settingsOpen.value = false}>X</div>
                     <h2 q:slot="title">Video Settings</h2>
-                    <VideoSettings q:slot='content' settings={settings} applySettings={applySettings} close={close} />
+                    <VideoSettings q:slot='content' settings={settings} applySettings={applySettings} close={closeSettings} />
                 </Modal>
             }
             {noteOpen.value && 
                 <Modal>
-                    <div q:slot='close-modal' onClick$={() => noteOpen.value = false}>X</div>
+                    <div q:slot='closeSettings-modal' onClick$={() => noteOpen.value = false}>X</div>
                     <h2 q:slot='title'>Play</h2>
                     <div q:slot='content' class={styles['play-container']}>
                         <div class={styles['play-author']}>{play?.author}</div>
