@@ -23,6 +23,10 @@ const EditRoster = component$((props: PropTypes) => {
         addPlayerOpen.value = false;
     })
 
+    const deletePlayer = $((id: string) => {
+        //post logic here
+    })
+
     return (
         <div class={styles['container']}>
             {addPlayerOpen.value === false &&
@@ -47,7 +51,7 @@ const EditRoster = component$((props: PropTypes) => {
             {players.map(player => (
                 <div key={player.id} class={styles["player-container"]}>
                     <Player number={player.number} id={player.id} name={player.name} />
-                    <BsTrash class={styles['player-btn']} />
+                    <BsTrash class={styles['player-btn']} onClick$={() => deletePlayer(player.id)}/>
                     {/* <BsPencilSquare class={styles['player-btn']} /> */}
                 </div>
             ))}
