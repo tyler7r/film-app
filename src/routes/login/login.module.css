@@ -7,13 +7,6 @@
     gap: 24px;
 }
 
-.page-title {
-    font-size: 64px;
-    color: #f4f3ea;
-    border-bottom: 4px solid #d3ab2b;
-    padding: 0px 16px 4px 16px;
-}
-
 .login-form {
     width: 80%;
     display: flex;

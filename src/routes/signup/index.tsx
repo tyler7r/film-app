@@ -2,6 +2,7 @@ import { $, component$, useStore } from "@builder.io/qwik";
 import styles from './signup.module.css'
 import { DocumentHead } from "@builder.io/qwik-city";
 import { Button } from "~/components/button";
+import PageTitle from "~/components/page-title";
 
 const Signup = component$(() => {
     const info = useStore({
@@ -21,7 +22,7 @@ const Signup = component$(() => {
 
     return (
         <div class={styles['signup-container']}>
-            <h2 class={styles['page-title']}>Sign Up!</h2>
+            <PageTitle>Sign Up!</PageTitle>
             <form class={styles['signup-form']} preventdefault:submit onSubmit$={submit}>
                 <label class={styles['signup-input']}>
                     <div class={styles['signup-title']}>Full Name</div>
