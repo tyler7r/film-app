@@ -11,7 +11,7 @@ const FilmHome = component$(() => {
             <h2 class={styles['content-title']}>Game Select</h2>
             <div class={styles['games-container']}>
                 {games.map(game => (
-                    <Game key={game.id} id={game.id} team1={game.team1} team2={game.team2} season={game.season} tournament={game.tournament} classProp={styles['game']} />
+                    <a href={`/film-room/${game.id}`}><Game key={game.id} id={game.id} team1={game.team1} team2={game.team2} season={game.season} tournament={game.tournament} classProp={styles['game']} /></a>
                 ))}
             </div>
         </div>
