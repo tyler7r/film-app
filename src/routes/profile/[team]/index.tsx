@@ -1,4 +1,4 @@
-import { Resource, component$, useSignal, useStore, $ } from "@builder.io/qwik";
+import { component$, useSignal, $ } from "@builder.io/qwik";
 import mockData from '../../../../data/db.json';
 import { DocumentHead, useLocation } from "@builder.io/qwik-city";
 import { Player } from "~/components/player";
@@ -7,8 +7,6 @@ import { Game } from "~/components/game";
 import { Button } from "~/components/button";
 import { NoteForm } from "~/components/noteform";
 import Modal from "~/components/modal";
-import TeamAnnouncement from "~/components/announcement";
-import ScoutingModal from "~/components/scouting";
 import CoachTab from "~/components/coach-tab";
 import ContentLink from "~/components/content-link";
 
@@ -55,7 +53,7 @@ export default component$(() => {
                     <div class={[styles['notes-container']]}>
                         {newNoteVisible.value
                             ? <Modal>
-                                <div q:slot='close-modal' onClick$={() => newNoteVisible.value = false}>X</div>
+                                <div q:slot='close-modal' onClick$={() => closeNote()}>X</div>
                                 <h2 q:slot='title'>New Note</h2>
                                 <NoteForm q:slot='content' close={closeNote} />
                             </Modal>
