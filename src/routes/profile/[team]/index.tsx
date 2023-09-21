@@ -40,13 +40,13 @@ export default component$(() => {
                     <div class={styles['container']} id={styles['roster-container']}>
                         <div class={styles['container-title']} id={styles['roster-title']}>Roster</div>
                         {players && players.map(player => (
-                            <Player name={player.name} id={player.id} number={player.number} />
+                            <Player key={player.id} name={player.name} id={player.id} number={player.number} />
                         ))}
                     </div>
                     <div class={styles['container']}>
                         <div class={styles['container-title']}>Games</div>
                         {games && games.map(game => (
-                            <a href={`/film-room/${game.id}`}><Game id={game.id} team1={game.team1} team2={game.team2} tournament={game.tournament} season={game.season} /></a>
+                            <a key={game.id} href={`/film-room/${game.id}`}><Game id={game.id} team1={game.team1} team2={game.team2} tournament={game.tournament} season={game.season} /></a>
                         ))}
                     </div>
                 </div>

@@ -10,7 +10,7 @@ const FilmHome = component$(() => {
             <h2 class={styles['content-title']}>Game Select</h2>
             <div class={styles['games-container']}>
                 {games.map(game => (
-                    <a class={styles['game']} href={`/film-room/${game.id}`}>
+                    <a key={game.id} class={styles['game']} href={`/film-room/${game.id}`}>
                         <div class={styles['game-tournament']}>
                             {game.season} {game.tournament}
                         </div>

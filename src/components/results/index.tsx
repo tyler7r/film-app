@@ -61,7 +61,7 @@ const SearchResults = component$((props: ResultsProps) => {
                 <div class={styles['results']}>
                     <div class={styles['results-title']}>Keywords</div>
                     {plays && plays.map(play => (
-                        <div class={styles['result']}>{play.note}</div>
+                        <div key={play.id} class={styles['result']}>{play.note}</div>
                     ))}
                 </div>
             }
@@ -80,7 +80,7 @@ const SearchResults = component$((props: ResultsProps) => {
                 <div class={styles['results']} id={styles['player-results']}>
                     <div class={styles['results-title']} id={styles['players-title']}>Players</div>
                     {players && players.map(player => (
-                        <div class={styles['result']}>{player.name} #{player.number}</div>
+                        <div key={player.id} class={styles['result']}>{player.name} #{player.number}</div>
                     ))}
                 </div>
             }
@@ -99,7 +99,7 @@ const SearchResults = component$((props: ResultsProps) => {
                 <div class={styles['results']}>
                     <div class={styles['results-title']}>Teams</div>
                     {teams && teams.map(team => (
-                        <div class={styles['result']}>{team.city} {team.name}</div>
+                        <div key={team.id} class={styles['result']}>{team.city} {team.name}</div>
                     ))}
                 </div>
             }
@@ -118,7 +118,7 @@ const SearchResults = component$((props: ResultsProps) => {
                 <div class={styles['results']}>
                     <div class={styles['results-title']}>Games</div>
                     {games && games.map(game => (
-                        <div class={styles['result']}>{game.team1} vs. {game.team2}</div>
+                        <div key={game.id} class={styles['result']}>{game.team1} vs. {game.team2}</div>
                     ))}
                 </div>
             }
