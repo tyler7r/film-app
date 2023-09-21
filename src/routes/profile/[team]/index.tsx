@@ -10,6 +10,7 @@ import Modal from "~/components/modal";
 import TeamAnnouncement from "~/components/announcement";
 import ScoutingModal from "~/components/scouting";
 import CoachTab from "~/components/coach-tab";
+import ContentLink from "~/components/content-link";
 
 export default component$(() => {
     const teamId = useLocation().params.teams;
@@ -46,7 +47,7 @@ export default component$(() => {
                     <div class={styles['container']}>
                         <div class={styles['container-title']}>Games</div>
                         {games && games.map(game => (
-                            <a key={game.id} href={`/film-room/${game.id}`}><Game id={game.id} team1={game.team1} team2={game.team2} tournament={game.tournament} season={game.season} /></a>
+                            <ContentLink key={game.id} href={`/film-room/${game.id}`}><Game id={game.id} team1={game.team1} team2={game.team2} tournament={game.tournament} season={game.season} /></ContentLink>
                         ))}
                     </div>
                 </div>
