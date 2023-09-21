@@ -3,6 +3,7 @@ import type { DocumentHead } from "@builder.io/qwik-city";
 import styles from './index.module.css';
 import mockData from '../../data/db.json'
 import ContentLink from "~/components/content-link";
+import ContentCard from "~/components/content-card";
 
 export default component$(() => {
   const exampleTeam = mockData.teams[1];
@@ -16,34 +17,38 @@ export default component$(() => {
         <div class={styles['continue-watching-game']}>(game info, timestamp, etc...)</div>
       </div>
       <div class={styles['content-cards']}>
-        <div class={styles['content-card']}>
-          <div class={styles['card-title']}>Assigned Clips</div>
-          <div class={styles['card-content']}>
-            <ContentLink href='/film-room/g1'>I am an example of an assigned clip!</ContentLink>
+        <ContentCard>
+          <div q:slot="title">Assigned Clips</div>
+          <div q:slot='content'>
+            <ContentLink href='/film-room/g1' class={styles['assigned-clip']}>I am an example of an assigned clip!</ContentLink>
           </div>
-        </div>
-        <div class={styles['content-card']}>
-          <div class={styles['card-title']}>Scouting Tab</div>
-            <div class={styles['card-content']}>
-              <div class={styles['scouting-container']}>
-                <div class={styles['scouting-title']}>Next Opponent</div>
-                <ContentLink href='/profile/t1'>
-                  <img src={exampleTeam.logo} class={styles['next-opponent-logo']} alt='opponent-logo' />
-                  <div>{exampleTeam.city} {exampleTeam.name}</div>
-                </ContentLink>
-              </div>
-              <div class={styles['scouting-container']}>
-                <div class={styles['scouting-title']}>Our Last Game</div>
-                <ContentLink href='/film-room/g1' class={styles['last-game-info']}>
-                  <div>vs. {exampleGame.team2}</div>
-                  <div>@{exampleGame.tournament}</div>
-                </ContentLink>
-              </div>
+        </ContentCard>
+        <ContentCard>
+          <div q:slot='title'>Scouting Tab</div>
+          <div q:slot="content">
+            <div class={styles['scouting-container']}>
+              <div class={styles['scouting-title']}>Next Opponent</div>
+              <ContentLink href='/profile/t1' class={styles['next-opponent-container']}>
+                <img src={exampleTeam.logo} class={styles['next-opponent-logo']} alt='opponent-logo' />
+                <div>{exampleTeam.city} {exampleTeam.name}</div>
+              </ContentLink>
             </div>
-        </div>
-        <div class={styles['content-card']} id={styles['highlight-card']}>
+            <div class={styles['scouting-container']}>
+              <div class={styles['scouting-title']}>Our Last Game</div>
+              <ContentLink href='/film-room/g1' class={styles['last-game-info']}>
+                <div>vs. {exampleGame.team2}</div>
+                <div>@{exampleGame.tournament}</div>
+              </ContentLink>
+            </div>
+          </div>
+        </ContentCard>
+        <ContentCard class={styles['highlight-card']}>
+          <div q:slot="title"><a href='/highlight-factory'>Highlight Factory</a></div>
+          <div q:slot="content"></div>
+        </ContentCard>
+        {/* <div class={styles['content-card']} id={styles['highlight-card']}>
           <a href='/highlight-factory'><div class={styles['highlight-title']}>The Highlight Factory</div></a>
-        </div>
+        </div> */}
       </div>
     </main>
   )
