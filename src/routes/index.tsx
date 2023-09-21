@@ -2,6 +2,7 @@ import { component$, useStylesScoped$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import styles from './index.module.css';
 import mockData from '../../data/db.json'
+import ContentLink from "~/components/content-link";
 
 export default component$(() => {
   const exampleTeam = mockData.teams[1];
@@ -18,7 +19,7 @@ export default component$(() => {
         <div class={styles['content-card']}>
           <div class={styles['card-title']}>Assigned Clips</div>
           <div class={styles['card-content']}>
-            <a href='/film-room/g1'><div class={styles['assigned-clip']}>I am an example of an assigned clip!</div></a>
+            <ContentLink href='/film-room/g1'>I am an example of an assigned clip!</ContentLink>
           </div>
         </div>
         <div class={styles['content-card']}>
@@ -26,17 +27,17 @@ export default component$(() => {
             <div class={styles['card-content']}>
               <div class={styles['scouting-container']}>
                 <div class={styles['scouting-title']}>Next Opponent</div>
-                <a href='/profile/t1'><div class={styles["scouting-info"]}>
+                <ContentLink href='/profile/t1'>
                   <img src={exampleTeam.logo} class={styles['next-opponent-logo']} alt='opponent-logo' />
-                  <div class={styles['next-opponent-name']}>{exampleTeam.city} {exampleTeam.name}</div>
-                </div></a>
+                  <div>{exampleTeam.city} {exampleTeam.name}</div>
+                </ContentLink>
               </div>
               <div class={styles['scouting-container']}>
                 <div class={styles['scouting-title']}>Our Last Game</div>
-                <a href='/film-room/g1'><div class={styles["scouting-info"]} id={styles['last-game-info']}>
-                  <div class={styles['last-game-opponent']}>vs. {exampleGame.team2}</div>
-                  <div class={styles['last-game-tournament']}>@{exampleGame.tournament}</div>
-                </div></a>
+                <ContentLink href='/film-room/g1' class={styles['last-game-info']}>
+                  <div>vs. {exampleGame.team2}</div>
+                  <div>@{exampleGame.tournament}</div>
+                </ContentLink>
               </div>
             </div>
         </div>

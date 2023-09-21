@@ -94,13 +94,6 @@ main {
     gap: 16px;
 }
 
-.assigned-clip {
-    background-color: #cbd0d8;
-    padding: 4px;
-    border-radius: 4px;
-    color: #333d50;
-}
-
 .scouting-container {
     display: flex;
     flex-direction: column;
@@ -113,17 +106,6 @@ main {
     font-size: 24px;
 }
 
-.scouting-info {
-    color: #333d50;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    background-color: #cbd0d8;
-    padding: 8px;
-    border-radius: 4px;
-}
-
 .next-opponent-logo {
     height: 70px;
     width: 70px;
@@ -131,7 +113,7 @@ main {
     border: 2px solid #d3ab2b;
 }
 
-#last-game-info {
+.last-game-info {
     flex-direction: column;
-    font-size: 24px;
+    font-size: 28px;
 }
