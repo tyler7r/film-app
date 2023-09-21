@@ -35,21 +35,6 @@
     color: rgb(92, 92, 92);
     background-color: #f4f3ea;
     padding: 12px;
-    font-size: 28px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    gap: 8px;
-    border-radius: 4px;
-}
-
-.game-tournament {
-    border-bottom: 2px solid #d3ab2b;
-    padding-bottom: 4px;
-}
-
-.game-teams {
-    color: #333d50;
+    font-size: 32px;
+    font-weight: bold;
 }

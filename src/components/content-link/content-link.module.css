@@ -8,3 +8,7 @@
     align-items: center;
     gap: 4px;
 }
+
+.a:hover {
+    border: 2px dashed #d3ab2b;
+}

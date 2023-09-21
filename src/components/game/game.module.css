@@ -1,6 +1,23 @@
 .game-container {
-    background-color: #cbd0d8;
+    color: rgb(92, 92, 92);
     padding: 8px;
-    color: #333d50;
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
     border-radius: 4px;
+    cursor: pointer;
+}
+
+.game-details {
+    border-bottom: 2px solid #d3ab2b;
+    padding-bottom: 4px;
+    font-size: 20px;
+}
+
+.game-matchup {
+    color: #333d50;
 }
