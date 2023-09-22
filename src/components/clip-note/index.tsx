@@ -25,6 +25,7 @@ const ClipNote = component$((props: PropTypes) => {
     const play = plays.find(play => play.id === 'p1')
 
     return (
+        // We will use this for the mobile version
         // <Modal>
         //     <div q:slot='close-modal' onClick$={() => close()}>X</div>
         //     <h2 q:slot='title'>Play</h2>
@@ -45,7 +46,7 @@ const ClipNote = component$((props: PropTypes) => {
         // </Modal>
         <div class={styles["container"]}>
             <div class={styles['close']} onClick$={() => close()}>X</div>
-            <h2 class={styles['title']}>Play</h2>
+            <h2 class={styles['title']}>Clip</h2>
             <div class={styles['play-container']}>
                 <div class={styles['play-author']}>Author: {play?.author}</div>
                 <div class={styles['play-note']}>{play?.note}</div>

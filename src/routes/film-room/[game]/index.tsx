@@ -13,7 +13,7 @@ const FilmRoom = component$(() => {
     const gameId = useLocation().params.game
     const settingsOpen = useSignal(false);
     const createNoteOpen = useSignal(false);
-    const clipNoteOpen = useSignal(true);
+    const clipNoteOpen = useSignal(false);
     const clipStarted = useSignal(false);
 
     const settings = useStore({

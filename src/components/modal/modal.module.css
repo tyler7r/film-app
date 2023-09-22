@@ -34,7 +34,8 @@
 }
 
 .modal-content {
-    width: 80%;
+    padding: 8px;
+    width: 95%;
     overflow-y: scroll;
 }
 

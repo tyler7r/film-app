@@ -28,6 +28,7 @@ const CreateNote = component$((props: PropTypes) => {
     })
 
     return (
+        // We will use this for the mobile version
         // <Modal>
         //     <div q:slot='close-modal' onClick$={() => closeNote()}>X</div>
         //     <h2 q:slot='title'>Create Note</h2>
