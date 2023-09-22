@@ -85,9 +85,6 @@ const FilmRoom = component$(() => {
                     </div>
                 </>
             }
-            {/* {createNoteOpen.value &&
-                <CreateNote endClip={endClip} close={closeNote} />
-            } */}
             {settingsOpen.value &&
                 <Modal>
                     <div q:slot='close-modal' onClick$={() => settingsOpen.value = false}>X</div>
@@ -95,9 +92,6 @@ const FilmRoom = component$(() => {
                     <VideoSettings q:slot='content' settings={settings} applySettings={applySettings} close={closeSettings} />
                 </Modal>
             }
-            {/* {clipNoteOpen.value && 
-                <ClipNote close={closeClipNote} />
-            } */}
         </div>
     )
 })
