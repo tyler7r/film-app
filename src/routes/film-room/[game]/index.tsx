@@ -7,6 +7,7 @@ import { Button } from "~/components/button";
 import { useLocation } from "@builder.io/qwik-city";
 import CreateNote from "~/components/create-note";
 import ClipNote from "~/components/clip-note";
+import Clip from "~/components/clip";
 
 const FilmRoom = component$(() => {
     const gameId = useLocation().params.game
@@ -42,6 +43,10 @@ const FilmRoom = component$(() => {
         createNoteOpen.value = false;
     })
 
+    const openClipNote = $(() => {
+        clipNoteOpen.value = true
+    })
+
     const closeClipNote = $(() => {
         clipNoteOpen.value = false;
     })
@@ -69,7 +74,7 @@ const FilmRoom = component$(() => {
                     <div class={styles['play-directory']}>
                         <div class={styles['directory-title']}>Play Directory</div>
                         {plays.map(play => (
-                            <div key={play.id} class={styles['play']} onClick$={() => clipNoteOpen.value = true}>{play.note}</div>
+                            <Clip key={play.id} note={play.note} open={openClipNote} />
                         ))}
                     </div>
                 </>
