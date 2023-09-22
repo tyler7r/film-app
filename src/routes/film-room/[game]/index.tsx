@@ -13,7 +13,7 @@ const FilmRoom = component$(() => {
     const gameId = useLocation().params.game
     const settingsOpen = useSignal(false);
     const createNoteOpen = useSignal(false);
-    const clipNoteOpen = useSignal(false);
+    const clipNoteOpen = useSignal(true);
     const clipStarted = useSignal(false);
 
     const settings = useStore({
@@ -71,6 +71,12 @@ const FilmRoom = component$(() => {
                             : <div id={styles['inactive']} class={styles['clip-btn']} onClick$={() => clipStarted.value = true}>START</div>
                         }
                     </div>
+                    {clipNoteOpen.value && 
+                        <ClipNote close={closeClipNote} />
+                    }
+                    {createNoteOpen.value &&
+                        <CreateNote endClip={endClip} close={closeNote} />
+                    }
                     <div class={styles['play-directory']}>
                         <div class={styles['directory-title']}>Play Directory</div>
                         {plays.map(play => (
@@ -79,9 +85,9 @@ const FilmRoom = component$(() => {
                     </div>
                 </>
             }
-            {createNoteOpen.value &&
+            {/* {createNoteOpen.value &&
                 <CreateNote endClip={endClip} close={closeNote} />
-            }
+            } */}
             {settingsOpen.value &&
                 <Modal>
                     <div q:slot='close-modal' onClick$={() => settingsOpen.value = false}>X</div>
@@ -89,9 +95,9 @@ const FilmRoom = component$(() => {
                     <VideoSettings q:slot='content' settings={settings} applySettings={applySettings} close={closeSettings} />
                 </Modal>
             }
-            {clipNoteOpen.value && 
+            {/* {clipNoteOpen.value && 
                 <ClipNote close={closeClipNote} />
-            }
+            } */}
         </div>
     )
 })

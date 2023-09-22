@@ -82,27 +82,6 @@
     background-color: red;
 }
 
-.play-container {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.play-author {
-    text-align: center;
-    font-size: 32px;
-}
-
-.play-note {
-    text-align: center;
-    font-size: 22px;
-    background-color: #f4f3ea;
-    border: 4px solid #cbd0d8;
-    border-radius: 4px;
-    padding: 8px;
-    color: #333d50;
-}
-
 #comment-container {
     width: 100%;
 }

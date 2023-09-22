@@ -60,7 +60,6 @@ input:focus {
 }
 
 textarea {
-  width: 90%;
   color: #333d50;
   outline: none;
   resize: none;
@@ -69,6 +68,7 @@ textarea {
   font-size: 18px;
   border-radius: 4px;
   padding: 6px;
+  border: none;
 }
 
 textarea:focus {

@@ -25,24 +25,41 @@ const ClipNote = component$((props: PropTypes) => {
     const play = plays.find(play => play.id === 'p1')
 
     return (
-        <Modal>
-            <div q:slot='close-modal' onClick$={() => close()}>X</div>
-            <h2 q:slot='title'>Play</h2>
-            <div q:slot='content' class={styles['play-container']}>
-                <div class={styles['play-author']}>{play?.author}</div>
+        // <Modal>
+        //     <div q:slot='close-modal' onClick$={() => close()}>X</div>
+        //     <h2 q:slot='title'>Play</h2>
+        //     <div q:slot='content' class={styles['play-container']}>
+        //         <div class={styles['play-author']}>{play?.author}</div>
+        //         <div class={styles['play-note']}>{play?.note}</div>
+        //         <form class='form-container' preventdefault:submit onSubmit$={submitComment}>
+        //             <label class='input-container' id={styles['comment-container']}>
+        //                 <div class='input-title'>Comment</div>
+        //                 <textarea bind:value={comment} />
+        //             </label>
+        //             {comment.value !== ''
+        //                 ? <Button>Submit</Button>
+        //                 : <Button type='button' onClick$={() => close()}>Close</Button>
+        //             }
+        //         </form>
+        //     </div>
+        // </Modal>
+        <div class={styles["container"]}>
+            <div class={styles['close']} onClick$={() => close()}>X</div>
+            <h2 class={styles['title']}>Play</h2>
+            <div class={styles['play-container']}>
+                <div class={styles['play-author']}>Author: {play?.author}</div>
                 <div class={styles['play-note']}>{play?.note}</div>
                 <form class='form-container' preventdefault:submit onSubmit$={submitComment}>
                     <label class='input-container' id={styles['comment-container']}>
                         <div class='input-title'>Comment</div>
                         <textarea bind:value={comment} />
                     </label>
-                    {comment.value !== ''
-                        ? <Button>Submit</Button>
-                        : <Button type='button' onClick$={() => close()}>Close</Button>
+                    {comment.value !== '' &&
+                        <Button id={styles['button']}>Submit</Button>
                     }
                 </form>
             </div>
-        </Modal>
+        </div>
     )
 })
 
