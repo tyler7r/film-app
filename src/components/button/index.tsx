@@ -10,5 +10,5 @@ export const Button = component$(
         <Slot />
       </button>
     );
-  }
+  },
 );
