@@ -37,7 +37,7 @@ export default component$(() => {
 
   return (
     <>
-      <Navbar />
+      <Navbar isMobile={mobileView.value} />
       <Slot />
     </>
   )
