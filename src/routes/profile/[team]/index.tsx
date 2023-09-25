@@ -1,4 +1,4 @@
-import { Resource, component$, useSignal, useStore, $ } from "@builder.io/qwik";
+import { component$, useSignal, $ } from "@builder.io/qwik";
 import mockData from '../../../../data/db.json';
 import { DocumentHead, useLocation } from "@builder.io/qwik-city";
 import { Player } from "~/components/player";
@@ -7,9 +7,9 @@ import { Game } from "~/components/game";
 import { Button } from "~/components/button";
 import { NoteForm } from "~/components/noteform";
 import Modal from "~/components/modal";
-import TeamAnnouncement from "~/components/announcement";
-import ScoutingModal from "~/components/scouting";
 import CoachTab from "~/components/coach-tab";
+import ContentLink from "~/components/content-link";
+import ContentCard from "~/components/content-card";
 
 export default component$(() => {
     const teamId = useLocation().params.teams;
@@ -37,24 +37,28 @@ export default component$(() => {
                     <CoachTab />
                 }
                 <div class={styles["team-content"]}>
-                    <div class={styles['container']} id={styles['roster-container']}>
-                        <div class={styles['container-title']} id={styles['roster-title']}>Roster</div>
-                        {players && players.map(player => (
-                            <Player name={player.name} id={player.id} number={player.number} />
-                        ))}
-                    </div>
-                    <div class={styles['container']}>
-                        <div class={styles['container-title']}>Games</div>
-                        {games && games.map(game => (
-                            <a href={`/film-room/${game.id}`}><Game id={game.id} team1={game.team1} team2={game.team2} tournament={game.tournament} season={game.season} /></a>
-                        ))}
-                    </div>
+                    <ContentCard>
+                        <div q:slot="title">Roster</div>
+                        <div q:slot='content' class={styles['roster-container']}>
+                            {players && players.map(player => (
+                                <Player key={player.id} name={player.name} id={player.id} number={player.number} />
+                            ))}
+                        </div>
+                    </ContentCard>
+                    <ContentCard>
+                        <div q:slot="title">Games</div>
+                        <div q:slot="content" class={styles['game-container']}>
+                            {games && games.map(game => (
+                                <ContentLink key={game.id} href={`/film-room/${game.id}`}><Game id={game.id} team1={game.team1} team2={game.team2} tournament={game.tournament} season={game.season} /></ContentLink>
+                            ))}
+                        </div>
+                    </ContentCard>
                 </div>
                 {isUserAffiliated.value &&
                     <div class={[styles['notes-container']]}>
                         {newNoteVisible.value
                             ? <Modal>
-                                <div q:slot='close-modal' onClick$={() => newNoteVisible.value = false}>X</div>
+                                <div q:slot='close-modal' onClick$={() => closeNote()}>X</div>
                                 <h2 q:slot='title'>New Note</h2>
                                 <NoteForm q:slot='content' close={closeNote} />
                             </Modal>

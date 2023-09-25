@@ -1,24 +1,8 @@
-/* dark blue #333d50 */
-/* yellow #d3ab2b */
-/* light gray #cbd0d8 */
-/* dark gray rgb(92, 92, 92) */
-/* cream #f4f3ea */
-
 .container {
     margin: 8px;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.content-title {
-    margin: 0;
-    font-size: 48px;
-    text-align: center;
-    color: #f4f3ea;
-    border-bottom: 4px solid #d3ab2b;
-    padding-bottom: 2px;
-    width: 50%;
 }
 
 .games-container {
@@ -35,21 +19,6 @@
     color: rgb(92, 92, 92);
     background-color: #f4f3ea;
     padding: 12px;
-    font-size: 28px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    gap: 8px;
-    border-radius: 4px;
-}
-
-.game-tournament {
-    border-bottom: 2px solid #d3ab2b;
-    padding-bottom: 4px;
-}
-
-.game-teams {
-    color: #333d50;
+    font-size: 32px;
+    font-weight: bold;
 }
