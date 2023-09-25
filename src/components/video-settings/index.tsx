@@ -1,6 +1,5 @@
 import type { PropFunction } from "@builder.io/qwik";
 import { component$ } from "@builder.io/qwik";
-import styles from "./settings.module.css";
 import { Button } from "../button";
 
 interface SettingTypes {
@@ -20,7 +19,7 @@ const VideoSettings = component$((props: VideoSettingsProps) => {
   const { settings, applySettings, close } = props;
 
   return (
-    <form class="form-container" preventdefault:submit onSubmit$={close}>
+    <form class="form-container" preventdefault: submit onSubmit$={close}>
       <label class="checkbox-container">
         <div class="input-title">Show Clips?</div>
         <input

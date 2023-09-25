@@ -8,7 +8,7 @@ interface PlayerProps {
 }
 
 export const Player = component$((props: PlayerProps) => {
-  const { name, id, number } = props;
+  const { name, number } = props;
 
   return (
     <div class={styles["player-info"]}>

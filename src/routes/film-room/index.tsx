@@ -12,9 +12,8 @@ const FilmHome = component$(() => {
       <PageTitle>Game Select</PageTitle>
       <div class={styles["games-container"]}>
         {games.map((game) => (
-          <a href={`/film-room/${game.id}`}>
+          <a href={`/film-room/${game.id}`} key={game.id}>
             <Game
-              key={game.id}
               id={game.id}
               team1={game.team1}
               team2={game.team2}

@@ -2,15 +2,10 @@ import { $, component$, useSignal, useStore } from "@builder.io/qwik";
 import styles from "./edit-roster.module.css";
 import mockData from "../../../data/db.json";
 import { Player } from "../player";
-import { BsTrash, BsPencilSquare } from "@qwikest/icons/bootstrap";
+import { BsTrash } from "@qwikest/icons/bootstrap";
 import { Button } from "../button";
 
-interface PropTypes {
-  close: () => void;
-}
-
-const EditRoster = component$((props: PropTypes) => {
-  const { close } = props;
+const EditRoster = component$(() => {
   const players = mockData.users.filter((user) => user.role === "player");
   const addPlayerOpen = useSignal(false);
   const newPlayerInfo = useStore({
@@ -23,7 +18,7 @@ const EditRoster = component$((props: PropTypes) => {
     addPlayerOpen.value = false;
   });
 
-  const deletePlayer = $((id: string) => {
+  const deletePlayer = $(() => {
     //post logic here
   });
 
@@ -36,7 +31,7 @@ const EditRoster = component$((props: PropTypes) => {
       )}
       {addPlayerOpen.value && (
         <form
-          preventdefault:submit
+          preventdefault: submit
           onSubmit$={addToRoster}
           class="form-container"
         >
@@ -77,7 +72,7 @@ const EditRoster = component$((props: PropTypes) => {
           <Player number={player.number} id={player.id} name={player.name} />
           <BsTrash
             class={styles["player-btn"]}
-            onClick$={() => deletePlayer(player.id)}
+          // onClick$={() => deletePlayer(player.id)}
           />
           {/* <BsPencilSquare class={styles['player-btn']} /> */}
         </div>
