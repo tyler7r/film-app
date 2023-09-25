@@ -1,4 +1,4 @@
-import type { QRL} from "@builder.io/qwik";
+import type { QRL } from "@builder.io/qwik";
 import { $, component$, useSignal } from "@builder.io/qwik";
 import styles from "./clip-note.module.css";
 import { Button } from "../button";
