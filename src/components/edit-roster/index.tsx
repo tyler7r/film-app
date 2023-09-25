@@ -18,9 +18,9 @@ const EditRoster = component$(() => {
     addPlayerOpen.value = false;
   });
 
-  const deletePlayer = $(() => {
-    //post logic here
-  });
+  // const deletePlayer = $(() => {
+  //   //post logic here
+  // });
 
   return (
     <div class={styles["container"]}>
