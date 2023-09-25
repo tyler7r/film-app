@@ -1,9 +1,9 @@
+import type { QRL} from "@builder.io/qwik";
 import { $, component$, useSignal } from "@builder.io/qwik";
-import styles from "./announcement.module.css";
 import { Button } from "../button";
 
 interface PropTypes {
-  close: () => void;
+  close: QRL<() => void>;
 }
 
 const TeamAnnouncement = component$((props: PropTypes) => {
@@ -16,9 +16,9 @@ const TeamAnnouncement = component$((props: PropTypes) => {
   });
 
   return (
-    <form preventdefault:submit onSubmit$={submit} class="form-container">
+    <form preventdefault: submit onSubmit$={submit} class="form-container">
       <textarea
-        bind:value={announcement}
+        bind: value={announcement}
         placeholder="Write an announcement that will be sent to all team member's inbox"
       />
       {announcement.value !== "" && <Button>Send</Button>}

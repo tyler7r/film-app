@@ -11,7 +11,7 @@ interface GameProps {
 }
 
 export const Game = component$((props: GameProps) => {
-  const { id, team1, team2, tournament, season, classProp } = props;
+  const { team1, team2, tournament, season, classProp } = props;
 
   return (
     <div class={`${styles["game-container"]} ${classProp}`}>

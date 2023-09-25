@@ -1,4 +1,4 @@
-import { component$, useStylesScoped$ } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import styles from "./index.module.css";
 import mockData from "../../data/db.json";
@@ -20,16 +20,16 @@ export default component$(() => {
       </div>
       <div class={styles["content-cards"]}>
         <ContentCard>
-          <div q:slot="title">Assigned Clips</div>
-          <div q:slot="content">
+          <div q: slot="title">Assigned Clips</div>
+          <div q: slot="content">
             <ContentLink href="/film-room/g1" class={styles["assigned-clip"]}>
               I am an example of an assigned clip!
             </ContentLink>
           </div>
         </ContentCard>
         <ContentCard>
-          <div q:slot="title">Scouting Tab</div>
-          <div q:slot="content">
+          <div q: slot="title">Scouting Tab</div>
+          <div q: slot="content">
             <div class={styles["scouting-container"]}>
               <div class={styles["scouting-title"]}>Next Opponent</div>
               <ContentLink
@@ -40,6 +40,8 @@ export default component$(() => {
                   src={exampleTeam.logo}
                   class={styles["next-opponent-logo"]}
                   alt="opponent-logo"
+                  height={170}
+                  width={170}
                 />
                 <div>
                   {exampleTeam.city} {exampleTeam.name}
@@ -59,10 +61,10 @@ export default component$(() => {
           </div>
         </ContentCard>
         <ContentCard class={styles["highlight-card"]}>
-          <div q:slot="title">
+          <div q: slot="title">
             <a href="/highlight-factory">Highlight Factory</a>
           </div>
-          <div q:slot="content"></div>
+          <div q: slot="content"></div>
         </ContentCard>
         {/* <div class={styles['content-card']} id={styles['highlight-card']}>
           <a href='/highlight-factory'><div class={styles['highlight-title']}>The Highlight Factory</div></a>

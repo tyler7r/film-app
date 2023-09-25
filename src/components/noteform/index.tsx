@@ -1,9 +1,9 @@
+import type { QRL } from "@builder.io/qwik";
 import { component$, useStore, $ } from "@builder.io/qwik";
 import { Button } from "../button";
-import styles from "./noteform.module.css";
 
 interface NoteProps {
-  close: () => void;
+  close: QRL<() => void>;
 }
 
 export const NoteForm = component$((props: NoteProps) => {
@@ -23,7 +23,7 @@ export const NoteForm = component$((props: NoteProps) => {
 
   return (
     <form
-      preventdefault:submit
+      preventdefault: submit
       class="form-container"
       onSubmit$={() => submit()}
     >

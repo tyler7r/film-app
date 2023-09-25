@@ -1,9 +1,7 @@
 import {
   $,
-  QwikMouseEvent,
   component$,
   useSignal,
-  useStylesScoped$,
 } from "@builder.io/qwik";
 import {
   BsSearch,

@@ -1,9 +1,8 @@
-import type { QwikIntrinsicElements } from "@builder.io/qwik";
-import { component$, useStylesScoped$ } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 
 import styles from "./site-logo.module.css";
 
-export const SiteLogo = component$((props) => {
+export const SiteLogo = component$(() => {
   return (
     <span class={styles.span}>
       <svg

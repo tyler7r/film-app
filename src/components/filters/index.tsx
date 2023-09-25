@@ -1,6 +1,5 @@
 import type { PropFunction } from "@builder.io/qwik";
 import { $, component$ } from "@builder.io/qwik";
-import styles from "./filters.module.css";
 import { Button } from "../button";
 
 interface SearchFilterType {
@@ -37,7 +36,7 @@ const SearchFilters = component$((props: FilterProps) => {
   });
 
   return (
-    <form preventdefault:submit onSubmit$={submit} class="form-container">
+    <form preventdefault: submit onSubmit$={submit} class="form-container">
       <label class="checkbox-container">
         <div class="input-title">Keywords</div>
         <input

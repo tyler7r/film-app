@@ -14,20 +14,20 @@ const CoachTab = component$(() => {
 
   const closeAnnouncement = $(() => {
     teamAnnouncementOpen.value = false;
-  });
+  })
 
   const closeScouting = $(() => {
     setScoutingOpen.value = false;
-  });
+  })
 
   const closeRoster = $(() => {
     editRosterOpen.value = false;
-  });
+  })
 
   return (
     <ContentCard>
-      <div q:slot="title">The Coach Box</div>
-      <div q:slot="content">
+      <div q: slot="title">The Coach Box</div>
+      <div q: slot="content">
         <div class={styles["btn-container"]}>
           <ContentLink
             class={styles["coach-btn"]}
@@ -51,29 +51,29 @@ const CoachTab = component$(() => {
         </div>
         {teamAnnouncementOpen.value && (
           <Modal>
-            <div q:slot="close-modal" onClick$={() => closeAnnouncement()}>
+            <div q: slot="close-modal" onClick$={() => closeAnnouncement()}>
               X
             </div>
-            <h2 q:slot="title">Team Announcment</h2>
-            <TeamAnnouncement q:slot="content" close={closeAnnouncement} />
+            <h2 q: slot="title">Team Announcment</h2>
+            <TeamAnnouncement q: slot="content" close={closeAnnouncement} />
           </Modal>
         )}
         {setScoutingOpen.value && (
           <Modal>
-            <div q:slot="close-modal" onClick$={() => closeScouting()}>
+            <div q: slot="close-modal" onClick$={() => closeScouting()}>
               X
             </div>
-            <h2 q:slot="title">Scouting Tab</h2>
-            <ScoutingModal q:slot="content" close={closeScouting} />
+            <h2 q: slot="title">Scouting Tab</h2>
+            <ScoutingModal q: slot="content" close={closeScouting} />
           </Modal>
         )}
         {editRosterOpen.value && (
           <Modal>
-            <div q:slot="close-modal" onClick$={() => closeRoster()}>
+            <div q: slot="close-modal" onClick$={() => closeRoster()}>
               X
             </div>
-            <h2 q:slot="title">Edit Roster</h2>
-            <EditRoster q:slot="content" close={closeRoster} />
+            <h2 q: slot="title">Edit Roster</h2>
+            <EditRoster q: slot="content" />
           </Modal>
         )}
       </div>

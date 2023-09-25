@@ -1,9 +1,9 @@
+import type { QRL} from "@builder.io/qwik";
 import { $, component$, useSignal } from "@builder.io/qwik";
-import styles from "./scouting.module.css";
 import { Button } from "../button";
 
 interface PropTypes {
-  close: () => void;
+  close: QRL<() => void>;
 }
 
 const ScoutingModal = component$((props: PropTypes) => {
@@ -17,13 +17,13 @@ const ScoutingModal = component$((props: PropTypes) => {
   });
 
   return (
-    <form class="form-container" preventdefault:submit onSubmit$={submit}>
+    <form class="form-container" preventdefault: submit onSubmit$={submit}>
       <label class="input-container">
         <div class="input-title">Next Opponent</div>
         <input
           type="text"
           placeholder="No next opponent..."
-          bind:value={nextOpponent}
+          bind: value={nextOpponent}
         />
       </label>
       <label class="input-container">
@@ -31,7 +31,7 @@ const ScoutingModal = component$((props: PropTypes) => {
         <input
           type="text"
           placeholder="No suggested game to watch..."
-          bind:value={lastGame}
+          bind: value={lastGame}
         />
       </label>
       <Button>Submit</Button>

@@ -1,10 +1,11 @@
-import { QwikMouseEvent, component$ } from "@builder.io/qwik";
+import type { QRL} from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 import styles from "./menu.module.css";
 import { BsList } from "@qwikest/icons/bootstrap";
 
 interface PropTypes {
   teamId: string;
-  close: () => void;
+  close: QRL<() => void>;
 }
 
 const NavMenu = component$((props: PropTypes) => {

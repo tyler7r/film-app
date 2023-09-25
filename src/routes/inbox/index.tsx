@@ -1,7 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import styles from "./inbox.module.css";
 
-import mockData from "../../../data/db.json";
 import type { DocumentHead } from "@builder.io/qwik-city";
 
 const Inbox = component$(() => {
