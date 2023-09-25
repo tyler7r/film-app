@@ -11,7 +11,7 @@ jobs:
         with:
           node-version: 16
           cache: "npm"
-      - run: npm lint
+      - run: npm run lint
   fmt:
     name: "Format"
     runs-on: ubuntu-latest
@@ -21,4 +21,4 @@ jobs:
         with:
           node-version: 16
           cache: "npm"
-      - run: npm fmt.check
+      - run: npm run fmt.check
