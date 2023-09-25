@@ -30,6 +30,7 @@
     "@typescript-eslint/parser": "6.2.0",
     "eslint": "8.45.0",
     "eslint-plugin-qwik": "^1.2.10",
+    "is-mobile": "^4.0.0",
     "prettier": "3.0.0",
     "typescript": "5.1.6",
     "undici": "5.22.1",
