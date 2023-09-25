@@ -3,6 +3,7 @@ main {
     flex-direction: column;
     width: 100%;
     align-items: center;
+    justify-content: center;
     text-align: center;
     gap: 16px;
 }
@@ -94,4 +95,20 @@ main {
 .last-game-info {
     flex-direction: column;
     font-size: 28px;
+}
+
+@media (max-width: 400px) {
+    .content-cards {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .highlight-card {
+        width: fit-content;
+    }
+
+    .continue-watching {
+        flex-direction: column;
+    }
 }
