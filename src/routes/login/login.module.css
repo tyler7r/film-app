@@ -50,3 +50,13 @@
 .no-account-link:hover {
     text-decoration: underline;
 }
+
+@media (max-width: 400px) {
+    .login-form {
+        width: 100%;
+    }
+
+    .login-input {
+        width: 70%;
+    }
+}

@@ -85,3 +85,13 @@
 .account-link:hover {
     text-decoration: underline;
 }
+
+@media (max-width: 400px) {
+    .signup-form {
+        width: 100%;
+    }
+
+    .signup-input {
+        width: 70%;
+    }
+}
