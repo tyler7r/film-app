@@ -27,14 +27,14 @@ export const IsMobileProvider = component$(() => {
     $((event) => {
       const width = (event as UIEvent).view?.innerWidth ?? 0;
       isMobile.value = width <= MOBILE_BREAKPOINT;
-    })
+    }),
   );
 
   useVisibleTask$(
     () => {
       isMobile.value = window.innerWidth <= MOBILE_BREAKPOINT;
     },
-    { strategy: "document-ready" }
+    { strategy: "document-ready" },
   );
 
   useContextProvider(IsMobileContext, isMobile);

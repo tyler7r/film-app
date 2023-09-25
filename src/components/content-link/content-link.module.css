@@ -1,15 +1,15 @@
 .a {
-    background-color: #cbd0d8;
-    padding: 4px;
-    border-radius: 4px;
-    color: #333d50;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 4px;
-    cursor: pointer;
+  background-color: #cbd0d8;
+  padding: 4px;
+  border-radius: 4px;
+  color: #333d50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
 }
 
 .a:hover {
-    border: 2px dashed #d3ab2b;
+  border: 2px dashed #d3ab2b;
 }

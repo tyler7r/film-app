@@ -1,24 +1,24 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
 }
 
 .player-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
 }
 
 .player-btn {
-    cursor: pointer;
-    color: #f4f3ea;
-    font-size: 24px;
+  cursor: pointer;
+  color: #f4f3ea;
+  font-size: 24px;
 }
 
 .player-btn:hover {
-    color: #d3ab2b;
+  color: #d3ab2b;
 }

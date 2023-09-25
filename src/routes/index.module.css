@@ -1,114 +1,114 @@
 main {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    gap: 16px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 16px;
 }
 
 .welcome-msg {
-    font-size: 36px;
-    color: #d3ab2b;
-    font-family: 'Kanit';
-    font-weight: lighter;
-    font-style: italic;
-    margin-top: 16px;
+  font-size: 36px;
+  color: #d3ab2b;
+  font-family: "Kanit";
+  font-weight: lighter;
+  font-style: italic;
+  margin-top: 16px;
 }
 
 .continue-watching {
-    font-family: 'Inter';
-    border: 4px solid #d3ab2b;
-    padding: 16px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    background-color: #cbd0d8;
-    border-radius: 8px;
+  font-family: "Inter";
+  border: 4px solid #d3ab2b;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  background-color: #cbd0d8;
+  border-radius: 8px;
 }
 
 .continue-watching-title {
-    font-weight: bold;
-    font-size: 36px;
-    color: #f4f3ea;
+  font-weight: bold;
+  font-size: 36px;
+  color: #f4f3ea;
 }
 
 .continue-watching-game {
-    color: #333d50;
-    font-size: 20px;
-    font-style: italic;
+  color: #333d50;
+  font-size: 20px;
+  font-style: italic;
 }
 
 .content-cards {
-    font-family: 'Inter';
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    min-height: 60vh;
-    border-radius: 0.5rem;
-    padding: 8px;
-    gap: 24px;
+  font-family: "Inter";
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 60vh;
+  border-radius: 0.5rem;
+  padding: 8px;
+  gap: 24px;
 }
 
 .next-opponent-container {
-    font-size: 28px;
+  font-size: 28px;
 }
 
 .highlight-card {
-    grid-column: 1 / 3;
-    justify-self: center;
-    width: 50%;
-    height: fit-content;
-    justify-content: center;
-    cursor: pointer;
+  grid-column: 1 / 3;
+  justify-self: center;
+  width: 50%;
+  height: fit-content;
+  justify-content: center;
+  cursor: pointer;
 }
 
 .highlight-card a {
-    color: #333d50;
+  color: #333d50;
 }
 
 .scouting-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 4px;
-    margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 8px;
 }
 
 .scouting-title {
-    font-size: 24px;
+  font-size: 24px;
 }
 
 .next-opponent-logo {
-    height: 70px;
-    width: 70px;
-    border-radius: 50%;
-    border: 2px solid #d3ab2b;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  border: 2px solid #d3ab2b;
 }
 
 .assigned-clip {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .last-game-info {
-    flex-direction: column;
-    font-size: 28px;
+  flex-direction: column;
+  font-size: 28px;
 }
 
 @media (max-width: 400px) {
-    .content-cards {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+  .content-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .highlight-card {
-        width: fit-content;
-    }
+  .highlight-card {
+    width: fit-content;
+  }
 
-    .continue-watching {
-        flex-direction: column;
-    }
+  .continue-watching {
+    flex-direction: column;
+  }
 }

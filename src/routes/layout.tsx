@@ -1,16 +1,8 @@
-import {
-  $,
-  component$,
-  Slot,
-  useOnWindow,
-  useSignal,
-  useTask$,
-  useVisibleTask$,
-} from "@builder.io/qwik";
+import { component$, Slot } from "@builder.io/qwik";
 import { routeLoader$, type RequestHandler } from "@builder.io/qwik-city";
 import { Navbar } from "~/components/navbar";
 import mobile from "is-mobile";
-import { IsMobileProvider, useIsMobile } from "~/components/is-mobile";
+import { IsMobileProvider } from "~/components/is-mobile";
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
   // Control caching for this request for best performance and to reduce hosting costs:
@@ -26,7 +18,7 @@ export const onGet: RequestHandler = async ({ cacheControl }) => {
 export const useMobileBrowserUserAgentSniffing = routeLoader$(
   (requestEvent) => {
     return mobile({ ua: requestEvent.headers.get("User-Agent") ?? undefined });
-  }
+  },
 );
 
 export default component$(() => {

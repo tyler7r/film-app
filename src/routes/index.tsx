@@ -1,7 +1,7 @@
 import { component$, useStylesScoped$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import styles from './index.module.css';
-import mockData from '../../data/db.json'
+import styles from "./index.module.css";
+import mockData from "../../data/db.json";
 import ContentLink from "~/components/content-link";
 import ContentCard from "~/components/content-card";
 
@@ -10,40 +10,58 @@ export default component$(() => {
   const exampleGame = mockData.games[1];
 
   return (
-    <main class='content'>
-      <h2 class={styles['welcome-msg']}>Welcome, Tyler Randall!</h2>
-      <div class={styles['continue-watching']}>
-        <div class={styles['continue-watching-title']}>Continue Watching</div>
-        <div class={styles['continue-watching-game']}>(game info, timestamp, etc...)</div>
+    <main class="content">
+      <h2 class={styles["welcome-msg"]}>Welcome, Tyler Randall!</h2>
+      <div class={styles["continue-watching"]}>
+        <div class={styles["continue-watching-title"]}>Continue Watching</div>
+        <div class={styles["continue-watching-game"]}>
+          (game info, timestamp, etc...)
+        </div>
       </div>
-      <div class={styles['content-cards']}>
+      <div class={styles["content-cards"]}>
         <ContentCard>
           <div q:slot="title">Assigned Clips</div>
-          <div q:slot='content'>
-            <ContentLink href='/film-room/g1' class={styles['assigned-clip']}>I am an example of an assigned clip!</ContentLink>
+          <div q:slot="content">
+            <ContentLink href="/film-room/g1" class={styles["assigned-clip"]}>
+              I am an example of an assigned clip!
+            </ContentLink>
           </div>
         </ContentCard>
         <ContentCard>
-          <div q:slot='title'>Scouting Tab</div>
+          <div q:slot="title">Scouting Tab</div>
           <div q:slot="content">
-            <div class={styles['scouting-container']}>
-              <div class={styles['scouting-title']}>Next Opponent</div>
-              <ContentLink href='/profile/t1' class={styles['next-opponent-container']}>
-                <img src={exampleTeam.logo} class={styles['next-opponent-logo']} alt='opponent-logo' />
-                <div>{exampleTeam.city} {exampleTeam.name}</div>
+            <div class={styles["scouting-container"]}>
+              <div class={styles["scouting-title"]}>Next Opponent</div>
+              <ContentLink
+                href="/profile/t1"
+                class={styles["next-opponent-container"]}
+              >
+                <img
+                  src={exampleTeam.logo}
+                  class={styles["next-opponent-logo"]}
+                  alt="opponent-logo"
+                />
+                <div>
+                  {exampleTeam.city} {exampleTeam.name}
+                </div>
               </ContentLink>
             </div>
-            <div class={styles['scouting-container']}>
-              <div class={styles['scouting-title']}>Our Last Game</div>
-              <ContentLink href='/film-room/g1' class={styles['last-game-info']}>
+            <div class={styles["scouting-container"]}>
+              <div class={styles["scouting-title"]}>Our Last Game</div>
+              <ContentLink
+                href="/film-room/g1"
+                class={styles["last-game-info"]}
+              >
                 <div>vs. {exampleGame.team2}</div>
                 <div>@{exampleGame.tournament}</div>
               </ContentLink>
             </div>
           </div>
         </ContentCard>
-        <ContentCard class={styles['highlight-card']}>
-          <div q:slot="title"><a href='/highlight-factory'>Highlight Factory</a></div>
+        <ContentCard class={styles["highlight-card"]}>
+          <div q:slot="title">
+            <a href="/highlight-factory">Highlight Factory</a>
+          </div>
           <div q:slot="content"></div>
         </ContentCard>
         {/* <div class={styles['content-card']} id={styles['highlight-card']}>
@@ -51,8 +69,8 @@ export default component$(() => {
         </div> */}
       </div>
     </main>
-  )
-})
+  );
+});
 
 export const head: DocumentHead = {
   title: "Film Study",
