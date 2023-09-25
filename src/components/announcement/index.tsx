@@ -1,4 +1,4 @@
-import type { QRL} from "@builder.io/qwik";
+import type { QRL } from "@builder.io/qwik";
 import { $, component$, useSignal } from "@builder.io/qwik";
 import { Button } from "../button";
 

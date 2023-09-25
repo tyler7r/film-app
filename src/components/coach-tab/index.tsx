@@ -14,15 +14,15 @@ const CoachTab = component$(() => {
 
   const closeAnnouncement = $(() => {
     teamAnnouncementOpen.value = false;
-  })
+  });
 
   const closeScouting = $(() => {
     setScoutingOpen.value = false;
-  })
+  });
 
   const closeRoster = $(() => {
     editRosterOpen.value = false;
-  })
+  });
 
   return (
     <ContentCard>

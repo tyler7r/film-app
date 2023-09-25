@@ -12,7 +12,6 @@ import ContentLink from "~/components/content-link";
 import ContentCard from "~/components/content-card";
 
 export default component$(() => {
-
   const team = mockData.teams[1];
   const games = mockData.games;
   const players = mockData.users.filter((user) => user.role === "player");
@@ -29,7 +28,13 @@ export default component$(() => {
     <div class="content">
       <div class={styles["team-profile"]}>
         <div class={styles["info-container"]}>
-          <img class={styles["team-logo"]} src={team.logo} height={170} width={170} alt="team-logo" />
+          <img
+            class={styles["team-logo"]}
+            src={team.logo}
+            height={170}
+            width={170}
+            alt="team-logo"
+          />
           <div class={styles["team-name"]}>
             {team.city} {team.name}
           </div>

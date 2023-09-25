@@ -1,4 +1,4 @@
-import type { QRL} from "@builder.io/qwik";
+import type { QRL } from "@builder.io/qwik";
 import { component$ } from "@builder.io/qwik";
 import styles from "./menu.module.css";
 import { BsList } from "@qwikest/icons/bootstrap";

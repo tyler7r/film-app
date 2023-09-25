@@ -72,7 +72,7 @@ const EditRoster = component$(() => {
           <Player number={player.number} id={player.id} name={player.name} />
           <BsTrash
             class={styles["player-btn"]}
-          // onClick$={() => deletePlayer(player.id)}
+            // onClick$={() => deletePlayer(player.id)}
           />
           {/* <BsPencilSquare class={styles['player-btn']} /> */}
         </div>
