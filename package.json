@@ -39,5 +39,9 @@
     "vite": "4.4.7",
     "vite-tsconfig-paths": "4.2.0",
     "wrangler": "^3.0.0"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.36.0",
+    "supabase-auth-helpers-qwik": "^0.0.3"
   }
 }
