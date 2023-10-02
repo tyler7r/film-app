@@ -1,15 +1,15 @@
-import { component$, useSignal, $ } from "@builder.io/qwik";
-import mockData from "../../../../data/db.json";
-import type { DocumentHead } from "@builder.io/qwik-city";
-import { Player } from "~/components/player";
-import styles from "./profile.module.css";
-import { Game } from "~/components/game";
+import { $, component$, useSignal } from "@builder.io/qwik";
+import { type DocumentHead } from "@builder.io/qwik-city";
 import { Button } from "~/components/button";
-import { NoteForm } from "~/components/noteform";
-import Modal from "~/components/modal";
 import CoachTab from "~/components/coach-tab";
-import ContentLink from "~/components/content-link";
 import ContentCard from "~/components/content-card";
+import ContentLink from "~/components/content-link";
+import { Game } from "~/components/game";
+import Modal from "~/components/modal";
+import { NoteForm } from "~/components/noteform";
+import { Player } from "~/components/player";
+import mockData from "../../../../data/db.json";
+import styles from "./profile.module.css";
 
 export default component$(() => {
   const team = mockData.teams[1];

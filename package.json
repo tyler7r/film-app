@@ -34,6 +34,7 @@
     "eslint-plugin-qwik": "^1.2.10",
     "is-mobile": "^4.0.0",
     "prettier": "3.0.0",
+    "supabase": "^1.99.5",
     "typescript": "5.1.6",
     "undici": "5.22.1",
     "vite": "4.4.7",

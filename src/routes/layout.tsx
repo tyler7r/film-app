@@ -1,9 +1,9 @@
 import { component$, Slot } from "@builder.io/qwik";
 import { routeLoader$, type RequestHandler } from "@builder.io/qwik-city";
-import { Navbar } from "~/components/navbar";
 import mobile from "is-mobile";
-import { IsMobileProvider } from "~/components/is-mobile";
 import { createServerClient } from "supabase-auth-helpers-qwik";
+import { IsMobileProvider } from "~/components/is-mobile";
+import { Navbar } from "~/components/navbar";
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
   // Control caching for this request for best performance and to reduce hosting costs:
@@ -24,14 +24,14 @@ export const useMobileBrowserUserAgentSniffing = routeLoader$(
 
 export const useDBTest = routeLoader$(async (requestEv) => {
   const supabaseClient = createServerClient(
-    requestEv.env.get('PUBLIC_SUPABASE_URL')!,
+    requestEv.env.get("PUBLIC_SUPABASE_URL")!,
     requestEv.env.get("PUBLIC_SUPABASE_ANON_KEY")!,
-    requestEv
+    requestEv,
   );
-  const { data } = await supabaseClient.from('test').select('*');
+  const { data } = await supabaseClient.from("test").select("*");
   console.log({ data });
-  return { data }
-})
+  return { data };
+});
 
 export default component$(() => {
   return (
