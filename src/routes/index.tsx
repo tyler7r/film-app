@@ -1,9 +1,9 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import styles from "./index.module.css";
-import mockData from "../../data/db.json";
-import ContentLink from "~/components/content-link";
 import ContentCard from "~/components/content-card";
+import ContentLink from "~/components/content-link";
+import mockData from "../../data/db.json";
+import styles from "./index.module.css";
 
 export default component$(() => {
   const exampleTeam = mockData.teams[1];
@@ -33,7 +33,7 @@ export default component$(() => {
             <div class={styles["scouting-container"]}>
               <div class={styles["scouting-title"]}>Next Opponent</div>
               <ContentLink
-                href="/profile/t1"
+                href="/profile/1"
                 class={styles["next-opponent-container"]}
               >
                 <img

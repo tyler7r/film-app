@@ -4,6 +4,7 @@ import mobile from "is-mobile";
 import { createServerClient } from "supabase-auth-helpers-qwik";
 import { IsMobileProvider } from "~/components/is-mobile";
 import { Navbar } from "~/components/navbar";
+import { Database } from "~/types";
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
   // Control caching for this request for best performance and to reduce hosting costs:
@@ -23,13 +24,12 @@ export const useMobileBrowserUserAgentSniffing = routeLoader$(
 );
 
 export const useDBTest = routeLoader$(async (requestEv) => {
-  const supabaseClient = createServerClient(
+  const supabaseClient = createServerClient<Database>(
     requestEv.env.get("PUBLIC_SUPABASE_URL")!,
     requestEv.env.get("PUBLIC_SUPABASE_ANON_KEY")!,
     requestEv,
   );
-  const { data } = await supabaseClient.from("test").select("*");
-  console.log({ data });
+  const { data } = await supabaseClient.from("teams").select("*").limit(1);
   return { data };
 });
 

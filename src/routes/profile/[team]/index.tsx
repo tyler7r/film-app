@@ -1,5 +1,6 @@
-import { $, component$, useSignal } from "@builder.io/qwik";
-import { type DocumentHead } from "@builder.io/qwik-city";
+import { $, Resource, component$, useSignal } from "@builder.io/qwik";
+import { routeLoader$, type DocumentHead } from "@builder.io/qwik-city";
+import { createServerClient } from "supabase-auth-helpers-qwik";
 import { Button } from "~/components/button";
 import CoachTab from "~/components/coach-tab";
 import ContentCard from "~/components/content-card";
@@ -8,11 +9,29 @@ import { Game } from "~/components/game";
 import Modal from "~/components/modal";
 import { NoteForm } from "~/components/noteform";
 import { Player } from "~/components/player";
+import { Database } from "~/types";
 import mockData from "../../../../data/db.json";
 import styles from "./profile.module.css";
 
+export const useTeamDetails = routeLoader$(async (requestEv) => {
+  const teamId = requestEv.params.team;
+  const supabaseClient = createServerClient<Database>(
+    requestEv.env.get("PUBLIC_SUPABASE_URL")!,
+    requestEv.env.get("PUBLIC_SUPABASE_ANON_KEY")!,
+    requestEv,
+  );
+  const { data } = await supabaseClient
+    .from("teams")
+    .select("*")
+    .eq("id", teamId)
+    .limit(1);
+  if (data) {
+    return data[0];
+  }
+});
+
 export default component$(() => {
-  const team = mockData.teams[1];
+  const team = useTeamDetails();
   const games = mockData.games;
   const players = mockData.users.filter((user) => user.role === "player");
 
@@ -27,18 +46,24 @@ export default component$(() => {
   return (
     <div class="content">
       <div class={styles["team-profile"]}>
-        <div class={styles["info-container"]}>
-          <img
-            class={styles["team-logo"]}
-            src={team.logo}
-            height={170}
-            width={170}
-            alt="team-logo"
-          />
-          <div class={styles["team-name"]}>
-            {team.city} {team.name}
-          </div>
-        </div>
+        <Resource
+          value={team}
+          onPending={() => <div>Loading...</div>}
+          onResolved={(team) => (
+            <div class={styles["info-container"]}>
+              <img
+                class={styles["team-logo"]}
+                src={team?.logo}
+                height={170}
+                width={170}
+                alt="team-logo"
+              />
+              <div class={styles["team-name"]}>
+                {team?.city} {team?.name}
+              </div>
+            </div>
+          )}
+        />
         {inCoachView.value && <CoachTab />}
         <div class={styles["team-content"]}>
           <ContentCard>
