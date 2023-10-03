@@ -80,40 +80,6 @@ export interface Database {
           }
         ]
       }
-      team_games: {
-        Row: {
-          created_at: string
-          game_id: number
-          id: number
-          team_id: number
-        }
-        Insert: {
-          created_at?: string
-          game_id: number
-          id?: number
-          team_id: number
-        }
-        Update: {
-          created_at?: string
-          game_id?: number
-          id?: number
-          team_id?: number
-        }
-        Relationships: [
-          {
-            foreignKeyName: "team_games_game_id_fkey"
-            columns: ["game_id"]
-            referencedRelation: "games"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "team_games_team_id_fkey"
-            columns: ["team_id"]
-            referencedRelation: "teams"
-            referencedColumns: ["id"]
-          }
-        ]
-      }
       team_users: {
         Row: {
           created_at: string

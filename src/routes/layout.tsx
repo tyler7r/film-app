@@ -1,10 +1,10 @@
 import { component$, Slot } from "@builder.io/qwik";
 import { routeLoader$, type RequestHandler } from "@builder.io/qwik-city";
+import { createClient } from "@supabase/supabase-js";
 import mobile from "is-mobile";
-import { createServerClient } from "supabase-auth-helpers-qwik";
 import { IsMobileProvider } from "~/components/is-mobile";
 import { Navbar } from "~/components/navbar";
-import { Database } from "~/types";
+import { Database } from "~/types/type-generator";
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
   // Control caching for this request for best performance and to reduce hosting costs:
@@ -23,15 +23,10 @@ export const useMobileBrowserUserAgentSniffing = routeLoader$(
   },
 );
 
-export const useDBTest = routeLoader$(async (requestEv) => {
-  const supabaseClient = createServerClient<Database>(
-    requestEv.env.get("PUBLIC_SUPABASE_URL")!,
-    requestEv.env.get("PUBLIC_SUPABASE_ANON_KEY")!,
-    requestEv,
-  );
-  const { data } = await supabaseClient.from("teams").select("*").limit(1);
-  return { data };
-});
+export const supabase = createClient<Database>(
+  process.env.PUBLIC_SUPABASE_URL!,
+  process.env.PUBLIC_SUPABASE_ANON_KEY!,
+);
 
 export default component$(() => {
   return (

@@ -1,17 +1,18 @@
 import { component$ } from "@builder.io/qwik";
+import { TeamType } from "~/types/types";
 import styles from "./game.module.css";
 
 interface GameProps {
-  id: string;
-  team1: string;
-  team2: string;
-  tournament: string;
-  season: string;
+  id: number;
+  tournament: string | null;
+  team1: TeamType;
+  team2: TeamType;
+  season: string | null;
   classProp?: string;
 }
 
-export const Game = component$((props: GameProps) => {
-  const { team1, team2, tournament, season, classProp } = props;
+const Game = component$((props: GameProps) => {
+  const { team2, team1, tournament, season, classProp } = props;
 
   return (
     <div class={`${styles["game-container"]} ${classProp}`}>
@@ -19,8 +20,10 @@ export const Game = component$((props: GameProps) => {
         {season} {tournament}
       </div>
       <div class={styles["game-matchup"]}>
-        {team1} vs. {team2}
+        {team1.city} {team1.name} vs. {team2.city} {team2.name}
       </div>
     </div>
   );
 });
+
+export default Game;
