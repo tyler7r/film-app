@@ -6,7 +6,7 @@ import PageTitle from "~/components/page-title";
 import { supabase } from "../layout";
 import styles from "./film-home.module.css";
 
-const useGetAllGames = routeLoader$(async (requestEv) => {
+export const useGetAllGames = routeLoader$(async () => {
   const { data } = await supabase
     .from("games")
     .select(`*, team1: team1_id(*), team2: team2_id(*)`);
