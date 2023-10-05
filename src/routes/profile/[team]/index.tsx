@@ -103,7 +103,7 @@ export default component$(() => {
                       games.map((game: any) => (
                         <ContentLink
                           key={`game-link${game.id}`}
-                          href={`/film-room/${game.id}`}
+                          href={`/film-room/g${game.id}`}
                         >
                           <Game
                             id={game.id}

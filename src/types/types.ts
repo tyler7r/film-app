@@ -14,7 +14,7 @@ export type GameType<T> = {
   season: string | null;
   team1_id: number;
   team2_id: number;
-  team1: T[];
-  team2: T[];
+  team1: T;
+  team2: T;
   tournament: string | null;
 };
