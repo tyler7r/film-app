@@ -114,6 +114,7 @@ export default component$(() => {
                           />
                         </ContentLink>
                       ))}
+                    {games?.length === 0 && <div>No Games Recorded</div>}
                   </>
                 )}
               />
