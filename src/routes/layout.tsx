@@ -4,7 +4,7 @@ import { createClient } from "@supabase/supabase-js";
 import mobile from "is-mobile";
 import { IsMobileProvider } from "~/components/is-mobile";
 import { Navbar } from "~/components/navbar";
-import { Database } from "~/types/type-generator";
+import { type Database } from "~/types/type-generator";
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
   // Control caching for this request for best performance and to reduce hosting costs:

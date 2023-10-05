@@ -1,5 +1,5 @@
 import { component$ } from "@builder.io/qwik";
-import { TeamType } from "~/types/types";
+import { type TeamType } from "~/types/types";
 import styles from "./game.module.css";
 
 interface GameProps {
