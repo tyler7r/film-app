@@ -16,6 +16,7 @@
     "dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
     "fmt": "prettier --write .",
     "fmt.check": "prettier --check .",
+    "gen-types": "npx supabase gen types typescript --project-id tqyavwqbewvvgoizsipl --schema public > ./src/types/generated_types.ts",
     "lint": "eslint \"src/**/*.ts*\"",
     "preview": "qwik build preview && vite preview --open",
     "serve": "wrangler pages dev ./dist",
