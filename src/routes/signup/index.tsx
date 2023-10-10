@@ -1,23 +1,21 @@
 import { $, component$, useStore } from "@builder.io/qwik";
-import styles from "./signup.module.css";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { Button } from "~/components/button";
 import PageTitle from "~/components/page-title";
+import styles from "./signup.module.css";
 
 const Signup = component$(() => {
   const info = useStore({
     name: "",
-    username: "",
-    password: "",
-    confirmPwd: "",
+    // username: "",
     email: "",
-    teamAffiliation: "",
-    affiliationPwd: "",
-    role: "",
+    // teamAffiliation: "",
+    // affiliationPwd: "",
+    // role: "",
   });
 
   const submit = $(() => {
-    console.log(info.role);
+    console.log(info);
   });
 
   return (
@@ -36,7 +34,7 @@ const Signup = component$(() => {
             value={info.name}
           />
         </label>
-        <label class={styles["signup-input"]}>
+        {/* <label class={styles["signup-input"]}>
           <div class={styles["signup-title"]}>Username</div>
           <input
             type="text"
@@ -45,8 +43,8 @@ const Signup = component$(() => {
             }
             value={info.username}
           />
-        </label>
-        <label class={styles["signup-input"]} id={styles["radio-container"]}>
+        </label> */}
+        {/* <label class={styles["signup-input"]} id={styles["radio-container"]}>
           <div class={styles["radio-title"]}>Role</div>
           <div class={styles["radio-inputs"]}>
             <div class={styles["radio"]}>
@@ -72,7 +70,7 @@ const Signup = component$(() => {
               />
             </div>
           </div>
-        </label>
+        </label> */}
         <label class={styles["signup-input"]}>
           <div class={styles["signup-title"]}>Email</div>
           <input
@@ -83,48 +81,6 @@ const Signup = component$(() => {
             value={info.email}
           />
         </label>
-        <label class={styles["signup-input"]}>
-          <div class={styles["signup-title"]}>Password</div>
-          <input
-            type="password"
-            onInput$={(e) =>
-              (info.password = (e.target as HTMLInputElement).value)
-            }
-            value={info.password}
-          />
-        </label>
-        <label class={styles["signup-input"]}>
-          <div class={styles["signup-title"]}>Confirm Password</div>
-          <input
-            type="password"
-            onInput$={(e) =>
-              (info.confirmPwd = (e.target as HTMLInputElement).value)
-            }
-            value={info.confirmPwd}
-          />
-        </label>
-        <label class={styles["signup-input"]}>
-          <div class={styles["signup-title"]}>Team Affiliation</div>
-          <input
-            type="text"
-            onInput$={(e) =>
-              (info.teamAffiliation = (e.target as HTMLInputElement).value)
-            }
-            value={info.teamAffiliation}
-          />
-        </label>
-        {info.teamAffiliation !== "" && (
-          <label class={styles["signup-input"]}>
-            <div class={styles["signup-title"]}>Affiliation Password</div>
-            <input
-              type="text"
-              onInput$={(e) =>
-                (info.affiliationPwd = (e.target as HTMLInputElement).value)
-              }
-              value={info.affiliationPwd}
-            />
-          </label>
-        )}
         <Button class={styles["signup-btn"]}>Sign Up</Button>
       </form>
       <div class={styles["account-container"]}>
