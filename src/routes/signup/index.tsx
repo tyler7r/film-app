@@ -1,10 +1,17 @@
-import { $, component$, useStore } from "@builder.io/qwik";
+import { $, component$, useSignal, useStore } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { Button } from "~/components/button";
+import FormMessage from "~/components/form-message";
 import PageTitle from "~/components/page-title";
+import { MessageType } from "~/utils/types";
 import styles from "./signup.module.css";
 
 const Signup = component$(() => {
+  const isLoading = useSignal(false);
+  const message: MessageType = useStore({
+    message: "Test",
+    status: "error",
+  });
   const info = useStore({
     name: "",
     // username: "",
@@ -14,9 +21,7 @@ const Signup = component$(() => {
     // role: "",
   });
 
-  const submit = $(() => {
-    console.log(info);
-  });
+  const submit = $(() => {});
 
   return (
     <div class={styles["signup-container"]}>
@@ -81,7 +86,10 @@ const Signup = component$(() => {
             value={info.email}
           />
         </label>
-        <Button class={styles["signup-btn"]}>Sign Up</Button>
+        <FormMessage message={message} />
+        <Button class={styles["signup-btn"]} disabled={isLoading.value}>
+          Sign Up
+        </Button>
       </form>
       <div class={styles["account-container"]}>
         <div>Already have an account?</div>
