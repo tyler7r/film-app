@@ -16,11 +16,8 @@ const Signup = component$(() => {
   });
   const info = useStore({
     name: "",
-    // username: "",
     email: "",
-    // teamAffiliation: "",
-    // affiliationPwd: "",
-    // role: "",
+    role: "",
   });
 
   const submit = $(async () => {
@@ -56,8 +53,10 @@ const Signup = component$(() => {
       email: info.email,
       password: pwd,
       options: {
+        emailRedirectTo: "http://localhost:5173/login",
         data: {
           name: info.name,
+          role: info.role,
         },
       },
     });
@@ -93,17 +92,7 @@ const Signup = component$(() => {
             value={info.name}
           />
         </label>
-        {/* <label classx={styles["signup-input"]}>
-          <div class={styles["signup-title"]}>Username</div>
-          <input
-            type="text"
-            onInput$={(e) =>
-              (info.username = (e.target as HTMLInputElement).value)
-            }
-            value={info.username}
-          />
-        </label> */}
-        {/* <label class={styles["signup-input"]} id={styles["radio-container"]}>
+        <label class={styles["signup-input"]} id={styles["radio-container"]}>
           <div class={styles["radio-title"]}>Role</div>
           <div class={styles["radio-inputs"]}>
             <div class={styles["radio"]}>
@@ -129,7 +118,7 @@ const Signup = component$(() => {
               />
             </div>
           </div>
-        </label> */}
+        </label>
         <label class={styles["signup-input"]}>
           <div class={styles["signup-title"]}>Email</div>
           <input
