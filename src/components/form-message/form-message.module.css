@@ -11,3 +11,9 @@
   border-color: red;
   background-color: rgb(250, 182, 182, 0.4);
 }
+
+#success {
+  color: green;
+  border-color: green;
+  background-color: rgb(69, 114, 69, 0.4);
+}

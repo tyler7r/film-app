@@ -3,13 +3,15 @@ import type { DocumentHead } from "@builder.io/qwik-city";
 import { Button } from "~/components/button";
 import FormMessage from "~/components/form-message";
 import PageTitle from "~/components/page-title";
+import { validateEmail, validateName } from "~/utils/helpers";
+import { supabase } from "~/utils/supabase";
 import { MessageType } from "~/utils/types";
 import styles from "./signup.module.css";
 
 const Signup = component$(() => {
   const isLoading = useSignal(false);
   const message: MessageType = useStore({
-    message: "Test",
+    message: undefined,
     status: "error",
   });
   const info = useStore({
@@ -21,7 +23,59 @@ const Signup = component$(() => {
     // role: "",
   });
 
-  const submit = $(() => {});
+  const submit = $(async () => {
+    // Initialize resets
+    isLoading.value = true;
+    message.message = undefined;
+    message.status = "error";
+
+    // Validate name
+    const isValidName = validateName(info.name);
+    if (!isValidName) {
+      message.message = "You must enter a valid name.";
+      isLoading.value = false;
+      return;
+    }
+
+    // Validate email
+    const isValidEmail = validateEmail(info.email);
+    if (!isValidEmail) {
+      message.message = "You must enter a valid email.";
+      isLoading.value = false;
+      return;
+    }
+
+    // Create initial random pwd
+    const timestamp = Date.now();
+    const pwd = `${Math.floor(Math.random() * 1000000)}${
+      info.email
+    }${timestamp}`;
+
+    // Signup in Supabase
+    const { data, error } = await supabase.auth.signUp({
+      email: info.email,
+      password: pwd,
+      options: {
+        data: {
+          name: info.name,
+        },
+      },
+    });
+
+    // Confirm signup
+    if (data?.user?.id) {
+      message.message =
+        "Success. Please verify your email to finish your account creation.";
+      message.status = "success";
+      isLoading.value = false;
+      return;
+    } else {
+      message.message =
+        "There was a problem creating a user. " + error?.message;
+      isLoading.value = false;
+      return;
+    }
+  });
 
   return (
     <div class={styles["signup-container"]}>
@@ -39,7 +93,7 @@ const Signup = component$(() => {
             value={info.name}
           />
         </label>
-        {/* <label class={styles["signup-input"]}>
+        {/* <label classx={styles["signup-input"]}>
           <div class={styles["signup-title"]}>Username</div>
           <input
             type="text"
@@ -86,11 +140,11 @@ const Signup = component$(() => {
             value={info.email}
           />
         </label>
-        <FormMessage message={message} />
         <Button class={styles["signup-btn"]} disabled={isLoading.value}>
           Sign Up
         </Button>
       </form>
+      <FormMessage message={message} />
       <div class={styles["account-container"]}>
         <div>Already have an account?</div>
         <a href="/login" class={styles["account-link"]}>

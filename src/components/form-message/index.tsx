@@ -8,9 +8,13 @@ interface FormMessageProps {
 
 const FormMessage = component$(({ message }: FormMessageProps) => {
   return (
-    <div class={styles["container"]} id={styles[`${message.status}`]}>
-      {message.message}
-    </div>
+    <>
+      {message.message && (
+        <div class={styles["container"]} id={styles[`${message.status}`]}>
+          {message.message}
+        </div>
+      )}
+    </>
   );
 });
 
