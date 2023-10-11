@@ -20,6 +20,20 @@ const Signup = component$(() => {
     role: "",
   });
 
+  const checkIfTeamAffiliated = $(async () => {
+    const { data, error } = await supabase
+      .from("teams")
+      .select("id")
+      .contains("member_emails", [`${info.email}`])
+      .single();
+
+    if (data && !error) {
+      return data.id;
+    } else {
+      return null;
+    }
+  });
+
   const submit = $(async () => {
     // Initialize resets
     isLoading.value = true;
@@ -48,6 +62,8 @@ const Signup = component$(() => {
       info.email
     }${timestamp}`;
 
+    const userTeam = await checkIfTeamAffiliated();
+
     // Signup in Supabase
     const { data, error } = await supabase.auth.signUp({
       email: info.email,
@@ -61,18 +77,33 @@ const Signup = component$(() => {
       },
     });
 
+    console.log(data.user);
+
     // Confirm signup
-    if (data?.user?.id) {
+    if (error) {
+      message.message =
+        "There was a problem creating the user. " + error.message;
+      isLoading.value = false;
+    } else if (data.user?.identities?.length === 0) {
+      message.message =
+        "User already registered! Check your email for confirmation link.";
+      message.status = "warning";
+      isLoading.value = false;
+    } else {
       message.message =
         "Success. Please verify your email to finish your account creation.";
       message.status = "success";
-      isLoading.value = false;
-      return;
-    } else {
-      message.message =
-        "There was a problem creating a user. " + error?.message;
-      isLoading.value = false;
-      return;
+
+      // add team_id to profile
+      const { error } = await supabase
+        .from("profiles")
+        .update({ team_id: userTeam })
+        .eq("id", `${data.user?.id}`);
+      if (error) {
+        message.message =
+          "There was an error processing user information " + error;
+        return;
+      }
     }
   });
 

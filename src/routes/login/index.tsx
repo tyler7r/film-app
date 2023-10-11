@@ -1,8 +1,8 @@
 import { $, component$, useStore } from "@builder.io/qwik";
-import styles from "./login.module.css";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { Button } from "~/components/button";
 import PageTitle from "~/components/page-title";
+import styles from "./login.module.css";
 
 const Login = component$(() => {
   const info = useStore({
@@ -11,7 +11,7 @@ const Login = component$(() => {
     confirmPwd: "",
   });
 
-  const submit = $(() => {
+  const submit = $(async () => {
     //post logic here
   });
 

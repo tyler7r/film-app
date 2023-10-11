@@ -80,7 +80,7 @@ export interface Database {
           id: string
           name: string | null
           role: string | null
-          team_affiliation: number | null
+          team_id: number | null
         }
         Insert: {
           created_at?: string | null
@@ -88,7 +88,7 @@ export interface Database {
           id: string
           name?: string | null
           role?: string | null
-          team_affiliation?: number | null
+          team_id?: number | null
         }
         Update: {
           created_at?: string | null
@@ -96,7 +96,7 @@ export interface Database {
           id?: string
           name?: string | null
           role?: string | null
-          team_affiliation?: number | null
+          team_id?: number | null
         }
         Relationships: [
           {
@@ -106,8 +106,8 @@ export interface Database {
             referencedColumns: ["id"]
           },
           {
-            foreignKeyName: "profiles_team_affiliation_fkey"
-            columns: ["team_affiliation"]
+            foreignKeyName: "profiles_team_id_fkey"
+            columns: ["team_id"]
             referencedRelation: "teams"
             referencedColumns: ["id"]
           }
