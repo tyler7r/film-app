@@ -8,6 +8,7 @@ import {
 } from "@builder.io/qwik";
 import { routeLoader$, useNavigate } from "@builder.io/qwik-city";
 import { Button } from "~/components/button";
+import CreateTeam from "~/components/create-team";
 import FormMessage from "~/components/form-message";
 import { validatePwdMatch } from "~/utils/helpers";
 import { supabase } from "~/utils/supabase";
@@ -24,12 +25,12 @@ const Staging = component$(() => {
   const nav = useNavigate();
   const teams = useGetTeams();
   const isLoading = useSignal(false);
+  const createTeamModal = useSignal(false);
   const info = useStore({
     password: "",
     confirmPwd: "",
     selectTeam: "",
-    createTeam: false,
-    hasTeam: true,
+    hasTeam: false,
     teamName: "",
   });
   const message: MessageType = useStore({
@@ -57,6 +58,11 @@ const Staging = component$(() => {
     await checkTeamAffiliation();
   });
 
+  // Close create team modal logic
+  const closeCreateTeam = $(() => {
+    createTeamModal.value = false;
+  });
+
   // Submit form data
   const submit = $(async () => {
     // Validate passwords match
@@ -72,7 +78,6 @@ const Staging = component$(() => {
 
     // Confirm form submit
     if (data && !error) {
-      console.log(data);
       message.message = "Successfully updated password";
       message.status = "success";
       await nav("/login");
@@ -92,28 +97,40 @@ const Staging = component$(() => {
       <h1 class={styles["page-title"]}>Finish Your Account!</h1>
       {info.hasTeam && <div>Your email is registerd with {info.teamName}</div>}
       {!info.hasTeam && (
-        <Resource
-          value={teams}
-          onPending={() => <div>Loading...</div>}
-          onResolved={(teams) => (
-            <select
-              onInput$={(e) =>
-                (info.selectTeam = (e.target as HTMLInputElement).value)
-              }
+        <>
+          <Resource
+            value={teams}
+            onPending={() => <div>Loading...</div>}
+            onResolved={(teams) => (
+              <select
+                onInput$={(e) =>
+                  (info.selectTeam = (e.target as HTMLInputElement).value)
+                }
+              >
+                <option value="" disabled selected>
+                  Select your team
+                </option>
+                {teams &&
+                  teams.map((team: TeamType) => (
+                    <option
+                      value={team.id}
+                      key={team.id}
+                    >{`${team.city} ${team.name}`}</option>
+                  ))}
+              </select>
+            )}
+          />
+          <div class={styles["create-team-msg"]}>
+            <div>Don't see your team?</div>
+            <div
+              class={styles["create-team"]}
+              onClick$={() => (createTeamModal.value = true)}
             >
-              <option value="" disabled selected>
-                Select your team
-              </option>
-              {teams &&
-                teams.map((team: TeamType) => (
-                  <option
-                    value={team.id}
-                    key={team.id}
-                  >{`${team.city} ${team.name}`}</option>
-                ))}
-            </select>
-          )}
-        />
+              Create your team's account now!
+            </div>
+          </div>
+          {createTeamModal.value && <CreateTeam close={closeCreateTeam} />}
+        </>
       )}
       <label class={styles["input-container"]}>
         <div class={styles["input-title"]}>Password</div>

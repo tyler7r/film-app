@@ -18,6 +18,23 @@
   margin-bottom: 8px;
 }
 
+.create-team-msg {
+  display: flex;
+  gap: 4px;
+  font-size: 18px;
+  color: #f4f3ea;
+}
+
+.create-team {
+  font-weight: bold;
+  color: #d3ab2b;
+  cursor: pointer;
+}
+
+.create-team:hover {
+  text-decoration: underline;
+}
+
 .input-container {
   gap: 4px;
   display: flex;

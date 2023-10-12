@@ -115,16 +115,7 @@ const Signup = component$(() => {
         preventdefault:submit
         onSubmit$={submit}
       >
-        <label class={styles["signup-input"]}>
-          <div class={styles["signup-title"]}>Full Name</div>
-          <input
-            type="text"
-            onInput$={(e) => (info.name = (e.target as HTMLInputElement).value)}
-            value={info.name}
-          />
-        </label>
         <label class={styles["signup-input"]} id={styles["radio-container"]}>
-          <div class={styles["radio-title"]}>Role</div>
           <div class={styles["radio-inputs"]}>
             <div class={styles["radio"]}>
               <div class={styles["signup-title"]}>Player</div>
@@ -149,6 +140,14 @@ const Signup = component$(() => {
               />
             </div>
           </div>
+        </label>
+        <label class={styles["signup-input"]}>
+          <div class={styles["signup-title"]}>Full Name</div>
+          <input
+            type="text"
+            onInput$={(e) => (info.name = (e.target as HTMLInputElement).value)}
+            value={info.name}
+          />
         </label>
         <label class={styles["signup-input"]}>
           <div class={styles["signup-title"]}>Email</div>
