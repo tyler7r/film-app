@@ -21,6 +21,7 @@ const Signup = component$(() => {
   });
 
   const checkIfTeamAffiliated = $(async () => {
+    // Check if email exists in any team member email array
     const { data, error } = await supabase
       .from("teams")
       .select("id")
@@ -69,15 +70,14 @@ const Signup = component$(() => {
       email: info.email,
       password: pwd,
       options: {
-        emailRedirectTo: "http://localhost:5173/login",
+        emailRedirectTo: "http://localhost:5173/staging",
         data: {
           name: info.name,
           role: info.role,
+          team_id: userTeam,
         },
       },
     });
-
-    console.log(data.user);
 
     // Confirm signup
     if (error) {
@@ -86,7 +86,7 @@ const Signup = component$(() => {
       isLoading.value = false;
     } else if (data.user?.identities?.length === 0) {
       message.message =
-        "User already registered! Check your email for confirmation link.";
+        "User already registered! Check your email for confirmation link or login";
       message.status = "warning";
       isLoading.value = false;
     } else {
