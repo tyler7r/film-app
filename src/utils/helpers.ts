@@ -23,3 +23,39 @@ export const validatePwdMatch = (pwd: string, confirmPwd: string) => {
     return false;
   }
 };
+
+export const emailListToArray = (emails: string) => {
+  const emailArray = emails.split(",");
+  const validEmails: string[] = [];
+  emailArray.forEach((email) => {
+    const isValidEmail = validateEmail(email);
+    if (isValidEmail) {
+      validEmails.push(email);
+    }
+  });
+  return validEmails;
+};
+
+export const validateImage = (url: string) => {
+  const request = new XMLHttpRequest();
+  request.open("GET", url, true);
+  request.send();
+  let status: number = 0;
+  request.onload = () => {
+    status = request.status;
+  };
+  console.log(status);
+  if (status === 200) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+export const validateTeamSelect = (id: number | null | "") => {
+  if (typeof id === "number" && id !== 0) {
+    return true;
+  } else {
+    return false;
+  }
+};

@@ -12,4 +12,5 @@ export type TeamType = {
   member_emails: string[] | null;
   name: string | null;
   next_opp: string | null;
+  member_requests: string[] | null;
 };

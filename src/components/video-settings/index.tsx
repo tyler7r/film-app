@@ -19,7 +19,7 @@ const VideoSettings = component$((props: VideoSettingsProps) => {
   const { settings, applySettings, close } = props;
 
   return (
-    <form class="form-container" preventdefault: submit onSubmit$={close}>
+    <form class="form-container" preventdefault:submit onSubmit$={close}>
       <label class="checkbox-container">
         <div class="input-title">Show Clips?</div>
         <input

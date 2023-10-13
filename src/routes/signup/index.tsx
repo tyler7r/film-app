@@ -25,9 +25,8 @@ const Signup = component$(() => {
     const { data, error } = await supabase
       .from("teams")
       .select("id")
-      .contains("member_emails", [`${info.email}`])
+      .contains("member_emails", [info.email])
       .single();
-
     if (data && !error) {
       return data.id;
     } else {
@@ -57,6 +56,13 @@ const Signup = component$(() => {
       return;
     }
 
+    // Validate role
+    if (info.role === "") {
+      message.message = "You must select a role";
+      isLoading.value = false;
+      return;
+    }
+
     // Create initial random pwd
     const timestamp = Date.now();
     const pwd = `${Math.floor(Math.random() * 1000000)}${
@@ -70,7 +76,7 @@ const Signup = component$(() => {
       email: info.email,
       password: pwd,
       options: {
-        emailRedirectTo: "http://localhost:5173/staging",
+        emailRedirectTo: "http://localhost:5173/staging/password",
         data: {
           name: info.name,
           role: info.role,

@@ -121,8 +121,10 @@ export interface Database {
           id: number
           logo: string | null
           member_emails: string[] | null
+          member_requests: string[] | null
           name: string | null
           next_opp: string | null
+          owner: string | null
         }
         Insert: {
           announcements?: string[] | null
@@ -131,8 +133,10 @@ export interface Database {
           id?: never
           logo?: string | null
           member_emails?: string[] | null
+          member_requests?: string[] | null
           name?: string | null
           next_opp?: string | null
+          owner?: string | null
         }
         Update: {
           announcements?: string[] | null
@@ -141,10 +145,19 @@ export interface Database {
           id?: never
           logo?: string | null
           member_emails?: string[] | null
+          member_requests?: string[] | null
           name?: string | null
           next_opp?: string | null
+          owner?: string | null
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "teams_owner_fkey"
+            columns: ["owner"]
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          }
+        ]
       }
     }
     Views: {
