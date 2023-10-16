@@ -25,11 +25,15 @@ export const validatePwdMatch = (pwd: string, confirmPwd: string) => {
 };
 
 export const emailListToArray = (emails: string) => {
-  const emailArray = emails.split(",");
+  // Split text input at commas
+  const emailArray = emails.split(", ");
   const validEmails: string[] = [];
+
+  // Loop through new array of emails and check for valid email form and any duplication
   emailArray.forEach((email) => {
     const isValidEmail = validateEmail(email);
-    if (isValidEmail) {
+    const emailAlreadyEntered = validEmails.includes(email);
+    if (isValidEmail && !emailAlreadyEntered) {
       validEmails.push(email);
     }
   });

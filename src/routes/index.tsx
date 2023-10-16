@@ -1,12 +1,23 @@
-import { component$ } from "@builder.io/qwik";
-import type { DocumentHead } from "@builder.io/qwik-city";
-import styles from "./index.module.css";
-import mockData from "../../data/db.json";
-import ContentLink from "~/components/content-link";
+import { Resource, component$ } from "@builder.io/qwik";
+import { routeLoader$, type DocumentHead } from "@builder.io/qwik-city";
 import ContentCard from "~/components/content-card";
+import ContentLink from "~/components/content-link";
+import { supabase } from "~/utils/supabase";
+import { TeamType } from "~/utils/types";
+import mockData from "../../data/db.json";
+import styles from "./index.module.css";
+
+export const useGetNextOpponent = routeLoader$(async () => {
+  const { data, error } = await supabase
+    .from("teams")
+    .select()
+    .eq("id", 12)
+    .single();
+  return data as TeamType;
+});
 
 export default component$(() => {
-  const exampleTeam = mockData.teams[1];
+  const exampleTeam = useGetNextOpponent();
   const exampleGame = mockData.games[1];
 
   return (
@@ -32,21 +43,29 @@ export default component$(() => {
           <div q: slot="content">
             <div class={styles["scouting-container"]}>
               <div class={styles["scouting-title"]}>Next Opponent</div>
-              <ContentLink
-                href="/profile/t1"
-                class={styles["next-opponent-container"]}
-              >
-                <img
-                  src={exampleTeam.logo}
-                  class={styles["next-opponent-logo"]}
-                  alt="opponent-logo"
-                  height={170}
-                  width={170}
-                />
-                <div>
-                  {exampleTeam.city} {exampleTeam.name}
-                </div>
-              </ContentLink>
+              <Resource
+                onPending={() => <div>Loading...</div>}
+                value={exampleTeam}
+                onResolved={(team) => (
+                  <ContentLink
+                    href="/profile/t1"
+                    class={styles["next-opponent-container"]}
+                  >
+                    {team.logo && (
+                      <img
+                        src={team.logo}
+                        class={styles["next-opponent-logo"]}
+                        alt="opponent-logo"
+                        height={170}
+                        width={170}
+                      />
+                    )}
+                    <div>
+                      {team.city} {team.name}
+                    </div>
+                  </ContentLink>
+                )}
+              />
             </div>
             <div class={styles["scouting-container"]}>
               <div class={styles["scouting-title"]}>Our Last Game</div>

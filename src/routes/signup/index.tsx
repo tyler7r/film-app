@@ -28,8 +28,10 @@ const Signup = component$(() => {
       .contains("member_emails", [info.email])
       .single();
     if (data && !error) {
+      console.log("there was a team");
       return data.id;
     } else {
+      console.log("no team");
       return null;
     }
   });

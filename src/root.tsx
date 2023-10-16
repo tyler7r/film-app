@@ -1,4 +1,10 @@
-import { component$, useVisibleTask$ } from "@builder.io/qwik";
+import {
+  component$,
+  createContextId,
+  useContextProvider,
+  useStore,
+  useVisibleTask$,
+} from "@builder.io/qwik";
 import {
   QwikCityProvider,
   RouterOutlet,
@@ -9,21 +15,38 @@ import { RouterHead } from "./components/router-head/router-head";
 import "./global.css";
 import { supabase } from "./utils/supabase";
 
+export type UserSess = {
+  userId: string;
+  isLoggedIn: boolean;
+  email: string;
+};
+
+export const UserSessionContext = createContextId<UserSess>("user-session");
+
 export default component$(() => {
-  /**
-   * The root of a QwikCity site always start with the <QwikCityProvider> component,
-   * immediately followed by the document's <head> and <body>.
-   *
-   * Don't remove the `<head>` and `<body>` elements.
-   */
+  const userSession: UserSess = useStore({
+    userId: "",
+    isLoggedIn: false,
+    email: "",
+  });
 
   useVisibleTask$(async () => {
     const { data: authListener } = supabase.auth.onAuthStateChange(
-      async (event, session) => {
+      async (event: string, session: any) => {
         if (event === "SIGNED_IN") {
           // Send cookies to server
+
+          // Set Auth State Context
+          userSession.userId = session?.user?.id;
+          userSession.email = session?.user?.email;
+          userSession.isLoggedIn = true;
         } else if (event === "SIGNED_OUT") {
           // Sign out user
+
+          // Set Auth State Context
+          userSession.userId = "";
+          userSession.isLoggedIn = false;
+          userSession.email = "";
         }
       },
     );
@@ -34,6 +57,8 @@ export default component$(() => {
     };
   });
 
+  // Pass state to children via context
+  useContextProvider(UserSessionContext, userSession);
   return (
     <QwikCityProvider>
       <head>

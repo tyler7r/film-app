@@ -8,7 +8,6 @@ import {
 } from "@builder.io/qwik";
 import { routeLoader$, useNavigate } from "@builder.io/qwik-city";
 import { Button } from "~/components/button";
-import CreateTeam from "~/components/create-team";
 import FormMessage from "~/components/form-message";
 import { validateTeamSelect } from "~/utils/helpers";
 import { supabase } from "~/utils/supabase";
@@ -24,8 +23,6 @@ const TeamSelect = component$(() => {
   const nav = useNavigate();
   const teams = useGetTeams();
   const isLoading = useSignal(false);
-  const isWarning = useSignal(false);
-  const createTeamModal = useSignal(false);
   const message: MessageType = useStore({
     message: undefined,
     status: "error",
@@ -71,10 +68,6 @@ const TeamSelect = component$(() => {
   // Run team affiliation check on Mount
   useVisibleTask$(async () => {
     await checkTeamAffiliation();
-  });
-
-  const closeModal = $(() => {
-    createTeamModal.value = false;
   });
 
   const submit = $(async () => {
@@ -141,7 +134,7 @@ const TeamSelect = component$(() => {
                     info.teamId = Number((e.target as HTMLInputElement).value);
                   }}
                 >
-                  <option value="" selected>
+                  <option value={0} selected>
                     Select your team
                   </option>
                   {teams &&
@@ -158,7 +151,7 @@ const TeamSelect = component$(() => {
               <div>Don't see your team?</div>
               <div
                 class={styles["create-team"]}
-                onClick$={() => (createTeamModal.value = true)}
+                onClick$={async () => await nav("/staging/create-team")}
               >
                 Create your team now!
               </div>
@@ -174,7 +167,6 @@ const TeamSelect = component$(() => {
           <Button disabled={isLoading.value}>Continue</Button>
         )}
       </form>
-      {createTeamModal.value && <CreateTeam close={closeModal} />}
     </>
   );
 });
