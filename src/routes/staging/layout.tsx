@@ -1,13 +1,33 @@
-import { Slot, component$ } from "@builder.io/qwik";
-import { DocumentHead } from "@builder.io/qwik-city";
-import { CheckTeamAffiliation } from "~/components/check-team-affiliation";
+import {
+  Slot,
+  component$,
+  useContext,
+  useVisibleTask$,
+} from "@builder.io/qwik";
+import { DocumentHead, useNavigate } from "@builder.io/qwik-city";
+import { supabase } from "~/utils/supabase";
+import { UserSessionContext } from "../layout";
 
 const Staging = component$(() => {
-  return (
-    <CheckTeamAffiliation>
-      <Slot />
-    </CheckTeamAffiliation>
-  );
+  const user = useContext(UserSessionContext);
+  const nav = useNavigate();
+  useVisibleTask$(async () => {
+    const { data, error } = await supabase.auth.getUser();
+    console.log(data);
+    if (data.user?.id && !error) {
+      user.email = data.user.email;
+      user.isLoggedIn = true;
+      user.teamId = data.user.user_metadata.team_id;
+      user.userId = data.user.id;
+    } else {
+      user.email = "";
+      user.isLoggedIn = false;
+      user.teamId = null;
+      user.userId = "";
+      await nav("/signup");
+    }
+  });
+  return user && <Slot />;
 });
 
 export const head: DocumentHead = {

@@ -9,7 +9,6 @@ import {
 } from "@builder.io/qwik";
 import { routeLoader$, useNavigate } from "@builder.io/qwik-city";
 import { Button } from "~/components/button";
-import { TeamContext } from "~/components/check-team-affiliation";
 import FormMessage from "~/components/form-message";
 import { UserSessionContext } from "~/routes/layout";
 import { validateTeamSelect } from "~/utils/helpers";
@@ -24,7 +23,7 @@ export const useGetTeams = routeLoader$(async () => {
 
 const TeamSelect = component$(() => {
   const user = useContext(UserSessionContext);
-  const teamId = useContext(TeamContext).teamId;
+  // const teamId = useContext(TeamContext).teamId;
   const nav = useNavigate();
   const teams = useGetTeams();
   const isValidForm = useSignal(false);
@@ -32,11 +31,7 @@ const TeamSelect = component$(() => {
     message: undefined,
     status: "error",
   });
-  const info: {
-    teamName: string;
-    hasTeam: boolean;
-    teamSelect: number;
-  } = useStore({
+  const info = useStore({
     hasTeam: false,
     teamName: "",
     teamSelect: 0,
@@ -45,6 +40,7 @@ const TeamSelect = component$(() => {
   // Check if user has a team affiliation
   const checkTeamAffiliation = $(() => {
     // Add user info and teamId to store if the user exist
+    const teamId = user.teamId;
     if (teamId) {
       info.hasTeam = true;
 
@@ -57,7 +53,8 @@ const TeamSelect = component$(() => {
   });
 
   // Run team affiliation check on mount
-  useVisibleTask$(() => {
+  useVisibleTask$(({ track }) => {
+    track(() => user.teamId);
     checkTeamAffiliation();
   });
 
