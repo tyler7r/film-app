@@ -11,7 +11,7 @@ export const useGetNextOpponent = routeLoader$(async () => {
   const { data, error } = await supabase
     .from("teams")
     .select()
-    .eq("id", 12)
+    .eq("id", 5)
     .single();
   return data as TeamType;
 });

@@ -120,7 +120,6 @@ export interface Database {
           division: string | null
           id: number
           logo: string | null
-          member_emails: string[] | null
           member_requests: string[] | null
           name: string | null
           next_opp: string | null
@@ -132,7 +131,6 @@ export interface Database {
           division?: string | null
           id?: never
           logo?: string | null
-          member_emails?: string[] | null
           member_requests?: string[] | null
           name?: string | null
           next_opp?: string | null
@@ -144,7 +142,6 @@ export interface Database {
           division?: string | null
           id?: never
           logo?: string | null
-          member_emails?: string[] | null
           member_requests?: string[] | null
           name?: string | null
           next_opp?: string | null

@@ -8,6 +8,13 @@
   margin: 8px;
 }
 
+.go-back {
+  font-size: 24px;
+  margin: 8px;
+  color: #f4f3ea;
+  cursor: pointer;
+}
+
 .page-title {
   text-align: center;
   font-size: 64px;
@@ -16,23 +23,6 @@
   padding: 0px 16px 4px 16px;
   margin: 0;
   margin-bottom: 8px;
-}
-
-.create-team-msg {
-  display: flex;
-  gap: 4px;
-  font-size: 18px;
-  color: #f4f3ea;
-}
-
-.create-team {
-  font-weight: bold;
-  color: #d3ab2b;
-  cursor: pointer;
-}
-
-.create-team:hover {
-  text-decoration: underline;
 }
 
 .input-container {

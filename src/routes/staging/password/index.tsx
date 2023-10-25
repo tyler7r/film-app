@@ -1,4 +1,10 @@
-import { $, component$, useSignal, useStore } from "@builder.io/qwik";
+import {
+  $,
+  component$,
+  useSignal,
+  useStore,
+  useVisibleTask$,
+} from "@builder.io/qwik";
 import { useNavigate } from "@builder.io/qwik-city";
 import { Button } from "~/components/button";
 import FormMessage from "~/components/form-message";
@@ -9,7 +15,7 @@ import styles from "./password.module.css";
 
 const Password = component$(() => {
   const nav = useNavigate();
-  const isLoading = useSignal(false);
+  const isValidForm = useSignal(false);
   const info = useStore({
     password: "",
     confirmPwd: "",
@@ -19,13 +25,24 @@ const Password = component$(() => {
     status: "error",
   });
 
-  const submit = $(async () => {
-    // Validate passwords match
+  // Validate form entries
+  useVisibleTask$(({ track }) => {
+    track(() => {
+      info.password;
+      info.confirmPwd;
+    });
     const validatePwd = validatePwdMatch(info.password, info.confirmPwd);
-    if (!validatePwd) {
-      message.message = "Passwords do not match!";
-      return;
+    if (info.password.length < 8) {
+      message.message = "Password must be at least 8 characters!";
+    } else if (!validatePwd) {
+      message.message = "Passwords must match!";
+    } else {
+      message.message = undefined;
+      isValidForm.value = true;
     }
+  });
+
+  const submit = $(async () => {
     // Update auth user password if matches
     const { data, error } = await supabase.auth.updateUser({
       password: `${info.password}`,
@@ -33,7 +50,6 @@ const Password = component$(() => {
 
     // Confirm form submit
     if (data && !error) {
-      isLoading.value = true;
       message.message = "Successfully updated password";
       message.status = "success";
 
@@ -83,7 +99,7 @@ const Password = component$(() => {
           />
         </label>
         <FormMessage message={message} />
-        <Button disabled={isLoading.value}>Submit</Button>
+        <Button disabled={!isValidForm.value}>Submit</Button>
       </form>
     </>
   );

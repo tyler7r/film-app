@@ -1,8 +1,13 @@
 import { Slot, component$ } from "@builder.io/qwik";
 import { DocumentHead } from "@builder.io/qwik-city";
+import { CheckTeamAffiliation } from "~/components/check-team-affiliation";
 
 const Staging = component$(() => {
-  return <Slot />;
+  return (
+    <CheckTeamAffiliation>
+      <Slot />
+    </CheckTeamAffiliation>
+  );
 });
 
 export const head: DocumentHead = {
