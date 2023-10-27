@@ -70,3 +70,18 @@ select {
 select:focus {
   outline: none;
 }
+
+.already-registered {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.registered-msg {
+  font-size: 32px;
+  color: #f4f3ea;
+  font-weight: bold;
+}

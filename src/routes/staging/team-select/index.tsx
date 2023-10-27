@@ -16,9 +16,28 @@ import { supabase } from "~/utils/supabase";
 import { MessageType, TeamType } from "~/utils/types";
 import styles from "./team-select.module.css";
 
+export let teamList: TeamType[] = [];
+
 export const useGetTeams = routeLoader$(async () => {
-  const { data, error } = await supabase.from("teams").select();
-  return data as TeamType[];
+  // Realtime updates in order to get accurate team list
+  supabase
+    .channel("team_db_changes")
+    .on(
+      "postgres_changes",
+      {
+        event: "*",
+        schema: "public",
+        table: "teams",
+      },
+      async (payload) => {
+        const { data, error } = await supabase.from("teams").select();
+        if (data) {
+          teamList = data;
+        }
+      },
+    )
+    .subscribe();
+  return teamList;
 });
 
 const TeamSelect = component$(() => {
@@ -38,16 +57,20 @@ const TeamSelect = component$(() => {
   });
 
   // Check if user has a team affiliation
-  const checkTeamAffiliation = $(() => {
+  const checkTeamAffiliation = $(async () => {
     // Add user info and teamId to store if the user exist
     const teamId = user.teamId;
     if (teamId) {
       info.hasTeam = true;
 
       // Update user's team data for rendering
-      const team = teams.value.find((team) => team.id === teamId);
-      if (team) {
-        info.teamName = `${team.city} ${team.name}`;
+      const team = await supabase
+        .from("teams")
+        .select()
+        .eq("id", teamId)
+        .single();
+      if (team.data) {
+        info.teamName = `${team.data.city} ${team.data.name}`;
       }
     }
   });
@@ -166,10 +189,12 @@ const TeamSelect = component$(() => {
         </>
       )}
       {info.hasTeam && (
-        <>
-          <div>Your email is registered with {info.teamName}</div>
+        <div class={styles["already-registered"]}>
+          <div class={styles["registered-msg"]}>
+            Your email is registered with {info.teamName}
+          </div>
           <Button onClick$={() => finishAccount()}>Finish Account</Button>
-        </>
+        </div>
       )}
     </>
   );

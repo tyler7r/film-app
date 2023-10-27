@@ -13,7 +13,6 @@ const Staging = component$(() => {
   const nav = useNavigate();
   useVisibleTask$(async () => {
     const { data, error } = await supabase.auth.getUser();
-    console.log(data);
     if (data.user?.id && !error) {
       user.email = data.user.email;
       user.isLoggedIn = true;
@@ -27,7 +26,7 @@ const Staging = component$(() => {
       await nav("/signup");
     }
   });
-  return user && <Slot />;
+  return <Slot />;
 });
 
 export const head: DocumentHead = {

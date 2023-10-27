@@ -32,9 +32,48 @@
   width: 50%;
   justify-content: center;
   gap: 8px;
+  align-items: center;
 }
 
 .input-title {
   font-size: 24px;
   color: #f4f3ea;
+  text-align: center;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.logo-input {
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 4px;
+  color: #f4f3ea;
+  background: none;
+  font-weight: bold;
+  border: 4px double #f4f3ea;
+}
+
+.image-preview-container {
+  height: 250px;
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-preview {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  border: 4px solid #d3ab2b;
+}
+
+.members-input {
+  width: 100%;
 }

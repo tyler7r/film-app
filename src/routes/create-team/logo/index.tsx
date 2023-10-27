@@ -2,7 +2,6 @@ import {
   $,
   component$,
   useContext,
-  useId,
   useSignal,
   useStore,
   useTask$,
@@ -16,7 +15,6 @@ import styles from "../create-team.module.css";
 import { TeamIdContext } from "../layout";
 
 const CreateTeamLogo = component$(() => {
-  const inputId = useId();
   const teamId = useContext(TeamIdContext);
   const nav = useNavigate();
   const hiddenFileInput = useSignal<HTMLInputElement>();
@@ -39,7 +37,6 @@ const CreateTeamLogo = component$(() => {
       .from("team_logos")
       .getPublicUrl(`logos/team${teamId.value}.png`);
     const publicURL = data.publicUrl;
-    console.log(data);
     if (publicURL) {
       logoURL.value = publicURL;
     }
@@ -49,9 +46,10 @@ const CreateTeamLogo = component$(() => {
     track(() => imagePreview.value);
     if (imagePreview.value !== "") {
       getImageURL();
+      message.message = undefined;
       validForm.value = true;
-      console.log(logoURL.value);
     } else {
+      message.message = "You must enter a logo!";
       validForm.value = false;
     }
   });
@@ -89,16 +87,16 @@ const CreateTeamLogo = component$(() => {
   });
 
   return (
-    <>
+    <div class={styles["logo-container"]}>
       <label class={styles["input-container"]}>
-        <div class={styles["input-title"]}>Logo*</div>
-        <button onClick$={handleClick}>
+        <div class={styles["input-title"]}>Add Team Logo</div>
+        <Button onClick$={handleClick}>
           {imagePreview.value !== "" ? (
             <div>Change Logo</div>
           ) : (
             <div>Upload Logo</div>
           )}
-        </button>
+        </Button>
         <input
           type="file"
           ref={hiddenFileInput}
@@ -113,12 +111,7 @@ const CreateTeamLogo = component$(() => {
       </label>
       {imagePreview.value !== "" && (
         <div class={styles["image-preview-container"]}>
-          <img
-            class={styles["logo-preview"]}
-            src={imagePreview.value}
-            height={80}
-            width={80}
-          />
+          <img class={styles["logo-preview"]} src={imagePreview.value} />
         </div>
       )}
       <form
@@ -129,7 +122,7 @@ const CreateTeamLogo = component$(() => {
         <Button disabled={!validForm.value}>Next</Button>
         <FormMessage message={message} />
       </form>
-    </>
+    </div>
   );
 });
 

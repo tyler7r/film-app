@@ -68,10 +68,11 @@ const InviteTeamMembers = component$(() => {
     >
       <label class={styles["input-container"]}>
         <div class={styles["input-title"]}>
-          Invite Members via Email (separated by commas) optional
+          Invite Members via Email (separated by commas)
         </div>
-        <input
-          type="text"
+        <textarea
+          class={styles["members-input"]}
+          placeholder="ex@example.com, ex2@example.com"
           onInput$={(e) => {
             emails.value = (e.target as HTMLInputElement).value;
           }}

@@ -53,9 +53,17 @@ const CreateTeamDetails = component$(() => {
       details.name;
       details.division;
     });
-    if (details.city === "" || details.name === "" || details.division === "") {
+    if (details.city === "") {
+      message.message = "Must enter a city!";
+      isValidForm.value = false;
+    } else if (details.name === "") {
+      message.message = "Must enter a team name!";
+      isValidForm.value = false;
+    } else if (details.division === "") {
+      message.message = "Must select a team division!";
       isValidForm.value = false;
     } else {
+      message.message = undefined;
       isValidForm.value = true;
     }
   });
@@ -114,7 +122,7 @@ const CreateTeamDetails = component$(() => {
       class={styles["form-container"]}
     >
       <label class={styles["input-container"]}>
-        <div class={styles["input-title"]}>City*</div>
+        <div class={styles["input-title"]}>City</div>
         <input
           type="text"
           onInput$={(e) => {
@@ -124,7 +132,7 @@ const CreateTeamDetails = component$(() => {
         />
       </label>
       <label class={styles["input-container"]}>
-        <div class={styles["input-title"]}>Name*</div>
+        <div class={styles["input-title"]}>Name</div>
         <input
           type="text"
           onInput$={(e) =>
