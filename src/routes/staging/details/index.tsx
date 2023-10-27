@@ -12,7 +12,7 @@ import FormMessage from "~/components/form-message";
 import { UserSessionContext } from "~/routes/layout";
 import { validateName } from "~/utils/helpers";
 import { supabase } from "~/utils/supabase";
-import { MessageType } from "~/utils/types";
+import { type MessageType } from "~/utils/types";
 import styles from "./details.module.css";
 
 const ProfileDetails = component$(() => {
@@ -52,7 +52,7 @@ const ProfileDetails = component$(() => {
       .eq("id", user.userId);
     if (error) {
       message.message =
-        "There was a problem adding your name and role. " + error?.message;
+        "There was a problem adding your name and role. " + error.message;
     } else {
       message.message = "Successfully added your name and role!";
       message.status = "success";

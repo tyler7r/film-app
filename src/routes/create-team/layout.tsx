@@ -1,12 +1,12 @@
 import {
-  Signal,
   Slot,
   component$,
   createContextId,
   useContextProvider,
   useSignal,
+  type Signal,
 } from "@builder.io/qwik";
-import { DocumentHead } from "@builder.io/qwik-city";
+import { type DocumentHead } from "@builder.io/qwik-city";
 import styles from "./create-team.module.css";
 
 export const TeamIdContext = createContextId<Signal<number>>("team_id");

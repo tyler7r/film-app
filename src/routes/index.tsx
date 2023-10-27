@@ -3,16 +3,12 @@ import { routeLoader$, type DocumentHead } from "@builder.io/qwik-city";
 import ContentCard from "~/components/content-card";
 import ContentLink from "~/components/content-link";
 import { supabase } from "~/utils/supabase";
-import { TeamType } from "~/utils/types";
+import { type TeamType } from "~/utils/types";
 import mockData from "../../data/db.json";
 import styles from "./index.module.css";
 
 export const useGetNextOpponent = routeLoader$(async () => {
-  const { data, error } = await supabase
-    .from("teams")
-    .select()
-    .eq("id", 5)
-    .single();
+  const { data } = await supabase.from("teams").select().eq("id", 5).single();
   return data as TeamType;
 });
 

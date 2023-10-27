@@ -11,7 +11,7 @@ import { Button } from "~/components/button";
 import FormMessage from "~/components/form-message";
 import { UserSessionContext } from "~/routes/layout";
 import { supabase } from "~/utils/supabase";
-import { MessageType } from "~/utils/types";
+import { type MessageType } from "~/utils/types";
 import styles from "../create-team.module.css";
 import { TeamIdContext } from "../layout";
 
@@ -98,7 +98,7 @@ const CreateTeamDetails = component$(() => {
         .single();
 
       // Assign teamId context the newly created team's id
-      if (data && !error) {
+      if (data) {
         teamId.value = data.id;
         user.teamId = data.id;
         // Update user's profile to include team_id

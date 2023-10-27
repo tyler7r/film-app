@@ -13,7 +13,7 @@ import FormMessage from "~/components/form-message";
 import { UserSessionContext } from "~/routes/layout";
 import { validateTeamSelect } from "~/utils/helpers";
 import { supabase } from "~/utils/supabase";
-import { MessageType, TeamType } from "~/utils/types";
+import { type MessageType, type TeamType } from "~/utils/types";
 import styles from "./team-select.module.css";
 
 export let teamList: TeamType[] = [];
@@ -29,8 +29,8 @@ export const useGetTeams = routeLoader$(async () => {
         schema: "public",
         table: "teams",
       },
-      async (payload) => {
-        const { data, error } = await supabase.from("teams").select();
+      async () => {
+        const { data } = await supabase.from("teams").select();
         if (data) {
           teamList = data;
         }
@@ -104,7 +104,7 @@ const TeamSelect = component$(() => {
         .eq("id", `${info.teamSelect}`)
         .select()
         .single();
-      if (data && !error) {
+      if (data) {
         isValidForm.value = true;
         message.message = `Success. Your join request was sent to ${data.city} ${data.name}`;
         message.status = "success";
@@ -157,13 +157,12 @@ const TeamSelect = component$(() => {
                     <option value={0} selected>
                       Select your team
                     </option>
-                    {teams &&
-                      teams.map((team: TeamType) => (
-                        <option
-                          value={team.id}
-                          key={team.id}
-                        >{`${team.city} ${team.name}`}</option>
-                      ))}
+                    {teams.map((team: TeamType) => (
+                      <option
+                        value={team.id}
+                        key={team.id}
+                      >{`${team.city} ${team.name}`}</option>
+                    ))}
                   </select>
                 )}
               />

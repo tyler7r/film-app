@@ -10,7 +10,7 @@ import { Button } from "~/components/button";
 import FormMessage from "~/components/form-message";
 import { validatePwdMatch } from "~/utils/helpers";
 import { supabase } from "~/utils/supabase";
-import { MessageType } from "~/utils/types";
+import { type MessageType } from "~/utils/types";
 import styles from "./password.module.css";
 
 const Password = component$(() => {
@@ -49,7 +49,7 @@ const Password = component$(() => {
     });
 
     // Confirm form submit
-    if (data && !error) {
+    if (data.user) {
       message.message = "Successfully updated password";
       message.status = "success";
 

@@ -10,7 +10,7 @@ import { useNavigate } from "@builder.io/qwik-city";
 import { Button } from "~/components/button";
 import FormMessage from "~/components/form-message";
 import { supabase } from "~/utils/supabase";
-import { MessageType } from "~/utils/types";
+import { type MessageType } from "~/utils/types";
 import styles from "../create-team.module.css";
 import { TeamIdContext } from "../layout";
 
@@ -104,14 +104,19 @@ const CreateTeamLogo = component$(() => {
           accept="image/"
           id="file-input"
           onInput$={(e) => {
-            let files: FileList | null = (e.target as HTMLInputElement).files;
+            const files: FileList | null = (e.target as HTMLInputElement).files;
             addLogoToBucket(files);
           }}
         />
       </label>
       {imagePreview.value !== "" && (
         <div class={styles["image-preview-container"]}>
-          <img class={styles["logo-preview"]} src={imagePreview.value} />
+          <img
+            class={styles["logo-preview"]}
+            src={imagePreview.value}
+            height={250}
+            width={250}
+          />
         </div>
       )}
       <form

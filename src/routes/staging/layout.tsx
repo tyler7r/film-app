@@ -4,7 +4,7 @@ import {
   useContext,
   useVisibleTask$,
 } from "@builder.io/qwik";
-import { DocumentHead, useNavigate } from "@builder.io/qwik-city";
+import { useNavigate, type DocumentHead } from "@builder.io/qwik-city";
 import { supabase } from "~/utils/supabase";
 import { UserSessionContext } from "../layout";
 

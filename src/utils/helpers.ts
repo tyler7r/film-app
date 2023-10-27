@@ -8,7 +8,7 @@ export const validateEmail = (email: string) => {
 };
 
 // Check if name is valid
-export const validateName = (name: string) => {
+export const validateName = (name: string | undefined) => {
   if (name === "" || name === undefined) {
     return false;
   }
