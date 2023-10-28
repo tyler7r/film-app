@@ -15,7 +15,7 @@ import styles from "../create-team.module.css";
 import { TeamIdContext } from "../layout";
 
 const CreateTeamLogo = component$(() => {
-  const teamId = useContext(TeamIdContext);
+  const teamId = useContext(TeamIdContext).value;
   const nav = useNavigate();
   const hiddenFileInput = useSignal<HTMLInputElement>();
 
@@ -35,7 +35,7 @@ const CreateTeamLogo = component$(() => {
   const getImageURL = $(() => {
     const { data } = supabase.storage
       .from("team_logos")
-      .getPublicUrl(`logos/team${teamId.value}.png`);
+      .getPublicUrl(`logos/team${teamId}.png`);
     const publicURL = data.publicUrl;
     if (publicURL) {
       logoURL.value = publicURL;
@@ -62,7 +62,7 @@ const CreateTeamLogo = component$(() => {
       const file = files[0];
       const { error } = await supabase.storage
         .from("team_logos")
-        .upload(`logos/team${teamId.value}.png`, file, {
+        .upload(`logos/team${teamId}.png`, file, {
           upsert: true,
         });
       if (error) {
@@ -74,15 +74,17 @@ const CreateTeamLogo = component$(() => {
   });
 
   const submit = $(async () => {
-    const { error } = await supabase
-      .from("teams")
-      .update({ logo: logoURL.value })
-      .eq("id", teamId.value);
-    if (error) {
-      message.message =
-        "There was an issue uploading the team logo! " + error.message;
-    } else {
-      await nav("/create-team/members");
+    if (teamId) {
+      const { error } = await supabase
+        .from("teams")
+        .update({ logo: logoURL.value })
+        .eq("id", teamId);
+      if (error) {
+        message.message =
+          "There was an issue uploading the team logo! " + error.message;
+      } else {
+        await nav("/create-team/members");
+      }
     }
   });
 
