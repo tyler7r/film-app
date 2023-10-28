@@ -19,6 +19,10 @@ import styles from "./team-select.module.css";
 export let teamList: TeamType[] = [];
 
 export const useGetTeams = routeLoader$(async () => {
+  const { data } = await supabase.from("teams").select();
+  if (data) {
+    teamList = data;
+  }
   // Realtime updates in order to get accurate team list
   supabase
     .channel("team_db_changes")
@@ -53,6 +57,7 @@ const TeamSelect = component$(() => {
   const info = useStore({
     hasTeam: false,
     teamName: "",
+    teamLogo: "",
     teamSelect: 0,
   });
 
@@ -71,6 +76,7 @@ const TeamSelect = component$(() => {
         .single();
       if (team.data) {
         info.teamName = `${team.data.city} ${team.data.name}`;
+        info.teamLogo = `${team.data.logo}`;
       }
     }
   });
@@ -157,12 +163,13 @@ const TeamSelect = component$(() => {
                     <option value={0} selected>
                       Select your team
                     </option>
-                    {teams.map((team: TeamType) => (
-                      <option
-                        value={team.id}
-                        key={team.id}
-                      >{`${team.city} ${team.name}`}</option>
-                    ))}
+                    {teams.length !== 0 &&
+                      teams.map((team: TeamType) => (
+                        <option
+                          value={team.id}
+                          key={team.id}
+                        >{`${team.city} ${team.name}`}</option>
+                      ))}
                   </select>
                 )}
               />
@@ -192,6 +199,12 @@ const TeamSelect = component$(() => {
           <div class={styles["registered-msg"]}>
             Your email is registered with {info.teamName}
           </div>
+          <img
+            src={info.teamLogo}
+            class={styles["logo-container"]}
+            height={250}
+            width={250}
+          />
           <Button onClick$={() => finishAccount()}>Finish Account</Button>
         </div>
       )}

@@ -78,10 +78,17 @@ select:focus {
   justify-content: center;
   align-items: center;
   margin-top: 24px;
+  text-align: center;
 }
 
 .registered-msg {
   font-size: 32px;
   color: #f4f3ea;
   font-weight: bold;
+}
+
+.logo-container {
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
 }

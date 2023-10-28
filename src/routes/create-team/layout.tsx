@@ -9,10 +9,10 @@ import {
 import { type DocumentHead } from "@builder.io/qwik-city";
 import styles from "./create-team.module.css";
 
-export const TeamIdContext = createContextId<Signal<number>>("team_id");
+export const TeamIdContext = createContextId<Signal<number | null>>("team_id");
 
 const CreateTeam = component$(() => {
-  const teamId = useSignal(0);
+  const teamId = useSignal(null);
 
   useContextProvider(TeamIdContext, teamId);
   return (
