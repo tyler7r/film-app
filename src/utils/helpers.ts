@@ -1,8 +1,3 @@
-export type MessageType = {
-  message: string | undefined;
-  status: "error" | "warning" | "success";
-};
-
 export const validateField = (input: string) => {
   if (input === "") {
     return false;
