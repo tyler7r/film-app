@@ -9,21 +9,19 @@ import { Form, routeAction$, useNavigate } from "@builder.io/qwik-city";
 import { createClient } from "@supabase/supabase-js";
 import { Button } from "~/components/button";
 import FormMessage from "~/components/form-message";
-import { type Database } from "~/utils/generated_types";
 import { emailListToArray } from "~/utils/helpers";
 import { type MessageType } from "~/utils/types";
 import styles from "../create-team.module.css";
 import { TeamIdContext } from "../layout";
 
 export const useInviteUsers = routeAction$(async (data, requestEvent) => {
-  const admin = createClient<Database>(
+  const admin = createClient(
     requestEvent.env.get("PUBLIC_SUPABASE_URL!")!,
     requestEvent.env.get("SERVICE_ROLE_KEY")!,
     {
       auth: {
         autoRefreshToken: false,
         persistSession: false,
-        detectSessionInUrl: false,
       },
     },
   );
