@@ -1,12 +1,12 @@
 import { component$ } from "@builder.io/qwik";
-import { MessageType } from "~/utils/helpers";
+import { type MessageType } from "~/utils/helpers";
 import styles from "./form-message.module.css";
 
 interface MessageProps {
   message: MessageType;
 }
 
-export const FormMessage = component$(({ message }: MessageProps) => {
+const FormMessage = component$(({ message }: MessageProps) => {
   return (
     <>
       {message.message && (
@@ -20,3 +20,5 @@ export const FormMessage = component$(({ message }: MessageProps) => {
     </>
   );
 });
+
+export default FormMessage;

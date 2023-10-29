@@ -1,20 +1,70 @@
-import { $, component$, useStore } from "@builder.io/qwik";
+import {
+  $,
+  component$,
+  useSignal,
+  useStore,
+  useVisibleTask$,
+} from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { Button } from "~/components/button";
-import { FormMessage } from "~/components/form-message";
+import FormMessage from "~/components/form-message";
 import PageTitle from "~/components/page-title";
-import { MessageType } from "~/utils/helpers";
+import { MessageType, validateEmail } from "~/utils/helpers";
+import { supabase } from "~/utils/supabase";
 import styles from "./signup.module.css";
 
 const Signup = component$(() => {
-  const message: MessageType = { message: undefined, status: "error" };
-  const info = useStore({
-    name: "",
-    email: "",
+  const isValidForm = useSignal(false);
+  const message: MessageType = useStore({
+    message: undefined,
+    status: "error",
+  });
+  const email = useSignal("");
+
+  useVisibleTask$(({ track }) => {
+    track(() => email.value);
+    const isValidEmail = validateEmail(email.value);
+    if (!isValidEmail) {
+      message.message = "Please enter a valid email address!";
+      isValidForm.value = false;
+    } else {
+      message.message = undefined;
+      isValidForm.value = true;
+    }
   });
 
-  const submit = $(() => {
-    console.log(info.name);
+  const submit = $(async () => {
+    // Create initial random pwd
+    const timestamp = Date.now();
+    const pwd = `${Math.floor(Math.random() * 1000000)}${
+      email.value
+    }${timestamp}`;
+
+    // Signup in Supabase
+    const { data, error } = await supabase.auth.signUp({
+      email: email.value,
+      password: pwd,
+      options: {
+        // Redirect to password creation page w/ email link
+        emailRedirectTo: "http://localhost:5173/signup/password",
+      },
+    });
+
+    // Confirm signup
+    if (error) {
+      message.message =
+        "There was a problem creating the user. " + error.message;
+      isValidForm.value = false;
+    } else if (data.user?.identities?.length === 0) {
+      message.message =
+        "User already registered! Check your email for confirmation link or login";
+      message.status = "warning";
+      isValidForm.value = false;
+    } else {
+      message.message =
+        "Success. Please verify your email to finish your account creation.";
+      message.status = "success";
+    }
   });
 
   return (
@@ -26,26 +76,18 @@ const Signup = component$(() => {
         onSubmit$={submit}
       >
         <label class={styles["signup-input"]}>
-          <div class={styles["signup-title"]}>Full Name</div>
-          <input
-            type="text"
-            onInput$={(e) => (info.name = (e.target as HTMLInputElement).value)}
-            value={info.name}
-          />
-        </label>
-        <label class={styles["signup-input"]}>
           <div class={styles["signup-title"]}>Email</div>
           <input
             type="email"
             onInput$={(e) =>
-              (info.email = (e.target as HTMLInputElement).value)
+              (email.value = (e.target as HTMLInputElement).value)
             }
-            value={info.email}
+            value={email.value}
           />
         </label>
-        <FormMessage message={message} />
-        <Button class={styles["signup-btn"]}>Sign Up</Button>
+        <Button disabled={!isValidForm.value}>Sign Up</Button>
       </form>
+      <FormMessage message={message} />
       <div class={styles["account-container"]}>
         <div>Already have an account?</div>
         <a href="/login" class={styles["account-link"]}>
