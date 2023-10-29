@@ -23,7 +23,7 @@ export default defineConfig(({ mode }) => {
       },
     },
     define: {
-      "process.env.PUBLIC_SUPABASE_URL": process.env.PUBLIC_SUPABASE_URL,
+      'process.env.PUBLIC_SUPABASE_URL': JSON.stringify(process.env.PUBLIC_SUPABASE_URL),
     }
   };
 });
