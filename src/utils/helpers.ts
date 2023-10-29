@@ -21,3 +21,11 @@ export const validatePwdMatch = (p1: string, p2: string) => {
     return false;
   }
 };
+
+export const validateTeamSelect = (team: number) => {
+  if (team !== 0) {
+    return true;
+  } else {
+    return false;
+  }
+};
