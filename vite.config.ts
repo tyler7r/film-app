@@ -22,7 +22,7 @@ export default defineConfig(() => {
       },
     },
     define: {
-      'process.env.PUBLIC_SUPABASE_URL': JSON.stringify(import.meta.env.PUBLIC_SUPABASE_URL),
+      'import.meta.env.PUBLIC_SUPABASE_URL': JSON.stringify(import.meta.env.PUBLIC_SUPABASE_URL),
     }
   };
 });
