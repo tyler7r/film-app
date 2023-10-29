@@ -17,7 +17,7 @@ import { TeamIdContext } from "../layout";
 
 export const useInviteUsers = routeAction$(async (data, requestEvent) => {
   const admin = createClient<Database>(
-    requestEvent.env.get("PUBLIC_SUPABASE_URL")!,
+    import.meta.env.PUBLIC_SUPABASE_URL!,
     requestEvent.env.get("SERVICE_ROLE_KEY")!,
   );
   const validEmails = emailListToArray(data.emails.toString());
