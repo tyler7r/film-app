@@ -4,7 +4,7 @@
 /* dark gray rgb(92, 92, 92) */
 /* cream #f4f3ea */
 
-.signup-container {
+.container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -21,7 +21,7 @@
   margin-bottom: 8px;
 }
 
-.signup-form {
+.form-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -30,7 +30,7 @@
   width: 80%;
 }
 
-.signup-input {
+.input-container {
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -58,7 +58,7 @@
   font-size: 24px;
 }
 
-.signup-title {
+.input-title {
   font-size: 24px;
   color: #f4f3ea;
 }

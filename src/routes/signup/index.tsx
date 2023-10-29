@@ -69,15 +69,15 @@ const Signup = component$(() => {
   });
 
   return (
-    <div class={styles["signup-container"]}>
+    <div class={styles["container"]}>
       <PageTitle>Sign Up!</PageTitle>
       <form
-        class={styles["signup-form"]}
+        class={styles["form-container"]}
         preventdefault:submit
         onSubmit$={submit}
       >
-        <label class={styles["signup-input"]}>
-          <div class={styles["signup-title"]}>Email</div>
+        <label class={styles["input-container"]}>
+          <div class={styles["input-title"]}>Email</div>
           <input
             type="email"
             onInput$={(e) =>
