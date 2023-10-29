@@ -6,11 +6,17 @@ interface MessageProps {
   message: MessageType;
 }
 
-export const FormMessage = component$((props: MessageProps) => {
-  const { message } = props;
+export const FormMessage = component$(({ message }: MessageProps) => {
   return (
-    <div class={styles[`message-container`]} id={styles[`${message.status}`]}>
-      {message.message}
-    </div>
+    <>
+      {message.message && (
+        <div
+          class={styles[`message-container`]}
+          id={styles[`${message.status}`]}
+        >
+          {message.message}
+        </div>
+      )}
+    </>
   );
 });
