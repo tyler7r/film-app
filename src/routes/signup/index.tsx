@@ -1,23 +1,20 @@
 import { $, component$, useStore } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { Button } from "~/components/button";
+import { FormMessage } from "~/components/form-message";
 import PageTitle from "~/components/page-title";
+import { MessageType } from "~/utils/helpers";
 import styles from "./signup.module.css";
 
 const Signup = component$(() => {
+  const message: MessageType = { message: undefined, status: "error" };
   const info = useStore({
     name: "",
-    username: "",
-    password: "",
-    confirmPwd: "",
     email: "",
-    teamAffiliation: "",
-    affiliationPwd: "",
-    role: "",
   });
 
   const submit = $(() => {
-    console.log(info.role);
+    console.log(info.name);
   });
 
   return (
@@ -37,43 +34,6 @@ const Signup = component$(() => {
           />
         </label>
         <label class={styles["signup-input"]}>
-          <div class={styles["signup-title"]}>Username</div>
-          <input
-            type="text"
-            onInput$={(e) =>
-              (info.username = (e.target as HTMLInputElement).value)
-            }
-            value={info.username}
-          />
-        </label>
-        <label class={styles["signup-input"]} id={styles["radio-container"]}>
-          <div class={styles["radio-title"]}>Role</div>
-          <div class={styles["radio-inputs"]}>
-            <div class={styles["radio"]}>
-              <div class={styles["signup-title"]}>Player</div>
-              <input
-                name="role"
-                type="radio"
-                onInput$={(e) =>
-                  (info.role = (e.target as HTMLInputElement).value)
-                }
-                value={"player"}
-              />
-            </div>
-            <div class={styles["radio"]}>
-              <div class={styles["signup-title"]}>Coach</div>
-              <input
-                name="role"
-                type="radio"
-                onInput$={(e) =>
-                  (info.role = (e.target as HTMLInputElement).value)
-                }
-                value={"coach"}
-              />
-            </div>
-          </div>
-        </label>
-        <label class={styles["signup-input"]}>
           <div class={styles["signup-title"]}>Email</div>
           <input
             type="email"
@@ -83,48 +43,7 @@ const Signup = component$(() => {
             value={info.email}
           />
         </label>
-        <label class={styles["signup-input"]}>
-          <div class={styles["signup-title"]}>Password</div>
-          <input
-            type="password"
-            onInput$={(e) =>
-              (info.password = (e.target as HTMLInputElement).value)
-            }
-            value={info.password}
-          />
-        </label>
-        <label class={styles["signup-input"]}>
-          <div class={styles["signup-title"]}>Confirm Password</div>
-          <input
-            type="password"
-            onInput$={(e) =>
-              (info.confirmPwd = (e.target as HTMLInputElement).value)
-            }
-            value={info.confirmPwd}
-          />
-        </label>
-        <label class={styles["signup-input"]}>
-          <div class={styles["signup-title"]}>Team Affiliation</div>
-          <input
-            type="text"
-            onInput$={(e) =>
-              (info.teamAffiliation = (e.target as HTMLInputElement).value)
-            }
-            value={info.teamAffiliation}
-          />
-        </label>
-        {info.teamAffiliation !== "" && (
-          <label class={styles["signup-input"]}>
-            <div class={styles["signup-title"]}>Affiliation Password</div>
-            <input
-              type="text"
-              onInput$={(e) =>
-                (info.affiliationPwd = (e.target as HTMLInputElement).value)
-              }
-              value={info.affiliationPwd}
-            />
-          </label>
-        )}
+        <FormMessage message={message} />
         <Button class={styles["signup-btn"]}>Sign Up</Button>
       </form>
       <div class={styles["account-container"]}>
