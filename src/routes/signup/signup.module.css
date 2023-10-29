@@ -38,6 +38,17 @@
   gap: 4px;
 }
 
+.checkbox-container {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkbox {
+  cursor: pointer;
+}
+
 #radio-container {
   gap: 8px;
   align-items: center;

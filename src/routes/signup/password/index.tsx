@@ -24,6 +24,7 @@ const CreatePassword = component$(() => {
     message: undefined,
     status: "error",
   });
+  const showPassword = useSignal(false);
   const isValidForm = useSignal(false);
 
   useVisibleTask$(({ track }) => {
@@ -81,7 +82,7 @@ const CreatePassword = component$(() => {
         <label class={styles["input-container"]}>
           <div class={styles["input-title"]}>Password</div>
           <input
-            type="password"
+            type={showPassword.value ? "text" : "password"}
             value={info.password}
             onInput$={(e) =>
               (info.password = (e.target as HTMLInputElement).value)
@@ -91,11 +92,19 @@ const CreatePassword = component$(() => {
         <label class={styles["input-container"]}>
           <div class={styles["input-title"]}>Confirm Password</div>
           <input
-            type="password"
+            type={showPassword.value ? "text" : "password"}
             value={info.confirmPwd}
             onInput$={(e) =>
               (info.confirmPwd = (e.target as HTMLInputElement).value)
             }
+          />
+        </label>
+        <label class={styles["checkbox-container"]}>
+          <div class={styles["input-title"]}>Show Password?</div>
+          <input
+            type="checkbox"
+            bind:checked={showPassword}
+            class={styles["checkbox"]}
           />
         </label>
         <Button disabled={!isValidForm.value}>Continue</Button>
