@@ -1,8 +1,8 @@
 import { $, component$, useStore } from "@builder.io/qwik";
-import styles from "./signup.module.css";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { Button } from "~/components/button";
 import PageTitle from "~/components/page-title";
+import styles from "./signup.module.css";
 
 const Signup = component$(() => {
   const info = useStore({
