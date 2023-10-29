@@ -4,7 +4,7 @@ export type MessageType = {
 };
 
 export const validateField = (input: string) => {
-  if (input === "" || input === null || input === undefined) {
+  if (input === "") {
     return false;
   } else {
     return true;
@@ -12,11 +12,9 @@ export const validateField = (input: string) => {
 };
 
 export const validateEmail = (email: string) => {
-  const regex =
-    /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-  if (email.match(regex)) {
+  const regex = new RegExp(/^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/);
+  if (regex.test(email)) {
     return true;
-  } else {
-    return false;
   }
+  return false;
 };

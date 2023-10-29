@@ -9,7 +9,7 @@ import type { DocumentHead } from "@builder.io/qwik-city";
 import { Button } from "~/components/button";
 import FormMessage from "~/components/form-message";
 import PageTitle from "~/components/page-title";
-import { MessageType, validateEmail } from "~/utils/helpers";
+import { validateEmail, type MessageType } from "~/utils/helpers";
 import { supabase } from "~/utils/supabase";
 import styles from "./signup.module.css";
 
