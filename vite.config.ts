@@ -1,6 +1,6 @@
 import { qwikCity } from "@builder.io/qwik-city/vite";
 import { qwikVite } from "@builder.io/qwik/optimizer";
-import { defineConfig, loadEnv } from "vite";
+import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 
 /*
@@ -13,8 +13,7 @@ import tsconfigPaths from "vite-tsconfig-paths";
  * - [tsconfigPaths](https://www.npmjs.com/package/vite-tsconfig-paths)
  */
 
-export default defineConfig(({ mode }) => {
-  const env = loadEnv(mode, process.cwd(), '')
+export default defineConfig(() => {
   return {
     plugins: [qwikCity(), qwikVite(), tsconfigPaths()],
     preview: {
@@ -23,7 +22,7 @@ export default defineConfig(({ mode }) => {
       },
     },
     define: {
-      'import.meta.env.PUBLIC_SUPABASE_URL': JSON.stringify(process.env.PUBLIC_SUPABASE_URL),
+      'import.meta.env.PUBLIC_SUPABASE_URL': JSON.stringify(import.meta.env.PUBLIC_SUPABASE_URL),
     }
   };
 });
