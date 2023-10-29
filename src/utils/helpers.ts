@@ -1,0 +1,20 @@
+export type MessageType = {
+  message: string | undefined;
+  status: "error" | "warning" | "success";
+};
+
+export const validateField = (input: string) => {
+  if (input === "") {
+    return false;
+  } else {
+    return true;
+  }
+};
+
+export const validateEmail = (email: string) => {
+  const regex = new RegExp(/^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/);
+  if (regex.test(email)) {
+    return true;
+  }
+  return false;
+};

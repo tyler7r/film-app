@@ -1,0 +1,28 @@
+.message-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 4px;
+  text-align: center;
+}
+
+#error {
+  background-color: rgb(255, 0, 0, 0.4);
+  color: red;
+  border: 2px solid red;
+}
+
+#warning {
+  background-color: rgb(255, 255, 0, 0.4);
+  color: yellow;
+  border: 2px solid yellow;
+}
+
+#success {
+  background-color: rgb(0, 128, 0, 0.4);
+  color: green;
+  border: 2px solid green;
+}
