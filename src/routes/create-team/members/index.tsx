@@ -9,7 +9,7 @@ import { Form, routeAction$, useNavigate } from "@builder.io/qwik-city";
 import { createClient } from "@supabase/supabase-js";
 import { Button } from "~/components/button";
 import FormMessage from "~/components/form-message";
-import { Database } from "~/utils/generated_types";
+import { type Database } from "~/utils/generated_types";
 import { emailListToArray } from "~/utils/helpers";
 import { type MessageType } from "~/utils/types";
 import styles from "../create-team.module.css";
