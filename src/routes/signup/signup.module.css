@@ -110,6 +110,31 @@
   cursor: pointer;
 }
 
+.select-team-msg {
+  color: #f4f3ea;
+  font-size: 24px;
+  text-align: center;
+}
+
+.create-team-msg {
+  margin: 16px;
+  display: flex;
+  gap: 6px;
+  font-size: 18px;
+  color: #f4f3ea;
+  justify-content: center;
+}
+
+.create-team {
+  font-weight: bold;
+  color: #d3ab2b;
+  cursor: pointer;
+}
+
+.create-team:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 400px) {
   .signup-form {
     width: 100%;

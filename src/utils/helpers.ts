@@ -29,3 +29,31 @@ export const validateTeamSelect = (team: number) => {
     return false;
   }
 };
+
+export const divisions = [
+  "Open",
+  "Women's",
+  "Mixed",
+  "AUDL",
+  "PUL",
+  "WUL",
+  "D1 College Men's",
+  "D1 College Women's",
+  "D3 College Men's",
+  "D3 College Women's",
+];
+
+export const emailListToArray = (emails: string) => {
+  const arrayForm: string[] = emails.split(", ");
+  const validEmails: string[] = [];
+
+  arrayForm.forEach((email) => {
+    const isValidEmail = validateEmail(email);
+    const isUniqueEmail = arrayForm.includes(email);
+    if (isValidEmail && isUniqueEmail) {
+      validEmails.push(email);
+    }
+  });
+
+  return validEmails;
+};

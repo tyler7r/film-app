@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 16px;
+}
+
+.select-menu {
+  padding: 8px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.select-menu:focus {
+  border: 4px solid #d3ab2b;
+  outline: none;
+}
+
+.go-back {
+  font-size: 18px;
+  color: #f4f3ea;
+  cursor: pointer;
+}
+
+.go-back:hover {
+  border-bottom: 2px solid #d3ab2b;
+}

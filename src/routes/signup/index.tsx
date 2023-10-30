@@ -35,6 +35,7 @@ const Signup = component$(() => {
   });
 
   const submit = $(async () => {
+    isValidForm.value = false;
     // Create initial random pwd
     const timestamp = Date.now();
     const pwd = `${Math.floor(Math.random() * 1000000)}${
@@ -55,7 +56,7 @@ const Signup = component$(() => {
     if (error) {
       message.message =
         "There was a problem creating the user. " + error.message;
-      isValidForm.value = false;
+      isValidForm.value = true;
     } else if (data.user?.identities?.length === 0) {
       message.message =
         "User already registered! Check your email for confirmation link or login";
@@ -65,6 +66,7 @@ const Signup = component$(() => {
       message.message =
         "Success. Please verify your email to finish your account creation.";
       message.status = "success";
+      isValidForm.value = false;
     }
   });
 

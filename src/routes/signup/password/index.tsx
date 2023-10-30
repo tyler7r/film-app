@@ -61,11 +61,14 @@ const CreatePassword = component$(() => {
         password: info.password,
       });
 
+      isValidForm.value = false;
+
       // Navigate to account details page
       setTimeout(async () => {
         await nav("/signup/details");
       }, 1000);
     } else {
+      isValidForm.value = true;
       message.message =
         "There was an error updating your password. " + error?.message;
     }
