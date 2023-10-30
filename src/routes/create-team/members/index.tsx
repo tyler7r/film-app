@@ -10,9 +10,9 @@ import { Form, routeAction$ } from "@builder.io/qwik-city";
 import { createClient } from "@supabase/supabase-js";
 import { Button } from "~/components/button";
 import FormMessage from "~/components/form-message";
-import { Database } from "~/utils/generated_types";
+import { type Database } from "~/utils/generated_types";
 import { emailListToArray } from "~/utils/helpers";
-import { MessageType } from "~/utils/types";
+import { type MessageType } from "~/utils/types";
 import { CreateTeamIdContext } from "../layout";
 
 export const useSendInvites = routeAction$(async (data, requestEvent) => {

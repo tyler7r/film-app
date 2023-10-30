@@ -45,7 +45,7 @@ export const divisions = [
 
 export const emailListToArray = (emails: string) => {
   const arrayForm: string[] = emails.split(", ");
-  let validEmails: string[] = [];
+  const validEmails: string[] = [];
 
   arrayForm.forEach((email) => {
     const isValidEmail = validateEmail(email);

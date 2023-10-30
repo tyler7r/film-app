@@ -10,7 +10,7 @@ import { useNavigate } from "@builder.io/qwik-city";
 import { Button } from "~/components/button";
 import FormMessage from "~/components/form-message";
 import { supabase } from "~/utils/supabase";
-import { MessageType } from "~/utils/types";
+import { type MessageType } from "~/utils/types";
 import styles from "../create-team.module.css";
 import { CreateTeamIdContext } from "../layout";
 

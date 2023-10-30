@@ -1,5 +1,4 @@
 import {
-  Signal,
   Slot,
   component$,
   createContextId,
@@ -7,8 +6,9 @@ import {
   useContextProvider,
   useSignal,
   useVisibleTask$,
+  type Signal,
 } from "@builder.io/qwik";
-import { DocumentHead } from "@builder.io/qwik-city";
+import { type DocumentHead } from "@builder.io/qwik-city";
 import PageTitle from "~/components/page-title";
 import { UserSessionContext } from "~/root";
 import { supabase } from "~/utils/supabase";

@@ -12,7 +12,7 @@ import FormMessage from "~/components/form-message";
 import { UserSessionContext } from "~/root";
 import { divisions } from "~/utils/helpers";
 import { supabase } from "~/utils/supabase";
-import { MessageType } from "~/utils/types";
+import { type MessageType } from "~/utils/types";
 import styles from "../create-team.module.css";
 import { CreateTeamIdContext } from "../layout";
 
