@@ -23,7 +23,7 @@ h2 {
 .form-container {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 12px;
   justify-content: center;
   align-items: center;
 }
@@ -43,6 +43,7 @@ h2 {
 .input-title {
   font-size: 24px;
   text-align: left;
+  color: #f4f3ea;
 }
 
 input {
