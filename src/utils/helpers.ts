@@ -42,3 +42,18 @@ export const divisions = [
   "D3 College Men's",
   "D3 College Women's",
 ];
+
+export const emailListToArray = (emails: string) => {
+  const arrayForm: string[] = emails.split(", ");
+  let validEmails: string[] = [];
+
+  arrayForm.forEach((email) => {
+    const isValidEmail = validateEmail(email);
+    const isUniqueEmail = arrayForm.includes(email);
+    if (isValidEmail && isUniqueEmail) {
+      validEmails.push(email);
+    }
+  });
+
+  return validEmails;
+};

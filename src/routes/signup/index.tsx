@@ -35,6 +35,7 @@ const Signup = component$(() => {
   });
 
   const submit = $(async () => {
+    isValidForm.value = false;
     // Create initial random pwd
     const timestamp = Date.now();
     const pwd = `${Math.floor(Math.random() * 1000000)}${
