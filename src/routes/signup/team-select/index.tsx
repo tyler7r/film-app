@@ -155,6 +155,15 @@ const TeamSelect = component$(() => {
           <Button disabled={isLoading.value}>Finish Account</Button>
         )}
       </form>
+      <div class={styles["create-team-msg"]}>
+        <div>Don't see your team?</div>
+        <div
+          class={styles["create-team"]}
+          onClick$={async () => await nav("/create-team/details")}
+        >
+          Create your team now!
+        </div>
+      </div>
     </div>
   );
 });
