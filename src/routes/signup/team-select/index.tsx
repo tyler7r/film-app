@@ -14,7 +14,7 @@ import PageTitle from "~/components/page-title";
 import { UserSessionContext } from "~/root";
 import { validateTeamSelect } from "~/utils/helpers";
 import { supabase } from "~/utils/supabase";
-import { MessageType, TeamType } from "~/utils/types";
+import { type MessageType, type TeamType } from "~/utils/types";
 import styles from "../signup.module.css";
 
 export let teamList: TeamType[] = [];

@@ -11,6 +11,7 @@
   align-items: center;
   margin: 8px;
   gap: 24px;
+  text-align: center;
 }
 
 .page-title {
@@ -73,6 +74,7 @@
 .input-title {
   font-size: 24px;
   color: #f4f3ea;
+  align-self: flex-start;
 }
 
 .account-container {

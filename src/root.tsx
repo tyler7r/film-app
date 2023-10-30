@@ -14,7 +14,7 @@ import { RouterHead } from "./components/router-head/router-head";
 
 import "./global.css";
 import { supabase } from "./utils/supabase";
-import { UserSess } from "./utils/types";
+import { type UserSess } from "./utils/types";
 
 export const UserSessionContext = createContextId<UserSess>("user-session");
 

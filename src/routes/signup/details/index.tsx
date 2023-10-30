@@ -70,52 +70,54 @@ const ProfileDetails = component$(() => {
   });
 
   return (
-    <form
-      onSubmit$={submit}
-      preventdefault:submit
-      class={styles["form-container"]}
-    >
-      <PageTitle>Account Details</PageTitle>
-      <label class={styles["input-container"]} id={styles["radio-container"]}>
-        <div class={styles["radio-title"]}>Choose Your Role</div>
-        <div class={styles["radio-inputs"]}>
-          <div class={styles["radio"]}>
-            <div class={styles["input-title"]}>Player</div>
-            <input
-              name="role"
-              type="radio"
-              onInput$={(e) =>
-                (details.role = (e.target as HTMLInputElement).value)
-              }
-              value={"player"}
-            />
+    <div class={styles["container"]}>
+      <form
+        onSubmit$={submit}
+        preventdefault:submit
+        class={styles["form-container"]}
+      >
+        <PageTitle>Account Details</PageTitle>
+        <label class={styles["input-container"]} id={styles["radio-container"]}>
+          <div class={styles["radio-title"]}>Choose Your Role</div>
+          <div class={styles["radio-inputs"]}>
+            <div class={styles["radio"]}>
+              <div class={styles["input-title"]}>Player</div>
+              <input
+                name="role"
+                type="radio"
+                onInput$={(e) =>
+                  (details.role = (e.target as HTMLInputElement).value)
+                }
+                value={"player"}
+              />
+            </div>
+            <div class={styles["radio"]}>
+              <div class={styles["input-title"]}>Coach</div>
+              <input
+                name="role"
+                type="radio"
+                onInput$={(e) =>
+                  (details.role = (e.target as HTMLInputElement).value)
+                }
+                value={"coach"}
+              />
+            </div>
           </div>
-          <div class={styles["radio"]}>
-            <div class={styles["input-title"]}>Coach</div>
-            <input
-              name="role"
-              type="radio"
-              onInput$={(e) =>
-                (details.role = (e.target as HTMLInputElement).value)
-              }
-              value={"coach"}
-            />
-          </div>
-        </div>
-      </label>
-      <label class={styles["input-container"]}>
-        <div class={styles["input-title"]}>Full Name</div>
-        <input
-          type="text"
-          onInput$={(e) =>
-            (details.name = (e.target as HTMLInputElement).value)
-          }
-          value={details.name}
-        />
-      </label>
-      <Button disabled={!isValidForm.value}>Continue</Button>
-      <FormMessage message={message} />
-    </form>
+        </label>
+        <label class={styles["input-container"]}>
+          <div class={styles["input-title"]}>Full Name</div>
+          <input
+            type="text"
+            onInput$={(e) =>
+              (details.name = (e.target as HTMLInputElement).value)
+            }
+            value={details.name}
+          />
+        </label>
+        <Button disabled={!isValidForm.value}>Continue</Button>
+        <FormMessage message={message} />
+      </form>
+    </div>
   );
 });
 
