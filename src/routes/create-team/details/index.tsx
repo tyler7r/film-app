@@ -144,6 +144,9 @@ const CreateTeamDetails = component$(() => {
       </select>
       <Button disabled={!isValidForm.value}>Next</Button>
       <FormMessage message={message} />
+      <a href="/signup/team-select" class={styles["go-back"]}>
+        Back to Team Select
+      </a>
     </form>
   );
 });

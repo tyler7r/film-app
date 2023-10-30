@@ -58,9 +58,11 @@ const ProfileDetails = component$(() => {
     if (error) {
       message.message =
         "There was a problem adding your name and role. " + error.message;
+      isValidForm.value = true;
     } else {
       message.message = "Successfully added name and role!";
       message.status = "success";
+      isValidForm.value = false;
 
       // Navigate to team-select page upon success
       setTimeout(async () => {

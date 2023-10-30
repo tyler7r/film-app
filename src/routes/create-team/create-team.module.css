@@ -18,3 +18,13 @@
   border: 4px solid #d3ab2b;
   outline: none;
 }
+
+.go-back {
+  font-size: 18px;
+  color: #f4f3ea;
+  cursor: pointer;
+}
+
+.go-back:hover {
+  border-bottom: 2px solid #d3ab2b;
+}

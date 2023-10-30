@@ -55,7 +55,7 @@ const Signup = component$(() => {
     if (error) {
       message.message =
         "There was a problem creating the user. " + error.message;
-      isValidForm.value = false;
+      isValidForm.value = true;
     } else if (data.user?.identities?.length === 0) {
       message.message =
         "User already registered! Check your email for confirmation link or login";
@@ -65,6 +65,7 @@ const Signup = component$(() => {
       message.message =
         "Success. Please verify your email to finish your account creation.";
       message.status = "success";
+      isValidForm.value = false;
     }
   });
 
