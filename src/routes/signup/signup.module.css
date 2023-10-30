@@ -4,13 +4,14 @@
 /* dark gray rgb(92, 92, 92) */
 /* cream #f4f3ea */
 
-.signup-container {
+.container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 8px;
   gap: 24px;
+  text-align: center;
 }
 
 .page-title {
@@ -21,21 +22,33 @@
   margin-bottom: 8px;
 }
 
-.signup-form {
+.form-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 16px;
   width: 80%;
+  text-align: center;
 }
 
-.signup-input {
+.input-container {
   width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 4px;
+}
+
+.checkbox-container {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkbox {
+  cursor: pointer;
 }
 
 #radio-container {
@@ -58,9 +71,10 @@
   font-size: 24px;
 }
 
-.signup-title {
+.input-title {
   font-size: 24px;
   color: #f4f3ea;
+  align-self: flex-start;
 }
 
 .account-container {
@@ -78,6 +92,22 @@
 
 .account-link:hover {
   text-decoration: underline;
+}
+
+.select-menu {
+  padding: 8px;
+  font-size: 22px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.select-menu:focus {
+  border: 4px solid #d3ab2b;
+  outline: none;
+}
+
+.option-input {
+  cursor: pointer;
 }
 
 @media (max-width: 400px) {

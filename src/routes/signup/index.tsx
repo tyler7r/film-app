@@ -9,8 +9,9 @@ import type { DocumentHead } from "@builder.io/qwik-city";
 import { Button } from "~/components/button";
 import FormMessage from "~/components/form-message";
 import PageTitle from "~/components/page-title";
-import { validateEmail, type MessageType } from "~/utils/helpers";
+import { validateEmail } from "~/utils/helpers";
 import { supabase } from "~/utils/supabase";
+import { type MessageType } from "~/utils/types";
 import styles from "./signup.module.css";
 
 const Signup = component$(() => {
@@ -68,15 +69,15 @@ const Signup = component$(() => {
   });
 
   return (
-    <div class={styles["signup-container"]}>
+    <div class={styles["container"]}>
       <PageTitle>Sign Up!</PageTitle>
       <form
-        class={styles["signup-form"]}
+        class={styles["form-container"]}
         preventdefault:submit
         onSubmit$={submit}
       >
-        <label class={styles["signup-input"]}>
-          <div class={styles["signup-title"]}>Email</div>
+        <label class={styles["input-container"]}>
+          <div class={styles["input-title"]}>Email</div>
           <input
             type="email"
             onInput$={(e) =>

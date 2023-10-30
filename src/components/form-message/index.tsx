@@ -1,5 +1,5 @@
 import { component$ } from "@builder.io/qwik";
-import { type MessageType } from "~/utils/helpers";
+import { type MessageType } from "~/utils/types";
 import styles from "./form-message.module.css";
 
 interface MessageProps {

@@ -1,8 +1,3 @@
-export type MessageType = {
-  message: string | undefined;
-  status: "error" | "warning" | "success";
-};
-
 export const validateField = (input: string) => {
   if (input === "") {
     return false;
@@ -17,4 +12,20 @@ export const validateEmail = (email: string) => {
     return true;
   }
   return false;
+};
+
+export const validatePwdMatch = (p1: string, p2: string) => {
+  if (p1 === p2) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+export const validateTeamSelect = (team: number) => {
+  if (team !== 0) {
+    return true;
+  } else {
+    return false;
+  }
 };

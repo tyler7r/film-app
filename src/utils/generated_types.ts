@@ -11,76 +11,60 @@ export interface Database {
     Tables: {
       games: {
         Row: {
-          id: string;
+          id: number;
           season: string | null;
-          team1_id: string;
-          team2_id: string;
+          team1_id: number;
+          team2_id: number;
           tournament: string | null;
           url: string | null;
         };
         Insert: {
-          id: string;
+          id?: never;
           season?: string | null;
-          team1_id: string;
-          team2_id: string;
+          team1_id: number;
+          team2_id: number;
           tournament?: string | null;
           url?: string | null;
         };
         Update: {
-          id?: string;
+          id?: never;
           season?: string | null;
-          team1_id?: string;
-          team2_id?: string;
+          team1_id?: number;
+          team2_id?: number;
           tournament?: string | null;
           url?: string | null;
         };
-        Relationships: [
-          {
-            foreignKeyName: "games_team1_id_fkey";
-            columns: ["team1_id"];
-            referencedRelation: "teams";
-            referencedColumns: ["id"];
-          },
-          {
-            foreignKeyName: "games_team2_id_fkey";
-            columns: ["team2_id"];
-            referencedRelation: "teams";
-            referencedColumns: ["id"];
-          },
-        ];
+        Relationships: [];
       };
       plays: {
         Row: {
-          author: string;
-          game: string;
-          id: string;
+          author: number;
+          game: number;
+          highlight: boolean;
+          id: number;
           keywords: string[] | null;
           note: string | null;
           timestamp: string;
         };
         Insert: {
-          author: string;
-          game: string;
-          id: string;
+          author: number;
+          game: number;
+          highlight?: boolean;
+          id?: never;
           keywords?: string[] | null;
           note?: string | null;
           timestamp: string;
         };
         Update: {
-          author?: string;
-          game?: string;
-          id?: string;
+          author?: number;
+          game?: number;
+          highlight?: boolean;
+          id?: never;
           keywords?: string[] | null;
           note?: string | null;
           timestamp?: string;
         };
         Relationships: [
-          {
-            foreignKeyName: "plays_author_fkey";
-            columns: ["author"];
-            referencedRelation: "profiles";
-            referencedColumns: ["id"];
-          },
           {
             foreignKeyName: "plays_game_fkey";
             columns: ["game"];
@@ -92,56 +76,85 @@ export interface Database {
       profiles: {
         Row: {
           created_at: string | null;
-          display_name: string | null;
           email: string | null;
           id: string;
+          name: string | null;
           role: string | null;
+          team_id: number | null;
         };
         Insert: {
           created_at?: string | null;
-          display_name?: string | null;
           email?: string | null;
           id: string;
+          name?: string | null;
           role?: string | null;
+          team_id?: number | null;
         };
         Update: {
           created_at?: string | null;
-          display_name?: string | null;
           email?: string | null;
           id?: string;
+          name?: string | null;
           role?: string | null;
+          team_id?: number | null;
         };
-        Relationships: [];
+        Relationships: [
+          {
+            foreignKeyName: "profiles_id_fkey";
+            columns: ["id"];
+            referencedRelation: "users";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "profiles_team_id_fkey";
+            columns: ["team_id"];
+            referencedRelation: "teams";
+            referencedColumns: ["id"];
+          },
+        ];
       };
       teams: {
         Row: {
-          affiliation_pwd: string | null;
           announcements: string[] | null;
           city: string | null;
           division: string | null;
-          id: string;
+          id: number;
+          logo: string | null;
+          member_requests: string[] | null;
           name: string | null;
           next_opp: string | null;
+          owner: string | null;
         };
         Insert: {
-          affiliation_pwd?: string | null;
           announcements?: string[] | null;
           city?: string | null;
           division?: string | null;
-          id: string;
+          id?: never;
+          logo?: string | null;
+          member_requests?: string[] | null;
           name?: string | null;
           next_opp?: string | null;
+          owner?: string | null;
         };
         Update: {
-          affiliation_pwd?: string | null;
           announcements?: string[] | null;
           city?: string | null;
           division?: string | null;
-          id?: string;
+          id?: never;
+          logo?: string | null;
+          member_requests?: string[] | null;
           name?: string | null;
           next_opp?: string | null;
+          owner?: string | null;
         };
-        Relationships: [];
+        Relationships: [
+          {
+            foreignKeyName: "teams_owner_fkey";
+            columns: ["owner"];
+            referencedRelation: "profiles";
+            referencedColumns: ["id"];
+          },
+        ];
       };
     };
     Views: {
