@@ -29,3 +29,16 @@ export const validateTeamSelect = (team: number) => {
     return false;
   }
 };
+
+export const divisions = [
+  "Open",
+  "Women's",
+  "Mixed",
+  "AUDL",
+  "PUL",
+  "WUL",
+  "D1 College Men's",
+  "D1 College Women's",
+  "D3 College Men's",
+  "D3 College Women's",
+];
