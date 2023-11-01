@@ -21,8 +21,11 @@ const Signup = component$(() => {
     status: "error",
   });
   const email = useSignal("");
+  const emails: { emails: string[] } = useStore({ emails: [] });
 
   useVisibleTask$(({ track }) => {
+    console.log("current", email.value);
+    console.log("list", emails.emails);
     track(() => email.value);
     const isValidEmail = validateEmail(email.value);
     if (!isValidEmail) {
