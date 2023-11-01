@@ -44,16 +44,22 @@ export const divisions = [
 ];
 
 export const emailListToArray = (emails: string) => {
-  const arrayForm: string[] = emails.split(", ");
+  const arrayForm: string[] = emails.split(",");
   const validEmails: string[] = [];
 
   arrayForm.forEach((email) => {
     const isValidEmail = validateEmail(email);
-    const isUniqueEmail = arrayForm.includes(email);
+    const isUniqueEmail = !validEmails.includes(email);
     if (isValidEmail && isUniqueEmail) {
       validEmails.push(email);
     }
   });
 
   return validEmails;
+};
+
+export const checkForDuplicates = (item: string, array: string[]) => {
+  const itemInArray = array.includes(item);
+  if (itemInArray) return false;
+  else return true;
 };
