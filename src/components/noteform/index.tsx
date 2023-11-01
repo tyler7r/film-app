@@ -1,5 +1,5 @@
 import type { QRL } from "@builder.io/qwik";
-import { component$, useStore, $ } from "@builder.io/qwik";
+import { $, component$, useStore } from "@builder.io/qwik";
 import { Button } from "../button";
 
 interface NoteProps {
