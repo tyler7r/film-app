@@ -1,4 +1,4 @@
-import { QRL, Signal, component$ } from "@builder.io/qwik";
+import { component$, type QRL, type Signal } from "@builder.io/qwik";
 import styles from "./multi-input.module.css";
 
 type MultiInputType = {
