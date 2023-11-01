@@ -17,6 +17,7 @@ import {
   validateEmail,
 } from "~/utils/helpers";
 import { type MessageType } from "~/utils/types";
+import styles from "../create-team.module.css";
 import { CreateTeamIdContext } from "../layout";
 
 export const useSendInvites = routeAction$(async (data, requestEvent) => {
@@ -62,7 +63,9 @@ const CreateTeamMembers = component$(() => {
     status: "error",
   });
   const currentEmail = useSignal("");
-  const emailStore: { emails: string[] } = useStore({ emails: [] });
+  const emailStore: { emails: string[] } = useStore({
+    emails: [],
+  });
 
   // Track if emails have been input in order to update button content
   useVisibleTask$(({ track }) => {
@@ -130,23 +133,41 @@ const CreateTeamMembers = component$(() => {
       action={action}
       class="form-container"
     >
-      <div>
-        {emailStore.emails.length > 0 &&
-          emailStore.emails.map((email, index) => (
-            <div key={index}>
-              <div onClick$={() => handleDelete(index)}>X</div>
-              <div>{email}</div>
-            </div>
-          ))}
+      <div class={styles["invite-container"]}>
+        <div class={styles["emails-container"]}>
+          {emailStore.emails.length > 0 &&
+            emailStore.emails.map((email, index) => (
+              <div key={index} class={styles["email"]}>
+                <div>{email}</div>
+                <button
+                  class={styles["delete-email"]}
+                  type="button"
+                  onClick$={() => handleDelete(index)}
+                >
+                  X
+                </button>
+              </div>
+            ))}
+          {emailStore.emails.length === 0 && (
+            <div class={styles["empty-email-msg"]}>Add email invites!</div>
+          )}
+        </div>
+        <div class={styles["email-input"]}>
+          <input
+            class={styles["input-box"]}
+            placeholder="Enter email..."
+            bind:value={currentEmail}
+          />
+          <button
+            type="button"
+            onClick$={handleNewEmail}
+            disabled={!isCurrentInputValid.value}
+            class={styles["add-email"]}
+          >
+            Add
+          </button>
+        </div>
       </div>
-      <input bind:value={currentEmail} />
-      <Button
-        type="button"
-        onClick$={handleNewEmail}
-        disabled={!isCurrentInputValid.value}
-      >
-        Add
-      </Button>
       <input
         name="createTeamId"
         value={createTeamId !== 0 ? createTeamId : null}
