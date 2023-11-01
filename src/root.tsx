@@ -41,6 +41,7 @@ export default component$(() => {
           userSession.teamId = null;
           userSession.isLoggedIn = false;
         }
+        console.log(session?.user.user_metadata);
       },
     );
     return () => {
