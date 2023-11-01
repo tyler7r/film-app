@@ -71,7 +71,6 @@ const CreateTeamDetails = component$(() => {
     isValidForm.value = false;
     const isValidTeam = await validateUniqueTeam();
     if (isValidTeam) {
-      await supabase.auth.updateUser({ data: { team_id: createTeamId.value } });
       const { data, error } = await supabase
         .from("teams")
         .insert({
@@ -87,6 +86,9 @@ const CreateTeamDetails = component$(() => {
       if (data) {
         createTeamId.value = data.id;
         user.teamId = data.id;
+        await supabase.auth.updateUser({
+          data: { team_id: data.id },
+        });
         // Update user's profile to include the team id
         await supabase
           .from("profiles")
