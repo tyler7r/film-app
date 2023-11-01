@@ -8,10 +8,10 @@ import {
 } from "@builder.io/qwik";
 import { Form, routeAction$, useNavigate } from "@builder.io/qwik-city";
 import { createClient } from "@supabase/supabase-js";
-import { type Database } from "firebase/database";
 import { Button } from "~/components/button";
 import FormMessage from "~/components/form-message";
 import MultiInput from "~/components/multi-input";
+import { type Database } from "~/utils/generated_types";
 import {
   checkForDuplicates,
   emailListToArray,
