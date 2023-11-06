@@ -23,8 +23,9 @@ nav {
 .team-logo {
   border: 4px double #d3ab2b;
   border-radius: 50%;
-  padding: 4px;
   cursor: pointer;
+  height: 50px;
+  width: 50px;
 }
 
 .team-logo:hover {

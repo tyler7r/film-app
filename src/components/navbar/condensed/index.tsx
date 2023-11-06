@@ -8,10 +8,11 @@ import styles from "../navbar.module.css";
 interface CondensedNavType {
   isSearchOpen: Signal<boolean>;
   isMenuOpen: Signal<boolean>;
+  isLoggedIn: Signal<boolean>;
 }
 
 const CondensedNavbar = component$(
-  ({ isSearchOpen, isMenuOpen }: CondensedNavType) => {
+  ({ isSearchOpen, isMenuOpen, isLoggedIn }: CondensedNavType) => {
     return (
       <nav>
         {!isSearchOpen.value ? (
@@ -30,7 +31,11 @@ const CondensedNavbar = component$(
               />
             </div>
             {isMenuOpen.value && (
-              <NavMenu teamId={"t1"} isMenuOpen={isMenuOpen} />
+              <NavMenu
+                teamId={"t1"}
+                isMenuOpen={isMenuOpen}
+                isLoggedIn={isLoggedIn}
+              />
             )}
           </>
         ) : (

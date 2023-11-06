@@ -1,9 +1,12 @@
-import { $, component$, useSignal } from "@builder.io/qwik";
+import { $, Signal, component$, useSignal } from "@builder.io/qwik";
 import { Button } from "../button";
-import { isSearchOpenType } from "../navbar";
 import styles from "./nav-search.module.css";
 
-const NavSearch = component$(({ isSearchOpen }: isSearchOpenType) => {
+interface NavSearchType {
+  isSearchOpen: Signal<boolean>;
+}
+
+const NavSearch = component$(({ isSearchOpen }: NavSearchType) => {
   const search = useSignal("");
 
   const submit = $(() => {
