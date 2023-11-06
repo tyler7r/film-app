@@ -1,4 +1,4 @@
-import { Signal, component$ } from "@builder.io/qwik";
+import { QRL, Signal, component$ } from "@builder.io/qwik";
 import { BsList, BsSearch } from "@qwikest/icons/bootstrap";
 import NavMenu from "~/components/nav-menu";
 import NavSearch from "~/components/nav-search";
@@ -9,10 +9,11 @@ interface CondensedNavType {
   isSearchOpen: Signal<boolean>;
   isMenuOpen: Signal<boolean>;
   isLoggedIn: Signal<boolean>;
+  logout: QRL<() => void>;
 }
 
 const CondensedNavbar = component$(
-  ({ isSearchOpen, isMenuOpen, isLoggedIn }: CondensedNavType) => {
+  ({ isSearchOpen, isMenuOpen, isLoggedIn, logout }: CondensedNavType) => {
     return (
       <nav>
         {!isSearchOpen.value ? (
@@ -35,6 +36,7 @@ const CondensedNavbar = component$(
                 teamId={"t1"}
                 isMenuOpen={isMenuOpen}
                 isLoggedIn={isLoggedIn}
+                logout={logout}
               />
             )}
           </>

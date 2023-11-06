@@ -1,4 +1,4 @@
-import { Signal, component$ } from "@builder.io/qwik";
+import { QRL, Signal, component$ } from "@builder.io/qwik";
 import { BsEnvelopeFill, BsSearch } from "@qwikest/icons/bootstrap";
 import { Button } from "../../button";
 import NavSearch from "../../nav-search";
@@ -9,10 +9,11 @@ import styles from "../navbar.module.css";
 interface ExpandedNavType {
   isSearchOpen: Signal<boolean>;
   isLoggedIn: Signal<boolean>;
+  logout: QRL<() => void>;
 }
 
 const ExpandedNavbar = component$(
-  ({ isSearchOpen, isLoggedIn }: ExpandedNavType) => {
+  ({ isSearchOpen, isLoggedIn, logout }: ExpandedNavType) => {
     return (
       <nav>
         <a href="/">
@@ -35,7 +36,7 @@ const ExpandedNavbar = component$(
                 <a href={`/profile/t1`} class={styles["team-logo"]}>
                   <TeamLogo />
                 </a>
-                <Button>Log Out</Button>
+                <Button onClick$={() => logout()}>Log Out</Button>
               </>
             ) : (
               <a href="/login">
