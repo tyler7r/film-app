@@ -1,20 +1,21 @@
-import type { QRL } from "@builder.io/qwik";
+import type { Signal } from "@builder.io/qwik";
 import { component$ } from "@builder.io/qwik";
-import styles from "./menu.module.css";
 import { BsList } from "@qwikest/icons/bootstrap";
+import styles from "./menu.module.css";
 
-interface PropTypes {
+interface NavMenuTypes {
   teamId: string;
-  close: QRL<() => void>;
+  isMenuOpen: Signal<boolean>;
 }
 
-const NavMenu = component$((props: PropTypes) => {
-  const { teamId, close } = props;
-
+const NavMenu = component$(({ teamId, isMenuOpen }: NavMenuTypes) => {
   return (
     <div class={styles["overlay"]}>
       <div class={styles["menu-container"]}>
-        <BsList class={styles["close"]} onClick$={() => close()} />
+        <BsList
+          class={styles["close"]}
+          onClick$={() => (isMenuOpen.value = false)}
+        />
         <div class={styles["btn-container"]}>
           <a href="/film-room" class={styles["menu-btn"]}>
             Film Room
