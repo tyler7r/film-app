@@ -1,13 +1,13 @@
 import {
+  Slot,
   component$,
   createContextId,
-  Signal,
-  Slot,
   useContext,
   useContextProvider,
   useSignal,
   useTask$,
   useVisibleTask$,
+  type Signal,
 } from "@builder.io/qwik";
 import {
   routeLoader$,

@@ -1,4 +1,4 @@
-import { $, Signal, component$, useSignal } from "@builder.io/qwik";
+import { $, component$, useSignal, type Signal } from "@builder.io/qwik";
 import { Button } from "../button";
 import styles from "./nav-search.module.css";
 

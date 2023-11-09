@@ -1,4 +1,4 @@
-import { QRL, Signal, component$ } from "@builder.io/qwik";
+import { component$, type QRL, type Signal } from "@builder.io/qwik";
 import { BsEnvelopeFill, BsSearch } from "@qwikest/icons/bootstrap";
 import { Button } from "../../button";
 import NavSearch from "../../nav-search";
