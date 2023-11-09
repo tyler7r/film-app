@@ -1,18 +1,16 @@
-import type { PropFunction } from "@builder.io/qwik";
-import { component$, useSignal, $ } from "@builder.io/qwik";
-import styles from "./nav-search.module.css";
+import { $, component$, useSignal, type Signal } from "@builder.io/qwik";
 import { Button } from "../button";
+import styles from "./nav-search.module.css";
 
-interface PropTypes {
-  closeSearch: PropFunction<() => void>;
+interface NavSearchType {
+  isSearchOpen: Signal<boolean>;
 }
 
-const NavSearch = component$((props: PropTypes) => {
-  const { closeSearch } = props;
+const NavSearch = component$(({ isSearchOpen }: NavSearchType) => {
   const search = useSignal("");
 
   const submit = $(() => {
-    closeSearch();
+    isSearchOpen.value = false;
     window.location.href = `/search/${search.value}`;
     search.value = "";
   });
@@ -27,7 +25,7 @@ const NavSearch = component$((props: PropTypes) => {
       <Button>Search</Button>
       <button
         type="button"
-        onClick$={() => closeSearch()}
+        onClick$={() => (isSearchOpen.value = false)}
         class={styles["close"]}
       >
         X

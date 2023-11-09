@@ -22,10 +22,10 @@ export const IsMobileProvider = component$(() => {
   const isMobile = useSignal(false);
 
   const adjustScreenSize = $(() => {
-    if (window.innerWidth > MOBILE_BREAKPOINT) {
-      return true;
-    } else {
+    if (window.innerWidth >= MOBILE_BREAKPOINT) {
       return false;
+    } else {
+      return true;
     }
   });
 

@@ -23,8 +23,9 @@ nav {
 .team-logo {
   border: 4px double #d3ab2b;
   border-radius: 50%;
-  padding: 4px;
   cursor: pointer;
+  height: 50px;
+  width: 50px;
 }
 
 .team-logo:hover {
@@ -41,4 +42,11 @@ nav {
 .nav-btn:hover {
   font-size: 34px;
   color: #cbd0d8;
+}
+
+.site-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 8px;
 }

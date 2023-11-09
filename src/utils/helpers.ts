@@ -43,6 +43,18 @@ export const divisions = [
   "D3 College Women's",
 ];
 
+export const noNavbarLocations = [
+  "/login/",
+  "/signup/",
+  "/signup/details/",
+  "/signup/password/",
+  "/signup/team-select/",
+  "/create-team/",
+  "/create-team/details/",
+  "/create-team/logo/",
+  "/create-team/members/",
+];
+
 export const emailListToArray = (emails: string) => {
   const arrayForm: string[] = emails.split(",");
   const validEmails: string[] = [];

@@ -50,6 +50,7 @@
 .menu-btn {
   font-size: 36px;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .menu-btn:hover {

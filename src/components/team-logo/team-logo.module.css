@@ -1,0 +1,12 @@
+.logo {
+  border: 4px double #d3ab2b;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+}
+
+.logo:hover {
+  border: 4px solid #d3ab2b;
+  background-color: rgb(203, 208, 216, 0.1);
+}

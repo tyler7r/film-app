@@ -1,85 +1,50 @@
-import { $, component$, useSignal } from "@builder.io/qwik";
-import {
-  BsSearch,
-  BsEnvelopeFill,
-  BsGearFill,
-  BsList,
-} from "@qwikest/icons/bootstrap";
+import { $, component$, useContext, useSignal } from "@builder.io/qwik";
 
-import { SiteLogo } from "~/components/site-logo";
-import { Button } from "~/components/button";
-import { TeamLogo } from "~/components/team-logo";
-
-import styles from "./navbar.module.css";
-import NavSearch from "../nav-search";
-import NavMenu from "../nav-menu";
+import { useNavigate } from "@builder.io/qwik-city";
+import { UserSessionContext } from "~/root";
+import { NavbarCheckContext } from "~/routes/layout";
+import { supabase } from "~/utils/supabase";
 import { useIsMobile } from "../is-mobile";
+import { SiteLogo } from "../site-logo";
+import CondensedNavbar from "./condensed";
+import ExpandedNavbar from "./expanded";
+import styles from "./navbar.module.css";
 
 export const Navbar = component$(() => {
+  const nav = useNavigate();
+  const user = useContext(UserSessionContext);
+  const isNavbarPresent = useContext(NavbarCheckContext);
   const isMobile = useIsMobile();
-  const searchOpen = useSignal(false);
-  const menuOpen = useSignal(false);
+  const isSearchOpen = useSignal(false);
+  const isMenuOpen = useSignal(false);
 
-  const closeSearch = $(() => {
-    searchOpen.value = false;
+  const handleLogout = $(async () => {
+    const { error } = await supabase.auth.signOut();
+    if (error) {
+      return;
+    } else {
+      await nav("/");
+    }
   });
 
-  const closeMenu = $(() => {
-    menuOpen.value = false;
-  });
-
-  const teamId = "t1";
-
-  return isMobile.value ? (
-    <nav>
-      <a href="/">
-        <SiteLogo />
-      </a>
-      {!searchOpen.value ? (
-        <div class={styles["right"]}>
-          <a href="/film-room">
-            <Button>Film Room</Button>
-          </a>
-          <BsSearch
-            class={styles["nav-btn"]}
-            onClick$={() => (searchOpen.value = true)}
-          />
-          <a href="/inbox" class={styles["nav-btn"]}>
-            <BsEnvelopeFill />
-          </a>
-          <a href={`/profile/${teamId}`} class={styles["team-logo"]}>
-            <TeamLogo team="Atlanta Hustle" />
-          </a>
-          <a href="/login" class={styles["nav-btn"]}>
-            <BsGearFill />
-          </a>
-        </div>
-      ) : (
-        <NavSearch closeSearch={closeSearch} />
-      )}
-    </nav>
+  return isNavbarPresent.value ? (
+    isMobile.value ? (
+      <CondensedNavbar
+        isSearchOpen={isSearchOpen}
+        isMenuOpen={isMenuOpen}
+        isLoggedIn={user.isLoggedIn}
+        logout={handleLogout}
+      />
+    ) : (
+      <ExpandedNavbar
+        isSearchOpen={isSearchOpen}
+        isLoggedIn={user.isLoggedIn}
+        logout={handleLogout}
+      />
+    )
   ) : (
-    <nav>
-      {!searchOpen.value ? (
-        <>
-          <a href="/">
-            <SiteLogo />
-          </a>
-          <div class={styles["right"]}>
-            <BsSearch
-              class={styles["nav-btn"]}
-              onClick$={() => (searchOpen.value = true)}
-            />
-            <BsList
-              class={styles["nav-btn"]}
-              onClick$={() => (menuOpen.value = true)}
-            />
-          </div>
-          {menuOpen.value && <NavMenu teamId={teamId} close={closeMenu} />}
-        </>
-      ) : (
-        <NavSearch closeSearch={closeSearch} />
-      )}
-    </nav>
+    <a href="/" class={styles["site-logo"]}>
+      <SiteLogo />
+    </a>
   );
 });

@@ -1,25 +1,41 @@
-import type { QwikIntrinsicElements } from "@builder.io/qwik";
-import { component$ } from "@builder.io/qwik";
+import {
+  $,
+  component$,
+  useContext,
+  useSignal,
+  useVisibleTask$,
+} from "@builder.io/qwik";
+import { UserSessionContext } from "~/root";
+import { supabase } from "~/utils/supabase";
+import styles from "./team-logo.module.css";
 
-const TEAM_CITY_MAP = {
-  "Atlanta Hustle": "ATL",
-};
+export const TeamLogo = component$(() => {
+  const user = useContext(UserSessionContext);
+  const teamLogo = useSignal("");
 
-export type TeamLogoProps = Omit<
-  QwikIntrinsicElements["img"],
-  "src" | "alt"
-> & { team: keyof typeof TEAM_CITY_MAP };
+  const getTeamLogo = $(async () => {
+    if (user.teamId) {
+      const { data } = await supabase
+        .from("teams")
+        .select()
+        .eq("id", user.teamId)
+        .single();
+      if (data?.logo) teamLogo.value = data.logo;
+    } else teamLogo.value = "";
+  });
 
-export const TeamLogo = component$(({ team, ...props }: TeamLogoProps) => {
-  const city = TEAM_CITY_MAP[team];
+  useVisibleTask$(async ({ track }) => {
+    track(() => user.teamId);
+    await getTeamLogo();
+  });
 
-  return (
+  return teamLogo.value !== "" ? (
     <img
-      width="40"
       height="50"
-      src={`https://theaudl.com/themes/AUDL_theme/css/images/logos/logo-team-${city}.png`}
-      alt={`${team} logo`}
-      {...props}
+      width="50"
+      src={teamLogo.value}
+      alt={"Team Logo"}
+      class={styles["logo"]}
     />
-  );
+  ) : null;
 });
