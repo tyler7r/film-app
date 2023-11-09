@@ -8,7 +8,7 @@ import styles from "../navbar.module.css";
 interface CondensedNavType {
   isSearchOpen: Signal<boolean>;
   isMenuOpen: Signal<boolean>;
-  isLoggedIn: Signal<boolean>;
+  isLoggedIn: boolean;
   logout: QRL<() => void>;
 }
 

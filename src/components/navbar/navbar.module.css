@@ -43,3 +43,10 @@ nav {
   font-size: 34px;
   color: #cbd0d8;
 }
+
+.site-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 8px;
+}

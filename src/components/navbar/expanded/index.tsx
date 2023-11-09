@@ -8,7 +8,7 @@ import styles from "../navbar.module.css";
 
 interface ExpandedNavType {
   isSearchOpen: Signal<boolean>;
-  isLoggedIn: Signal<boolean>;
+  isLoggedIn: boolean;
   logout: QRL<() => void>;
 }
 
@@ -28,12 +28,12 @@ const ExpandedNavbar = component$(
               class={styles["nav-btn"]}
               onClick$={() => (isSearchOpen.value = true)}
             />
-            {isLoggedIn.value ? (
+            {isLoggedIn ? (
               <>
                 <a href="/inbox" class={styles["nav-btn"]}>
                   <BsEnvelopeFill />
                 </a>
-                <a href={`/profile/t1`} class={styles["team-logo"]}>
+                <a href={`/profile/t1`}>
                   <TeamLogo />
                 </a>
                 <Button onClick$={() => logout()}>Log Out</Button>

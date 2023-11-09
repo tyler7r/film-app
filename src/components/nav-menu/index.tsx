@@ -6,7 +6,7 @@ import styles from "./menu.module.css";
 interface NavMenuTypes {
   teamId: string;
   isMenuOpen: Signal<boolean>;
-  isLoggedIn: Signal<boolean>;
+  isLoggedIn: boolean;
   logout: QRL<() => void>;
 }
 
@@ -27,7 +27,7 @@ const NavMenu = component$(
             <a href="/film-room" class={styles["menu-btn"]}>
               Film Room
             </a>
-            {isLoggedIn.value ? (
+            {isLoggedIn ? (
               <>
                 <a href="/inbox" class={styles["menu-btn"]}>
                   Inbox

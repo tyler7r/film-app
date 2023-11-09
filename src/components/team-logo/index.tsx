@@ -15,14 +15,13 @@ export const TeamLogo = component$(() => {
 
   const getTeamLogo = $(async () => {
     if (user.teamId) {
-      const { data, error } = await supabase
+      const { data } = await supabase
         .from("teams")
         .select()
         .eq("id", user.teamId)
         .single();
       if (data?.logo) teamLogo.value = data.logo;
-      else throw new Error(error?.message);
-    } else return "";
+    } else teamLogo.value = "";
   });
 
   useVisibleTask$(async ({ track }) => {
@@ -30,7 +29,7 @@ export const TeamLogo = component$(() => {
     await getTeamLogo();
   });
 
-  return (
+  return teamLogo.value !== "" ? (
     <img
       height="50"
       width="50"
@@ -38,5 +37,5 @@ export const TeamLogo = component$(() => {
       alt={"Team Logo"}
       class={styles["logo"]}
     />
-  );
+  ) : null;
 });
